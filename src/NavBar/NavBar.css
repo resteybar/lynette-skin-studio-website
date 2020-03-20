@@ -1,0 +1,30 @@
+#NavBar {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+    /* Creating space from at top of title */
+    margin-top: 50px;
+
+    /* Creating space between the title & links */
+    margin-bottom: 30px;
+}
+
+a {
+    /* Takes off Underline in Links */
+    text-decoration: none;
+}
+
+ul {
+    /* Takes off Bullet Points from List */
+    list-style-type: none;
+}
+
+li {
+    /* Makes each Link on the same line */
+    display: inline;
+
+    /* Makes space between each link */
+    margin-right: 20px;
+}
