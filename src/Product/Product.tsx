@@ -1,6 +1,5 @@
 import React from 'react'
 import './Product.css'
-import { BrowserRouter as Link } from 'react-router-dom'
 
 const Product: React.FC = () => {
     return (
