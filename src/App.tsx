@@ -6,10 +6,13 @@ import Product from './Product/Product';
 
 const App: React.FC = () => {
   return (
-    <div className="App">
+    <div className='App'>
       <NavBar />
-      <Home />
-      <Product />
+      
+      <div id='main'>
+        <Home />
+        <Product />
+      </div>
     </div>
   );
 }

@@ -4,8 +4,8 @@ import './NavBar.css'
 const NavBar: React.FC = () => {
     // Links in Nav Bar
     const links = [
-        'Home',
-        'Product'
+        { name: 'Home', path: '' },
+        { name: 'Product', path: 'Product' }
     ]
 
     // Automate Rendering Links
@@ -15,7 +15,7 @@ const NavBar: React.FC = () => {
         for (let i = 0; i < links.length; i++)
             renderedLinks.push(
                 <li key={ i }>
-                    <a href={ '#' + links[i] }>{ links[i] }</a>
+                    <a href={ '#' + links[i].path }>{ links[i].name }</a>
                 </li>
             )
         
@@ -28,21 +28,6 @@ const NavBar: React.FC = () => {
             <ul>
                 { renderLinks() }
             </ul>
-
-                {/* Switch - Ensures 1 route displays @ once
-                <BrowserRouter>
-                <Switch>
-                    exact = url has to be exactly with this
-                    w/o exact = as long as it has the substr of one of the paths
-                    <Route path='/' exact component={ Home } />
-                    <Route path='/product' exact component={ Product }/>
-                    <Route path='/:id' exact component={ Home }/>
-
-                    No Matching Routes
-                    <Route path='/' render={() => <div>404</div>} />
-                </Switch> 
-                </BrowserRouter>
-                */}
         </div>
     )
 }
