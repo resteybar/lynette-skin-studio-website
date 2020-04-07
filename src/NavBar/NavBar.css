@@ -10,6 +10,7 @@
     /* TBD: May change later with background image */
     /* When Nav. Bar overlays main content, it hides content behind it*/
     /* background-color: white; */
+    border: 1px solid black;
 }
 
 h1 {
