@@ -15,7 +15,7 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
                 <h1 className='title-lynette lynette-brown'>LYNETTE'S</h1>
                 <h1 className='title-skin-studio lynette-brown'>SKIN STUDIO</h1>
             </div>
-            <ul id='links'>
+            <ul id='navbarscrolling-links'>
                 { props.renderLinks }
             </ul>
             <div id='menu'>

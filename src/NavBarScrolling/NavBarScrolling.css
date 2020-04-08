@@ -37,7 +37,22 @@
 
 /* Provides space for the title on the left */
 #navbarscrolling-title {
-    margin-left: 30px;
+    margin-left: 60px;
+    font-size: small;
+}
+
+#navbarscrolling-title > h1 {
+    /* Adjust Thickness of Title */
+    font-weight: 100;
+}
+
+/* Provides space to the right of the links */
+#navbarscrolling-links {
+    margin-right: 30px;
+}
+
+#navbarscrolling-links > li {
+    margin-right: 30px;
 }
 
 /* When the user is on mobile
