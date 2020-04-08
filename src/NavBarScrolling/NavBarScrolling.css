@@ -1,9 +1,6 @@
 #NavBarScrolling {
     font-family: 'Open Sans', sans-serif;
 
-    /* Extends width to be the entire screen width */
-    margin: 0 -1em;
-
     /* TBD: May change later with background image */
     /* When Nav. Bar overlays main content, it hides content behind it*/
     /* background-color: white; */
