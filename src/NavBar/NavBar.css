@@ -10,3 +10,11 @@
 #title-skin-studio {
     margin-bottom: 20px;
 }
+
+#NavBar-links > li {
+    /* Makes each Link on the same line */
+    display: inline;
+
+    /* Makes space between each link */
+    margin-right: 20px;
+}

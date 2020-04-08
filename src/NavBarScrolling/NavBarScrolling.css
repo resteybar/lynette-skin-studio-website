@@ -48,11 +48,20 @@
 
 /* Provides space to the right of the links */
 #navbarscrolling-links {
+    /* Makes space between each link */
     margin-right: 30px;
 }
 
 #navbarscrolling-links > li {
+    /* Makes each Link on the same line */
+    display: inline;
+
+    /* Makes space between each link */
     margin-right: 30px;
+}
+
+#menu-links {
+    display: none;
 }
 
 /* When the user is on mobile

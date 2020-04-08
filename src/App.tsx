@@ -26,7 +26,7 @@ const App: React.FC = () => {
 
       for (let i = 0; i < links.length; i++)
           renderedLinks.push(
-              <li className='remove-list-bullets inline-list' key={ i }>
+              <li className='remove-list-bullets' key={ i }>
                   <a className='remove-ul-link lynette-brown' href={ '#' + links[i].path }>{ links[i].name.toUpperCase() }</a>
               </li>
           )
@@ -39,9 +39,9 @@ const App: React.FC = () => {
   return (
     <div className='App'>
       <NavBar renderLinks={htmlLinks} />
-      <NavBarScrolling renderLinks={htmlLinks} />
-      
       <Home />
+
+      <NavBarScrolling renderLinks={htmlLinks} />
       <Product />
     </div>
   );
