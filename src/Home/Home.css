@@ -1,9 +1,13 @@
 #Home {
     background-image: url('../images/home_bg.jpg');
 
-    /* Full height */
+    /* Fit Bg Img Entire Screen Height */
     height: 99vh;
+
+    /* Fit Bg Img Entire Screen Width */
     width: 100%;
+
+    /* Ensures Home Bg Img size does not get any smaller */
     min-height: 800px;
 
     /* Center and scale the image nicely */
