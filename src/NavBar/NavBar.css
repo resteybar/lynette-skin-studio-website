@@ -1,13 +1,10 @@
 #NavBar {
     text-align: center;
     font-family: 'Open Sans', sans-serif;
+    padding-top: 40px;
 }
 
-#title-lynette {
-    margin-top: 40px;
-}
-
-#title-skin-studio {
+#navbar-title {
     margin-bottom: 20px;
 }
 
