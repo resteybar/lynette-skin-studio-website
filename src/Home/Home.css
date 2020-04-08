@@ -1,5 +1,5 @@
 #Home {
-    background-image: url('../images/home_background.jpg');
+    background-image: url('../images/home_bg.jpg');
 
     /* Full height */
     height: 99vh;
@@ -10,4 +10,13 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+@font-face {
+    font-family: Halant Light;
+    src: url('../fonts/Halant-Light.ttf');
+}
+
+#Home > h1{
+    font-family: Halant Light;
 }
