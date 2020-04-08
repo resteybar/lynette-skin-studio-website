@@ -1,19 +1,12 @@
 #NavBar {
     text-align: center;
     font-family: 'Open Sans', sans-serif;
-
-    /* TBD: May change later with background image */
-    /* When Nav. Bar overlays main content, it hides content behind it*/
-    /* background-color: white; */
-    border: 1px solid black;
 }
 
 #title-lynette {
-    letter-spacing: 0.23em;
-    margin-bottom: 0;
+    margin-top: 40px;
 }
 
 #title-skin-studio {
-    margin-top: 0;
-    letter-spacing: 0.075em;
+    margin-bottom: 20px;
 }

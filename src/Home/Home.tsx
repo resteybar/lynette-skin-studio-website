@@ -3,7 +3,7 @@ import './Home.css'
 
 const Home: React.FC = () => {
     return (
-        <div id="Home">
+        <div id="Home" className='debug-border'>
             <h1>Home Page Showing</h1>
         </div>
     )
