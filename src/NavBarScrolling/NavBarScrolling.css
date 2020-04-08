@@ -1,0 +1,90 @@
+#NavBarScrolling {
+    font-family: 'Open Sans', sans-serif;
+
+    /* Extends width to be the entire screen width */
+    margin: 0 -1em;
+
+    /* TBD: May change later with background image */
+    /* When Nav. Bar overlays main content, it hides content behind it*/
+    /* background-color: white; */
+
+    /* Allows flexible positioning without using 'float' or 'positioning' */
+    display: flex;
+
+    /* Evenly spaces out the Title & Links */
+    justify-content: space-between;
+
+    /* Ensures the Title & Links are centered vertically and horizontally */
+    /* in their own position */
+    align-items: center;
+
+    /* 
+    0px     = Pixels to the right
+    10px    = Pixels to downward
+    5px     = Blur Radius Effect
+    -5px    = Spread Radius
+                - Making it negative made the blur smaller, thus
+                  we bring it downwards 10px to only show on the bottom
+                  border
+     */
+    box-shadow: 0px 10px 5px -5px lightgrey;
+}
+
+/* Hide menu icon when expanded on computer */
+#menu {
+    display: none;
+}
+
+/* Provides space for the title on the left */
+#navbarscrolling-title {
+    margin-left: 60px;
+    font-size: small;
+}
+
+#navbarscrolling-title > h1 {
+    /* Adjust Thickness of Title */
+    font-weight: 100;
+}
+
+/* Provides space to the right of the links */
+#navbarscrolling-links {
+    margin-right: 30px;
+}
+
+#navbarscrolling-links > li {
+    margin-right: 30px;
+}
+
+/* When the user is on mobile
+            or
+    decreases width of website,
+    it'll hide the expanded NavBarScrolling
+*/
+@media screen and (max-width: 800px) {
+    #NavBarScrolling > ul {
+        display: none;
+    }
+
+    #NavBarScrolling {
+        /* Center Title + Menu Icon */
+        justify-content: center;
+    }
+
+    #navbarscrolling-title {
+        /* Earlier we added 30px to the margin-left */
+        /* Now, we're removing it to display title */
+        /* in the center. */
+        margin-left: 0px;
+    }
+
+    #menu {
+        /* Show icon */
+        display: block;
+
+        /* Ensure icon does not occupy room from Title  */
+        position: absolute;
+
+        /* Position Menu Icon to the right of the screen */
+        left: 90%;
+    }
+}
