@@ -10,7 +10,7 @@ const Home: React.FC<HomeProps> = props => {
     return (
         <div id="Home" className='debug-border'>
             <NavBar renderLinks={props.renderLinks} />
-            <h1>Home Page Showing</h1>
+            <h1 >LMAO</h1>
         </div>
     )
 }
