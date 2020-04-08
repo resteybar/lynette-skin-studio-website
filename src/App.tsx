@@ -14,7 +14,10 @@ const App: React.FC = () => {
   // Links in Nav Bar
   const links = [
       { name: 'Home', path: '' },
-      { name: 'Product', path: 'Product' }
+      { name: 'About', path: '' },
+      { name: 'Services', path: '' },
+      { name: 'Products', path: '' },
+      { name: 'Contact', path: '' }
   ]
 
   // Automate Rendering Links
@@ -23,8 +26,8 @@ const App: React.FC = () => {
 
       for (let i = 0; i < links.length; i++)
           renderedLinks.push(
-              <li key={ i }>
-                  <a href={ '#' + links[i].path }>{ links[i].name }</a>
+              <li className='remove-list-bullets inline-list' key={ i }>
+                  <a className='remove-ul-link lynette-brown' href={ '#' + links[i].path }>{ links[i].name.toUpperCase() }</a>
               </li>
           )
       
@@ -37,11 +40,9 @@ const App: React.FC = () => {
     <div className='App'>
       <NavBar renderLinks={htmlLinks} />
       
-      <div id='main'>
-        <Home />
-        <NavBarScrolling renderLinks={htmlLinks} />
-        <Product />
-      </div>
+      <Home />
+      <NavBarScrolling renderLinks={htmlLinks} />
+      <Product />
     </div>
   );
 }

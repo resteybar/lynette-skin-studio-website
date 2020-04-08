@@ -1,3 +1,44 @@
 html {
     scroll-behavior: smooth;
 }
+
+.lynette-brown {
+    color: #862e08;
+}
+
+.title {
+    /* Creating space from at top of title */
+    margin-top: 50px;
+
+    /* Creating space between the title & links */
+    margin-bottom: 30px;
+}
+
+.remove-ul-link {
+    /* Takes off Underline in Links */
+    text-decoration: none;
+}
+
+.remove-list-bullets {
+    /* Takes off Bullet Points from List */
+    list-style-type: none;
+}
+
+.inline-list {
+    /* Makes each Link on the same line */
+    display: inline;
+
+    /* Makes space between each link */
+    margin-right: 20px;
+}
+
+/* For Nav. Bar + Scrolling Nav. Bar */
+.title-lynette {
+    letter-spacing: 0.23em;
+    margin-bottom: 0;
+}
+
+.title-skin-studio {
+    margin-top: 0;
+    letter-spacing: 0.075em;
+}
