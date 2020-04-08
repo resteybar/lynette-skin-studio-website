@@ -2,8 +2,9 @@
     background-image: url('../images/home_background.jpg');
 
     /* Full height */
-    height: 1000px;
+    height: 99vh;
     width: 100%;
+    min-height: 800px;
 
     /* Center and scale the image nicely */
     background-position: center;
