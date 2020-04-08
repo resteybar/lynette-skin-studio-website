@@ -1,3 +1,7 @@
+@font-face {
+    font-family: Shree Regular;
+    src: url('../fonts/Shree\ Devanagari\ 714-Regular.ttf');
+}
 #NavBar {
     text-align: center;
     font-family: 'Open Sans', sans-serif;
@@ -6,6 +10,9 @@
 
 #navbar-title {
     margin-bottom: 20px;
+
+    font-family: Shree Regular;
+    font-size: 15px;
 }
 
 #NavBar-links > li {
