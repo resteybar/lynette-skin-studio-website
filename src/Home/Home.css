@@ -1,0 +1,12 @@
+#Home {
+    background-image: url('../images/home_background.jpg');
+
+    /* Full height */
+    height: 1000px;
+    width: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
