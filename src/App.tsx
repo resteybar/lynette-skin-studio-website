@@ -40,7 +40,7 @@ const App: React.FC = () => {
     <div className='App'>
       <NavBar renderLinks={htmlLinks} />
       <NavBarScrolling renderLinks={htmlLinks} />
-
+      
       <Home />
       <Product />
     </div>
