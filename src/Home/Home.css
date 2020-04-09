@@ -2,7 +2,7 @@
     background-image: url('../images/home_bg.jpg');
 
     /* Fit Bg Img Entire Screen Height */
-    height: 99vh;
+    height: 100vh;
 
     /* Fit Bg Img Entire Screen Width */
     width: 100%;
@@ -13,7 +13,7 @@
     /* Center and scale the image nicely */
     background-position: center top;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
 }
 
 @font-face {
