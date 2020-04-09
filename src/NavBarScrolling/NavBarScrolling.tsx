@@ -11,6 +11,7 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
     const size: string = '21'
 
     const displayLinks = () => {
+        const isMenuClicked = document.getElementById('menu-icon')
         
     }
 
