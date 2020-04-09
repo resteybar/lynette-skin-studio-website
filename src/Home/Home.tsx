@@ -1,6 +1,8 @@
 import React from 'react'
 import './Home.css'
 import NavBar from '../NavBar/NavBar'
+import ContactUsButton from '../images/Contact_Us_Button.png'
+import ContactUsButtonFilled from '../images/Contact_Us_Button_Filled.png'
 
 interface HomeProps {
     renderLinks: JSX.Element[]
@@ -10,9 +12,23 @@ const Home: React.FC<HomeProps> = props => {
     return (
         <div id="Home" className='debug-border'>
             <NavBar renderLinks={props.renderLinks} />
-            <h1 >LMAO</h1>
+            <h1 >WELCOME MESSAGE</h1>
+            <div id="ContactUsButton" className='debug-border'>
+                <img className='debug-border' id="OnHoverContact" src={ContactUsButton} onMouseOver={ToFilled} onMouseOut={ToNotFilled}/>
+            </div>
         </div>
     )
+}
+
+const ToFilled = () => {
+    var contactButton = document.getElementById("OnHoverContact") as HTMLImageElement
+    
+    contactButton.src = ContactUsButtonFilled
+}
+const ToNotFilled = () => {
+    var contactButton = document.getElementById("OnHoverContact") as HTMLImageElement
+
+    contactButton.src = ContactUsButton
 }
 
 export default Home
