@@ -39,7 +39,7 @@ const App: React.FC = () => {
   
   return (
     <div className='App'>
-      {/* <Home renderLinks={htmlLinks} /> */}
+      <Home renderLinks={htmlLinks} />
 
       <NavBarScrolling renderLinks={htmlLinks} />
       {/* <Product /> */}
