@@ -1,7 +1,7 @@
 import React from 'react'
 import './NavBarScrolling.css'
 import menuIcon from '../images/menu.png'
-import CSS from 'csstype'
+import { styled } from 'styletron-react'
 
 interface NavBarScrollingProps {
     renderLinks: JSX.Element[]
@@ -9,9 +9,17 @@ interface NavBarScrollingProps {
 
 const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
     const size: string = '21'
+    var isMenuDisplayed: boolean = false
 
     const displayLinks = () => {
+        const menuLinks = document.getElementById('menu-links-2')
         
+        if (isMenuDisplayed)
+            menuLinks?.setAttribute('style', 'display: none;')
+        else 
+            menuLinks?.setAttribute('style', 'display: block;')
+
+        isMenuDisplayed = !isMenuDisplayed
     }
 
     return (
@@ -27,6 +35,9 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
                 <img id='menu-icon' src={ menuIcon } height={ size + 'px' }  width={ size + 'px' } 
                 onClick={ () => displayLinks() }
                 />
+                <CondensedLinks id='menu-links-2'>
+                    { props.renderLinks }
+                </CondensedLinks>
             </div>
             <ul id='menu-links'>
                 { props.renderLinks }
@@ -34,5 +45,14 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
         </div>
     )
 }
+
+// CSS
+const CondensedLinks = styled('ul', {
+    // Change to 'none'
+    display: 'block',
+    position: 'absolute',
+    top: '50px',
+    backgroundColor: 'white'
+})
 
 export default NavBarScrolling

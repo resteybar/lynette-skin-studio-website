@@ -12,17 +12,7 @@ html {
 }
 
 .debug-border {
-     border: 1px solid black;
-}
-
-.remove-ul-link {
-    /* Takes off Underline in Links */
-    text-decoration: none;
-}
-
-.remove-list-bullets {
-    /* Takes off Bullet Points from List */
-    list-style-type: none;
+    /* border: 1px solid black; */
 }
 
 .inline-list {

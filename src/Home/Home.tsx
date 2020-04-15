@@ -9,6 +9,17 @@ interface HomeProps {
 }
 
 const Home: React.FC<HomeProps> = props => {
+    const ToFilled = () => {
+        var contactButton = document.getElementById("OnHoverContact") as HTMLImageElement
+        
+        contactButton.src = ContactUsButtonFilled
+    }
+    const ToNotFilled = () => {
+        var contactButton = document.getElementById("OnHoverContact") as HTMLImageElement
+    
+        contactButton.src = ContactUsButton
+    }
+
     return (
         <div id="Home" className='debug-border'>
             <NavBar renderLinks={props.renderLinks} />
@@ -18,17 +29,6 @@ const Home: React.FC<HomeProps> = props => {
             </div>
         </div>
     )
-}
-
-const ToFilled = () => {
-    var contactButton = document.getElementById("OnHoverContact") as HTMLImageElement
-    
-    contactButton.src = ContactUsButtonFilled
-}
-const ToNotFilled = () => {
-    var contactButton = document.getElementById("OnHoverContact") as HTMLImageElement
-
-    contactButton.src = ContactUsButton
 }
 
 export default Home
