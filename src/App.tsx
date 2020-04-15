@@ -1,8 +1,10 @@
-import React from 'react';
-import './App.css';
+import React from 'react'
+import './App.css'
 import Home  from './Home/Home'
 import Product from './Product/Product'
 import NavBarScrolling from './NavBarScrolling/NavBarScrolling'
+import TestNavBar from './TestNavBar/TestNavBar'
+import { styled } from 'styletron-react'
 
 type LinkValue = {
   name: string;
@@ -25,24 +27,37 @@ const App: React.FC = () => {
 
       for (let i = 0; i < links.length; i++)
           renderedLinks.push(
-              <li className='remove-list-bullets' key={ i }>
-                  <a className='remove-ul-link lynette-brown' href={ '#' + links[i].path }>{ links[i].name.toUpperCase() }</a>
-              </li>
+              <List key={ i }>
+                  <Link href={ '#' + links[i].path }>{ links[i].name.toUpperCase() }</Link>
+              </List>
           )
       
       return renderedLinks
   }
 
   const htmlLinks = renderLinks(links)
-
+  
   return (
     <div className='App'>
-      <Home renderLinks={htmlLinks} />
+      {/* <Home renderLinks={htmlLinks} /> */}
 
       <NavBarScrolling renderLinks={htmlLinks} />
-      <Product />
+      {/* <Product /> */}
+      {/* <TestNavBar /> */}
     </div>
-  );
+  )
 }
 
-export default App;
+// CSS
+const LynetteBrown = '#862e08'
+
+const List = styled('li', {
+  listStyleType: 'none',  /* Takes off Bullet Points from List */
+})
+
+const Link = styled('a', {
+  textDecoration: 'none', /* Takes off Underline in Links */
+  color: LynetteBrown
+})
+
+export default App

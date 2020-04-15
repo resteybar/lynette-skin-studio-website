@@ -1,5 +1,4 @@
 import React from 'react'
-import { styled } from "styletron-react";
 import './Home.css'
 import NavBar from '../NavBar/NavBar'
 import ContactUsButton from '../images/Contact_Us_Button.png'

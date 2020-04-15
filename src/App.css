@@ -15,16 +15,6 @@ html {
     /* border: 1px solid black; */
 }
 
-.remove-ul-link {
-    /* Takes off Underline in Links */
-    text-decoration: none;
-}
-
-.remove-list-bullets {
-    /* Takes off Bullet Points from List */
-    list-style-type: none;
-}
-
 .inline-list {
     /* Makes each Link on the same line */
     display: inline;
