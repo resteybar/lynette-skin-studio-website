@@ -3,7 +3,13 @@ import './NavBarScrolling.css'
 import menuIcon from '../images/menu.png'
 import { styled } from 'styletron-react'
 
+type LinkValue = {
+    name: string;
+    path: string;
+  }
+
 interface NavBarScrollingProps {
+    links: LinkValue[],
     renderLinks: JSX.Element[]
 }
 
