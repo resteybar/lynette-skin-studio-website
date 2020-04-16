@@ -48,5 +48,4 @@ const ButtonInput = styled('input', {
     fontFamily: 'Shree',
 });
 
-
 export default Home
