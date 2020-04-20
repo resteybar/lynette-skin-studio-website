@@ -72,11 +72,9 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
 
 // CSS
 const CondensedLinks = styled('ul', {
-    // Change to 'none'
-    // display: 'block',
-    // position: 'absolute',
-    // top: '49px',
-    // backgroundColor: 'white',
+    // Creates white space on the left and right of the condensed nav. bar
+    marginLeft: '5%',
+    marginRight: '5%'
 })
 
 const CondensedLinksList = styled('div', {
@@ -85,9 +83,10 @@ const CondensedLinksList = styled('div', {
     top: '72px',
     right: '0px',
     backgroundColor: 'white',
-    paddingRight: '8%',
-    paddingLeft: '2%',
-    boxShadow: '-10px 10px 5px -5px lightgrey',
+    width: '100%',
+    height: '92%',
+    boxShadow: '0px 10px 5px -5px lightgrey',
+    // border: '1px solid black'
 })
 
 const MenuIcon = styled('img', {
@@ -102,10 +101,18 @@ const MenuIcon = styled('img', {
 })
 
 const LynetteBrown = '#862e08'
+const paddingTopBot = '15px'
 
 export const List = styled('li', {
   listStyleType: 'none',  /* Takes off Bullet Points from List */
-  margin: '15px auto',
+  padding: '0px',
+  paddingTop: paddingTopBot,
+  paddingBottom: paddingTopBot,
+  marginTop: '0px',
+  marginLeft: '0px',
+  marginRight: '0px',
+  marginBottom: '0px',
+  borderBottom: '1px solid lightgrey'
 })
 
 export const Link = styled('a', {
