@@ -17,13 +17,14 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
     var isMenuDisplayed: boolean = false
 
     const displayLinks = () => {
-        const menuLinks = document.getElementById('menu-links-2')
+        const menuLinks: HTMLElement | null = document.getElementById('menu-links-2')
         
         if (isMenuDisplayed)
             menuLinks?.setAttribute('style', 'display: none;')
         else 
             menuLinks?.setAttribute('style', 'display: block;')
 
+        console.log(window.innerWidth)
         isMenuDisplayed = !isMenuDisplayed
     }
 
