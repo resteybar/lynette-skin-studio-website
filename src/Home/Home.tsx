@@ -1,34 +1,50 @@
 import React from 'react'
 import './Home.css'
 import NavBar from '../NavBar/NavBar'
-import ContactUsButton from '../images/Contact_Us_Button.png'
-import ContactUsButtonFilled from '../images/Contact_Us_Button_Filled.png'
+import { styled, withStyle } from 'styletron-react'
+import { Client } from "styletron-engine-atomic";
+
+const instance = new Client();
 
 interface HomeProps {
     renderLinks: JSX.Element[]
 }
 
 const Home: React.FC<HomeProps> = props => {
-    const ToFilled = () => {
-        var contactButton = document.getElementById("OnHoverContact") as HTMLImageElement
-        
-        contactButton.src = ContactUsButtonFilled
-    }
-    const ToNotFilled = () => {
-        var contactButton = document.getElementById("OnHoverContact") as HTMLImageElement
-    
-        contactButton.src = ContactUsButton
-    }
+    const displayLinks = () => {
 
+    }
     return (
+
         <div id="Home" className='debug-border'>
             <NavBar renderLinks={props.renderLinks} />
             <h1 >WELCOME MESSAGE</h1>
-            <div id="ContactUsButton" className='debug-border'>
-                <img className='debug-border' id="OnHoverContact" src={ContactUsButton} onMouseOver={ToFilled} onMouseOut={ToNotFilled}/>
-            </div>
+
+            <ButtonContainer>
+                <ButtonInput type="button" value="CONTACT US"/>
+            </ButtonContainer>
+
         </div>
+        
+        
     )
 }
+const ButtonContainer = styled('div', {
+    textAlign: 'center',
+    //border: '1px solid',
+    //top: '50px',
+})
+
+const ButtonInput = styled('input', {
+    marginTop: '0px',
+    height: '70px',
+    width: '200px',
+    border: '2px solid',
+    borderColor: '#862e08',
+    backgroundColor: 'Transparent',
+    fontSize: '18pt',
+    fontFamily: 'Shree Devanagari 714-Regular.ttf',
+    fontWeight: 100,
+});
 
 export default Home
