@@ -4,7 +4,7 @@ import Home  from './Home/Home'
 import Product from './Product/Product'
 import NavBarScrolling from './NavBarScrolling/NavBarScrolling'
 import TestNavBar from './TestNavBar/TestNavBar'
-import { styled } from 'styletron-react'
+import { styled, withStyle } from 'styletron-react'
 
 type LinkValue = {
   name: string;
@@ -25,7 +25,6 @@ const App: React.FC = () => {
   const renderLinks = (links: LinkValue[]) => {
       var renderedLinks = []
 
-
       renderedLinks.push(
         <List key={ 0 }>
             <Link href={ '#' + links[0].path }>{ links[0].name.toUpperCase() }</Link>
@@ -35,7 +34,8 @@ const App: React.FC = () => {
       for (let i = 1; i < links.length; i++)
           renderedLinks.push(
               <List key={ i }>
-                  <Link $style={{ color: 'white' }} href={ '#' + links[i].path }>{ links[i].name.toUpperCase() }</Link>
+                  {/* <Link $style={{ color: 'white' }} href={ '#' + links[i].path }>{ links[i].name.toUpperCase() }</Link> */}
+                  <Link href={ '#' + links[i].path }>{ links[i].name.toUpperCase() }</Link>
               </List>
           )
       
@@ -46,7 +46,7 @@ const App: React.FC = () => {
 
   return (
     <div className='App'>
-      <Home renderLinks={ formattedHtmlLinks } />
+      {/* <Home renderLinks={ formattedHtmlLinks } /> */}
 
       <NavBarScrolling links={ links } renderLinks={ formattedHtmlLinks } />
       {/* <Product /> */}
@@ -55,23 +55,14 @@ const App: React.FC = () => {
   )
 }
 
-// CSS
+// CSS        
 const LynetteBrown = '#862e08'
 
-const List = styled('li', {
+export const List = styled('li', {
   listStyleType: 'none',  /* Takes off Bullet Points from List */
 })
 
-// const getLinkColor: string = ($type: boolean) => {
-//   switch ($type) {
-//     case true:
-//       return LynetteBrown
-//     default:
-//       return '#FFFFFF'
-//   }
-// }
-
-const Link = styled('a', {
+export const Link = styled('a', {
   textDecoration: 'none', /* Takes off Underline in Links */
   color: LynetteBrown
 })
