@@ -55,14 +55,14 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
                 <h1 className='title-skin-studio lynette-brown'>SKIN STUDIO</h1>
             </div>
             <ul id='navbarscrolling-links'>
-                { props.renderLinks }
+                { renderedLinks }
             </ul>
             <div id='menu' className='debug-border' onClick={ () => displayLinks() }>
                 <MenuIcon src={ menuIcon }/>
             </div>
             
             <CondensedLinksList id='menu-links-2'>
-                <CondensedLinks>
+                <CondensedLinks id='menu-link-2'>
                     { renderedLinks }
                 </CondensedLinks>
             </CondensedLinksList>
@@ -112,7 +112,7 @@ export const List = styled('li', {
   marginLeft: '0px',
   marginRight: '0px',
   marginBottom: '0px',
-  borderBottom: '1px solid lightgrey'
+//   borderBottom: '1px solid lightgrey'
 })
 
 export const Link = styled('a', {

@@ -33,8 +33,8 @@ const App: React.FC = () => {
       for (let i = 1; i < links.length; i++)
           renderedLinks.push(
               <List key={ i }>
-                  {/* <Link $style={{ color: 'white' }} href={ '#' + links[i].path }>{ links[i].name.toUpperCase() }</Link> */}
-                  <Link href={ '#' + links[i].path }>{ links[i].name.toUpperCase() }</Link>
+                  <Link $style={{ color: 'white' }} href={ '#' + links[i].path }>{ links[i].name.toUpperCase() }</Link>
+                  {/* <Link href={ '#' + links[i].path }>{ links[i].name.toUpperCase() }</Link> */}
               </List>
           )
       

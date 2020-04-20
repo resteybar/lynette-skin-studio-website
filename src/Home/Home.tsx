@@ -18,9 +18,9 @@ const Home: React.FC<HomeProps> = props => {
 
         <div id="Home" className='debug-border'>
             <NavBar renderLinks={props.renderLinks} />
-            <h1 >WELCOME MESSAGE</h1>
 
             <ButtonContainer>
+                <h1 id='welcome-message'>WELCOME MESSAGE</h1>
                 <ButtonInput type="button" value="CONTACT US"/>
             </ButtonContainer>
 
