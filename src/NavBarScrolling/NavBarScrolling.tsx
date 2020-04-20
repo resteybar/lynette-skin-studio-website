@@ -57,12 +57,12 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
             <ul id='navbarscrolling-links'>
                 { renderedLinks }
             </ul>
-            <div id='menu' className='debug-border' onClick={ () => displayLinks() }>
+            <Menu onClick={ () => displayLinks() }>
                 <MenuIcon src={ menuIcon }/>
-            </div>
+            </Menu>
             
-            <CondensedLinksList id='menu-links-2'>
-                <CondensedLinks id='menu-link-2'>
+            <CondensedLinksList id='menu-links-2' className=''>
+                <CondensedLinks>
                     { renderedLinks }
                 </CondensedLinks>
             </CondensedLinksList>
@@ -86,14 +86,36 @@ const CondensedLinksList = styled('div', {
     width: '100%',
     height: '92%',
     boxShadow: '0px 10px 5px -5px lightgrey',
-    // border: '1px solid black',
+    '@media screen and (min-width: 800px)': {
+        display: 'none'
+    }
+})
+
+const Menu = styled('div', {
+    /* Hide menu icon when expanded on computer */
+    display: 'none',
+    '@media screen and (max-width: 800px)': {
+        /* Show icon */
+        display: 'block',
+
+        /* Ensure icon does not occupy room from Title  */
+        position: 'absolute',
+
+        /* Position Menu Icon to the right of the screen */
+        left: '86%',
+
+        paddingRight: '10%',
+        paddingTop: '23px',
+        paddingBottom: '23px',
+        paddingLeft: '2%',
+    }
 })
 
 const MenuIcon = styled('img', {
     height: '21px',
     width: '21px',
     
-    // Turn off Highlighting menu icon
+    // Turn off Highlighting on menu icon
     WebkitUserSelect: 'none',
     MozUserSelect: 'none',
     msUserSelect: 'none',

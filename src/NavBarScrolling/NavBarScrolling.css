@@ -27,11 +27,6 @@
     box-shadow: 0px 10px 5px -5px lightgrey;
 }
 
-/* Hide menu icon when expanded on computer */
-#menu {
-    display: none;
-}
-
 /* Provides space for the title on the left */
 #navbarscrolling-title {
     margin-left: 60px;
@@ -57,7 +52,7 @@
     margin-right: 30px;
 }
 
-#menu-links, #menu-links-2 {
+#menu-links {
     display: none;
 }
 
@@ -81,25 +76,5 @@
         /* Now, we're removing it to display title */
         /* in the center. */
         margin-left: 0px;
-    }
-
-    #menu {
-        /* Show icon */
-        display: block;
-
-        /* Ensure icon does not occupy room from Title  */
-        position: absolute;
-
-        /* Position Menu Icon to the right of the screen */
-        left: 86%;
-
-        padding-right: 10%;
-        padding-top: 23px;
-        padding-bottom: 23px;
-        padding-left: 2%;
-    }
-
-    #menu-link-2 {
-        border-bottom: '1px solid lightgrey'
     }
 }
