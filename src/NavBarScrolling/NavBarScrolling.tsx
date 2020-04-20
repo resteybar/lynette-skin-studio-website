@@ -86,7 +86,7 @@ const CondensedLinksList = styled('div', {
     width: '100%',
     height: '92%',
     boxShadow: '0px 10px 5px -5px lightgrey',
-    // border: '1px solid black'
+    // border: '1px solid black',
 })
 
 const MenuIcon = styled('img', {
@@ -112,7 +112,11 @@ export const List = styled('li', {
   marginLeft: '0px',
   marginRight: '0px',
   marginBottom: '0px',
-//   borderBottom: '1px solid lightgrey'
+
+  // To display Light Border below links FOR Condensed/Collapsed Links
+  '@media screen and (max-width: 800px)': {
+      borderBottom: '1px solid lightgrey'
+  }
 })
 
 export const Link = styled('a', {
