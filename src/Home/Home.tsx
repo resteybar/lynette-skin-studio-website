@@ -37,14 +37,23 @@ const ButtonContainer = styled('div', {
 
 const ButtonInput = styled('input', {
     marginTop: '0px',
-    height: '70px',
+    height: '60px',
     width: '200px',
-    border: '2px solid',
+    border: '1px solid',
     borderColor: '#862e08',
     backgroundColor: 'Transparent',
-    fontSize: '18pt',
+    ':hover':{
+        backgroundColor: '#862e08',
+        //opacity: '.3',
+        color: 'rgba(255,255,255,2)'
+    },
+
+    //Contact us text
+    color: '#862e08',
+    fontSize: '16pt',
+    letterSpacing: '2px',
     fontFamily: 'Shree Devanagari 714-Regular.ttf',
-    fontWeight: 100,
+    fontWeight: 200,
 });
 
 export default Home
