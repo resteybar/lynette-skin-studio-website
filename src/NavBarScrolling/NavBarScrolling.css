@@ -57,7 +57,7 @@
     margin-right: 30px;
 }
 
-#menu-links {
+#menu-links, #menu-links-2 {
     display: none;
 }
 
@@ -67,7 +67,7 @@
     it'll hide the expanded NavBarScrolling
 */
 @media screen and (max-width: 800px) {
-    #NavBarScrolling > ul {
+    #navbarscrolling-links {
         display: none;
     }
 
@@ -97,10 +97,9 @@
         padding-top: 23px;
         padding-bottom: 23px;
         padding-left: 2%;
+    }
 
-        /* padding-top: 4%;
-        padding-right: 7%;
-        padding-bottom: 2.5%;
-        padding-left: 4%; */
+    #menu-link-2 {
+        border-bottom: '1px solid lightgrey'
     }
 }
