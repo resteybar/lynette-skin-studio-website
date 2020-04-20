@@ -3,7 +3,6 @@ import './App.css'
 import Home  from './Home/Home'
 import Product from './Product/Product'
 import NavBarScrolling from './NavBarScrolling/NavBarScrolling'
-import TestNavBar from './TestNavBar/TestNavBar'
 import { styled, withStyle } from 'styletron-react'
 
 type LinkValue = {

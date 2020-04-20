@@ -78,7 +78,7 @@ const CondensedLinks = styled('ul', {
 })
 
 const CondensedLinksList = styled('div', {
-    display: 'none',
+    // display: 'none',
     position: 'absolute',
     top: '72px',
     right: '0px',
