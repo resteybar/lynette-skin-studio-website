@@ -17,7 +17,7 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
     var isMenuDisplayed: boolean = false
 
     const displayLinks = () => {
-        const menuLinks: HTMLElement | null = document.getElementById('menu-links-2')
+        const menuLinks: HTMLElement | null = document.getElementById('mobile-links')
         
         if (menuLinks) {
             if (!isMenuDisplayed)
@@ -63,18 +63,18 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
                 <MenuIcon src={ menuIcon }/>
             </Menu>
             
-            <div id='menu-links-2' className='mobile-navbar'>
-                <CondensedLinks>
+            <div id='mobile-links' className='mobile-navbar'>
+                <MobileLinks>
                     { renderedLinks }
-                </CondensedLinks>
+                </MobileLinks>
             </div>
         </div>
     )
 }
 
 // CSS
-const CondensedLinks = styled('ul', {
-    // Creates white space on the left and right of the condensed nav. bar
+const MobileLinks = styled('ul', {
+    // Creates white space on the left and right of the mobile nav. bar
     marginLeft: '5%',
     marginRight: '5%'
 })
@@ -123,7 +123,7 @@ export const List = styled('li', {
   marginRight: '0px',
   marginBottom: '0px',
 
-  // To display Light Border below links FOR Condensed/Collapsed Links
+  // To display Light Border below links FOR Mobile Links
   '@media screen and (max-width: 800px)': {
       borderBottom: '1px solid lightgrey'
   }
