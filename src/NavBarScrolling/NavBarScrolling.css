@@ -56,6 +56,11 @@
     display: none;
 }
 
+/* Hovering over Mobile Nav. Bar will show a different color */
+.mobile-navbar li:hover {
+    background-color: lightgrey;
+}
+
 /* When the user is on mobile
             or
     decreases width of website,

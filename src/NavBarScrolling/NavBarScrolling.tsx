@@ -120,12 +120,11 @@ const paddingTopBot = '15px'
 export const List = styled('li', {
   listStyleType: 'none',  /* Takes off Bullet Points from List */
   padding: '0px',
-  paddingTop: paddingTopBot,
-  paddingBottom: paddingTopBot,
   marginTop: '0px',
   marginLeft: '0px',
   marginRight: '0px',
   marginBottom: '0px',
+  display: 'block',
 
   // To display Light Border below links FOR Mobile Links
   '@media screen and (max-width: 800px)': {
@@ -136,6 +135,11 @@ export const List = styled('li', {
 export const Link = styled('a', {
   textDecoration: 'none', /* Takes off Underline in Links */
   color: LynetteBrown,
+  paddingTop: paddingTopBot,
+  paddingBottom: paddingTopBot,
+  width: '100%',
+  height: '100%',
+  display: 'block'
 })
 
 export default NavBarScrolling
