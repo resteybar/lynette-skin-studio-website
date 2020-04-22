@@ -21,7 +21,11 @@ const Home: React.FC<HomeProps> = props => {
 
             <ButtonContainer>
                 <h1 id='welcome-message'>WELCOME MESSAGE</h1>
-                <ButtonInput type="button" value="CONTACT US"/>
+                
+                {/* Raymond will complete the a tag later */}
+                <a href='#'>
+                    <ButtonInput type="button" value="CONTACT US"/>
+                </a>
             </ButtonContainer>
 
         </div>
@@ -45,7 +49,8 @@ const ButtonInput = styled('input', {
     ':hover':{
         backgroundColor: '#862e08',
         //opacity: '.3',
-        color: 'rgba(255,255,255,2)'
+        color: 'rgba(255,255,255,2)',
+        cursor: 'pointer'   // Changes cursor to a 'It's a Link!' cursor
     },
 
     //Contact us text
