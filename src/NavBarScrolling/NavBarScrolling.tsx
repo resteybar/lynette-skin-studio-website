@@ -1,7 +1,11 @@
 import React from 'react'
 import './NavBarScrolling.css'
-import menuIcon from '../images/menu.png'
 import { styled, withStyle } from 'styletron-react'
+
+// Images
+import menuIcon from '../images/menu.png'
+import facebookIcon from '../images/Facebook_Graphic-01.png'
+import yelpIcon from '../images/Yelp_Graphic-01.png'
 
 type LinkValue = {
     name: string;
@@ -43,6 +47,8 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
     }
 
     const renderedLinks = renderLinks(props.links)
+    const facebookLink = 'https://www.facebook.com/LynetteSkinStudio/'
+    const yelpLink = 'https://www.yelp.com/biz/lynettes-skin-studio-marina'
 
     return (
         <div id='NavBarScrolling' className='debug-border'>
@@ -65,6 +71,14 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
                 <MobileLinks>
                     { renderedLinks }
                 </MobileLinks>
+                <SocialIcons>
+                    <a href={ facebookLink } target='_blank'>
+                        <FacebookIcon src={ facebookIcon } />
+                    </a>
+                    <a href={ yelpLink } target='_blank'>
+                        <YelpIcon src={ yelpIcon } />
+                    </a>
+                </SocialIcons>
             </div>
         </div>
     )
@@ -73,8 +87,8 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
 // CSS
 const MobileLinks = styled('ul', {
     // Creates white space on the left and right of the mobile nav. bar
-    marginLeft: '5%',
-    marginRight: '5%'
+    marginLeft: '4%',
+    marginRight: '4%'
 })
 
 const Menu = styled('div', {
@@ -106,6 +120,22 @@ const MenuIcon = styled('img', {
     MozUserSelect: 'none',
     msUserSelect: 'none',
     userSelect: 'none'
+})
+
+const iconSize = '45px'
+
+const SocialIcons = styled('div', {
+    marginTop: '15px',
+    marginLeft: '4%',
+})
+
+const YelpIcon = styled('img', {
+    height: iconSize,
+    width: iconSize
+})
+
+const FacebookIcon = withStyle(YelpIcon, {
+    marginRight: '10px',
 })
 
 const LynetteBrown = '#862e08'
