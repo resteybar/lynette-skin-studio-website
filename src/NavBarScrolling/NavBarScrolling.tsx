@@ -59,10 +59,14 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
             <ul id='navbarscrolling-links'>
                 { renderedLinks }
             </ul>
+
+            {/* Mobile Nav. Bar */}
+            {/*     - Menu Icon */}
             <Menu onClick={ () => displayLinks() }>
                 <MenuIcon src={ menuIcon }/>
             </Menu>
             
+            {/*     - Mobile Links */}
             <div id='mobile-links' className='mobile-navbar'>
                 <MobileLinks>
                     { renderedLinks }
