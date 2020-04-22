@@ -87,6 +87,7 @@
         margin-left: 0px;
     }
 
+    /* Mobile NavBar look */
     .mobile-navbar {
         position: absolute;
         top: 72px;
@@ -97,10 +98,14 @@
         box-shadow: 0px 10px 5px -5px lightgrey;
     }
 
+    /*  Used for clicking the Menu Icon to switch between showing & not showing the
+        Mobile Nav. Bar */
     .show-navbar {
         display: block;
     }
 
+    /*  Used to display the Mobile Nav. Bar links line by line vertically so that
+        Computer Nav. Bar can be horizontal (inline) */
     .is-mobile-view {
         display: block;
     }

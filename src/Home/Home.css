@@ -8,7 +8,7 @@
     width: 100%;
 
     /* Ensures Home Bg Img size does not get any smaller */
-    min-height: 800px;
+    min-height: 1200px;
 
     /* Center and scale the image nicely */
     background-position: center top;
