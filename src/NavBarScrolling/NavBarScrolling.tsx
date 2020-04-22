@@ -17,12 +17,14 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
     var isMenuDisplayed: boolean = false
 
     const displayLinks = () => {
-        const menuLinks = document.getElementById('menu-links-2')
+        const menuLinks: HTMLElement | null = document.getElementById('menu-links-2')
         
-        if (isMenuDisplayed)
-            menuLinks?.setAttribute('style', 'display: none;')
-        else 
-            menuLinks?.setAttribute('style', 'display: block;')
+        if (menuLinks) {
+            if (!isMenuDisplayed)
+                menuLinks.className += ' show-navbar'
+            else 
+                menuLinks.className = 'mobile-navbar'
+        }
 
         isMenuDisplayed = !isMenuDisplayed
     }
@@ -57,15 +59,15 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
             <ul id='navbarscrolling-links'>
                 { renderedLinks }
             </ul>
-            <div id='menu' className='debug-border' onClick={ () => displayLinks() }>
+            <Menu onClick={ () => displayLinks() }>
                 <MenuIcon src={ menuIcon }/>
-            </div>
+            </Menu>
             
-            <CondensedLinksList id='menu-links-2'>
-                <CondensedLinks id='menu-link-2'>
+            <div id='menu-links-2' className='mobile-navbar'>
+                <CondensedLinks>
                     { renderedLinks }
                 </CondensedLinks>
-            </CondensedLinksList>
+            </div>
         </div>
     )
 }
@@ -77,23 +79,31 @@ const CondensedLinks = styled('ul', {
     marginRight: '5%'
 })
 
-const CondensedLinksList = styled('div', {
+const Menu = styled('div', {
+    /* Hide menu icon when expanded on computer */
     display: 'none',
-    position: 'absolute',
-    top: '72px',
-    right: '0px',
-    backgroundColor: 'white',
-    width: '100%',
-    height: '92%',
-    boxShadow: '0px 10px 5px -5px lightgrey',
-    // border: '1px solid black',
+    '@media screen and (max-width: 800px)': {
+        /* Show icon */
+        display: 'block',
+
+        /* Ensure icon does not occupy room from Title  */
+        position: 'absolute',
+
+        /* Position Menu Icon to the right of the screen */
+        left: '86%',
+
+        paddingRight: '10%',
+        paddingTop: '23px',
+        paddingBottom: '23px',
+        paddingLeft: '2%',
+    }
 })
 
 const MenuIcon = styled('img', {
     height: '21px',
     width: '21px',
     
-    // Turn off Highlighting menu icon
+    // Turn off Highlighting on menu icon
     WebkitUserSelect: 'none',
     MozUserSelect: 'none',
     msUserSelect: 'none',
