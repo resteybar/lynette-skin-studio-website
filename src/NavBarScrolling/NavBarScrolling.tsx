@@ -6,7 +6,7 @@ import { styled, withStyle } from 'styletron-react'
 type LinkValue = {
     name: string;
     path: string;
-  }
+}
 
 interface NavBarScrollingProps {
     links: LinkValue[],
@@ -32,16 +32,10 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
     const renderLinks = (links: LinkValue[]) => {
         var renderedLinks = []
   
-        renderedLinks.push(
-          <List key={ 0 }>
-              <Link href={ '#' + links[0].path }>{ links[0].name.toUpperCase() }</Link>
-          </List>
-        )
-  
-        for (let i = 1; i < links.length; i++)
+        for (let i = 0; i < links.length; i++)
             renderedLinks.push(
                 <List key={ i }>
-                    <Link href={ '#' + links[i].path }>{ links[i].name.toUpperCase() }</Link>
+                    <Link className='is-mobile-view' href={ '#' + links[i].path }>{ links[i].name.toUpperCase() }</Link>
                 </List>
             )
         
@@ -124,7 +118,6 @@ export const List = styled('li', {
   marginLeft: '0px',
   marginRight: '0px',
   marginBottom: '0px',
-  display: 'block',
 
   // To display Light Border below links FOR Mobile Links
   '@media screen and (max-width: 800px)': {
@@ -139,7 +132,6 @@ export const Link = styled('a', {
   paddingBottom: paddingTopBot,
   width: '100%',
   height: '100%',
-  display: 'block'
 })
 
 export default NavBarScrolling
