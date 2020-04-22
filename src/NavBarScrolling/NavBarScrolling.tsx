@@ -20,13 +20,10 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
         const menuLinks: HTMLElement | null = document.getElementById('menu-links-2')
         
         if (menuLinks) {
-            console.log('Menu Links exists!')
             if (!isMenuDisplayed)
                 menuLinks.className += ' show-navbar'
             else 
                 menuLinks.className = 'mobile-navbar'
-            
-            console.log(menuLinks.className)
         }
 
         isMenuDisplayed = !isMenuDisplayed
@@ -80,17 +77,6 @@ const CondensedLinks = styled('ul', {
     // Creates white space on the left and right of the condensed nav. bar
     marginLeft: '5%',
     marginRight: '5%'
-})
-
-const CondensedLinksList = styled('div', {
-    display: 'none',
-    position: 'absolute',
-    top: '72px',
-    right: '0px',
-    backgroundColor: 'white',
-    width: '100%',
-    height: '92%',
-    boxShadow: '0px 10px 5px -5px lightgrey'
 })
 
 const Menu = styled('div', {
