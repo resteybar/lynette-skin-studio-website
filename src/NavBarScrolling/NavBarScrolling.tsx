@@ -19,12 +19,16 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
     const displayLinks = () => {
         const menuLinks: HTMLElement | null = document.getElementById('menu-links-2')
         
-        if (isMenuDisplayed)
-            menuLinks?.setAttribute('style', 'display: none;')
-        else 
-            menuLinks?.setAttribute('style', 'display: block;')
+        if (menuLinks) {
+            console.log('Menu Links exists!')
+            if (!isMenuDisplayed)
+                menuLinks.className += ' show-navbar'
+            else 
+                menuLinks.className = 'mobile-navbar'
+            
+            console.log(menuLinks.className)
+        }
 
-        console.log(window.innerWidth)
         isMenuDisplayed = !isMenuDisplayed
     }
 
@@ -62,11 +66,11 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
                 <MenuIcon src={ menuIcon }/>
             </Menu>
             
-            <CondensedLinksList id='menu-links-2' className=''>
+            <div id='menu-links-2' className='mobile-navbar'>
                 <CondensedLinks>
                     { renderedLinks }
                 </CondensedLinks>
-            </CondensedLinksList>
+            </div>
         </div>
     )
 }
@@ -86,10 +90,7 @@ const CondensedLinksList = styled('div', {
     backgroundColor: 'white',
     width: '100%',
     height: '92%',
-    boxShadow: '0px 10px 5px -5px lightgrey',
-    '@media screen and (min-width: 800px)': {
-        display: 'none'
-    }
+    boxShadow: '0px 10px 5px -5px lightgrey'
 })
 
 const Menu = styled('div', {
