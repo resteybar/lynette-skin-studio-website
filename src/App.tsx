@@ -2,6 +2,7 @@ import React from 'react'
 import './App.css'
 import Home  from './Home/Home'
 import Product from './Product/Product'
+import About from './About/About'
 import NavBarScrolling from './NavBarScrolling/NavBarScrolling'
 import { styled } from 'styletron-react'
 
@@ -30,7 +31,9 @@ const App: React.FC = () => {
         </List>
       )
 
-      for (let i = 1; i < links.length; i++)
+      // On Home Page, show every link except the "Contact Us"
+      // because we made a button to handle that link
+      for (let i = 1; i < links.length - 1; i++)
           renderedLinks.push(
               <List key={ i }>
                   <Link $style={{ color: 'white' }} href={ '#' + links[i].path }>{ links[i].name.toUpperCase() }</Link>
@@ -45,9 +48,10 @@ const App: React.FC = () => {
 
   return (
     <div className='App'>
-      <NavBarScrolling links={ links } renderLinks={ formattedHtmlLinks } />
+      {/* <NavBarScrolling links={ links } renderLinks={ formattedHtmlLinks } /> */}
       <Home renderLinks={ formattedHtmlLinks } />
       <Product />
+      <About />
     </div>
   )
 }
@@ -61,7 +65,8 @@ export const List = styled('li', {
 
 export const Link = styled('a', {
   textDecoration: 'none', /* Takes off Underline in Links */
-  color: LynetteBrown
+  color: LynetteBrown,
+  letterSpacing: '0.1em',
 })
 
 export default App
