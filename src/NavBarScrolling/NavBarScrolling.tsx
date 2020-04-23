@@ -75,15 +75,17 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
             <div id='mobile-links' className='mobile-navbar'>
                 <MobileLinks>
                     { renderedLinks }
+                    <SocialIconList>
+                        <SocialIcons>
+                            <a href={ facebookLink } target='_blank' rel='noopener noreferrer'>
+                                <FacebookIcon src={ facebookIcon } />
+                            </a>
+                            <a href={ yelpLink } target='_blank' rel='noopener noreferrer'>
+                                <YelpIcon src={ yelpIcon } />
+                            </a>
+                        </SocialIcons>
+                    </SocialIconList>
                 </MobileLinks>
-                <SocialIcons>
-                    <a href={ facebookLink } target='_blank' rel='noopener noreferrer'>
-                        <FacebookIcon src={ facebookIcon } />
-                    </a>
-                    <a href={ yelpLink } target='_blank' rel='noopener noreferrer'>
-                        <YelpIcon src={ yelpIcon } />
-                    </a>
-                </SocialIcons>
             </div>
         </div>
     )
@@ -139,8 +141,6 @@ const iconSize = '45px'
 
 const SocialIcons = styled('div', {
     paddingTop: '15px',
-    paddingLeft: '4%',
-    backgroundColor: 'white'
 })
 
 const YelpIcon = styled('img', {
@@ -154,6 +154,10 @@ const FacebookIcon = withStyle(YelpIcon, {
 
 const LynetteBrown = '#862e08'
 const paddingTopBot = '15px'
+
+const SocialIconList = styled('li', {
+    listStyleType: 'none',  /* Takes off Bullet Points from List */
+})
 
 const List = styled('li', {
   listStyleType: 'none',  /* Takes off Bullet Points from List */
