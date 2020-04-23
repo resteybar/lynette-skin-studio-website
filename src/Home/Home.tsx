@@ -53,7 +53,7 @@ const ButtonInput = styled('input', {
     fontSize: '16pt',
     letterSpacing: '2px',
     fontFamily: 'Shree Devanagari 714-Regular.ttf',
-    fontWeight: 200,
+    fontWeight: 100,
 })
 
 export default Home
