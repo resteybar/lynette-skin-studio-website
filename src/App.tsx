@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.css'
 import Home  from './Home/Home'
-// import Product from './Product/Product'
+import Product from './Product/Product'
 import NavBarScrolling from './NavBarScrolling/NavBarScrolling'
 import { styled } from 'styletron-react'
 
@@ -47,8 +47,7 @@ const App: React.FC = () => {
     <div className='App'>
       <NavBarScrolling links={ links } renderLinks={ formattedHtmlLinks } />
       <Home renderLinks={ formattedHtmlLinks } />
-      {/* <Product /> */}
-      {/* <TestNavBar /> */}
+      <Product />
     </div>
   )
 }

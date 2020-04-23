@@ -1,6 +1,9 @@
 #NavBarScrolling {
     font-family: 'Open Sans', sans-serif;
 
+    width: 100%;
+    background-color: white;
+
     /* TBD: May change later with background image */
     /* When Nav. Bar overlays main content, it hides content behind it*/
     /* background-color: white; */
@@ -29,6 +32,8 @@
     /* Adding more white space above and below the title & links */
     padding-top: 15px;
     padding-bottom: 15px;
+
+    position: fixed;
 }
 
 /* Provides space for the title on the left */

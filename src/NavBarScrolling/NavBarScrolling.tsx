@@ -92,8 +92,9 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
 // CSS
 const MobileLinks = styled('ul', {
     // Creates white space on the left and right of the mobile nav. bar
-    marginLeft: '4%',
-    marginRight: '4%'
+    paddingLeft: '4%',
+    paddingRight: '4%',
+    backgroundColor: 'white'
 })
 
 const Menu = styled('div', {
@@ -134,8 +135,9 @@ const MenuIcon = styled('img', {
 const iconSize = '45px'
 
 const SocialIcons = styled('div', {
-    marginTop: '15px',
-    marginLeft: '4%',
+    paddingTop: '15px',
+    paddingLeft: '4%',
+    backgroundColor: 'white'
 })
 
 const YelpIcon = styled('img', {
