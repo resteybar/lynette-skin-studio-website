@@ -1,19 +1,13 @@
 import React from 'react'
 import './Home.css'
 import NavBar from '../NavBar/NavBar'
-import { styled, withStyle } from 'styletron-react'
-import { Client } from "styletron-engine-atomic";
-
-const instance = new Client();
+import { styled } from 'styletron-react'
 
 interface HomeProps {
     renderLinks: JSX.Element[]
 }
 
 const Home: React.FC<HomeProps> = props => {
-    const displayLinks = () => {
-
-    }
     return (
 
         <div id="Home" className='debug-border'>
@@ -21,7 +15,11 @@ const Home: React.FC<HomeProps> = props => {
 
             <ButtonContainer>
                 <h1 id='welcome-message'>WELCOME MESSAGE</h1>
-                <ButtonInput type="button" value="CONTACT US"/>
+                
+                {/* Raymond will complete the a tag later */}
+                {/* <a href=''> */}
+                    <ButtonInput type="button" value="CONTACT US"/>
+                {/* </a> */}
             </ButtonContainer>
 
         </div>
@@ -45,7 +43,8 @@ const ButtonInput = styled('input', {
     ':hover':{
         backgroundColor: '#862e08',
         //opacity: '.3',
-        color: 'rgba(255,255,255,2)'
+        color: 'rgba(255,255,255,2)',
+        cursor: 'pointer'   // Changes cursor to a 'It's a Link!' cursor
     },
 
     //Contact us text

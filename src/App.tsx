@@ -3,7 +3,7 @@ import './App.css'
 import Home  from './Home/Home'
 import Product from './Product/Product'
 import NavBarScrolling from './NavBarScrolling/NavBarScrolling'
-import { styled, withStyle } from 'styletron-react'
+import { styled } from 'styletron-react'
 
 type LinkValue = {
   name: string;
@@ -47,8 +47,7 @@ const App: React.FC = () => {
     <div className='App'>
       <NavBarScrolling links={ links } renderLinks={ formattedHtmlLinks } />
       <Home renderLinks={ formattedHtmlLinks } />
-      {/* <Product /> */}
-      {/* <TestNavBar /> */}
+      <Product />
     </div>
   )
 }
