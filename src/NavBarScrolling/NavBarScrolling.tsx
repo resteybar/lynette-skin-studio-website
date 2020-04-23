@@ -22,12 +22,16 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
 
     const displayLinks = () => {
         const menuLinks: HTMLElement | null = document.getElementById('mobile-links')
-        
-        if (menuLinks) {
-            if (!isMenuDisplayed)
+        const app: HTMLElement | null = document.querySelector('*')
+
+        if (menuLinks && app) {
+            if (!isMenuDisplayed) {
                 menuLinks.className += ' show-navbar'
-            else 
+                app.style.overflowY = 'hidden'
+            } else {
                 menuLinks.className = 'mobile-navbar'
+                app.style.overflowY = 'scroll'
+            }
         }
 
         isMenuDisplayed = !isMenuDisplayed
@@ -56,6 +60,7 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
                 <h1 className='title-lynette lynette-brown'>LYNETTE'S</h1>
                 <h1 className='title-skin-studio lynette-brown'>SKIN STUDIO</h1>
             </div>
+            
             <ul id='navbarscrolling-links'>
                 { renderedLinks }
             </ul>
@@ -63,7 +68,7 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
             {/* Mobile Nav. Bar */}
             {/*     - Menu Icon */}
             <Menu onClick={ () => displayLinks() }>
-                <MenuIcon src={ menuIcon }/>
+                <MenuIcon src={ menuIcon } />
             </Menu>
             
             {/*     - Mobile Links */}
@@ -72,10 +77,10 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
                     { renderedLinks }
                 </MobileLinks>
                 <SocialIcons>
-                    <a href={ facebookLink } target='_blank'>
+                    <a href={ facebookLink } target='_blank' rel='noopener noreferrer'>
                         <FacebookIcon src={ facebookIcon } />
                     </a>
-                    <a href={ yelpLink } target='_blank'>
+                    <a href={ yelpLink } target='_blank' rel='noopener noreferrer'>
                         <YelpIcon src={ yelpIcon } />
                     </a>
                 </SocialIcons>
@@ -94,6 +99,10 @@ const MobileLinks = styled('ul', {
 const Menu = styled('div', {
     /* Hide menu icon when expanded on computer */
     display: 'none',
+    ':hover': {
+        backgroundColor: 'lightgrey',
+        cursor: 'pointer'
+    },
     '@media screen and (max-width: 800px)': {
         /* Show icon */
         display: 'block',
@@ -104,9 +113,9 @@ const Menu = styled('div', {
         /* Position Menu Icon to the right of the screen */
         left: '86%',
 
-        paddingRight: '10%',
-        paddingTop: '23px',
-        paddingBottom: '23px',
+        paddingRight: '2%',
+        paddingTop: '38px',
+        paddingBottom: '38px',
         paddingLeft: '2%',
     }
 })
@@ -141,7 +150,7 @@ const FacebookIcon = withStyle(YelpIcon, {
 const LynetteBrown = '#862e08'
 const paddingTopBot = '15px'
 
-export const List = styled('li', {
+const List = styled('li', {
   listStyleType: 'none',  /* Takes off Bullet Points from List */
   padding: '0px',
   marginTop: '0px',
@@ -149,13 +158,17 @@ export const List = styled('li', {
   marginRight: '0px',
   marginBottom: '0px',
 
+  ':hover': {
+    backgroundColor: 'lightgrey'
+  },
+
   // To display Light Border below links FOR Mobile Links
   '@media screen and (max-width: 800px)': {
       borderBottom: '1px solid lightgrey'
   }
 })
 
-export const Link = styled('a', {
+const Link = styled('a', {
   textDecoration: 'none', /* Takes off Underline in Links */
   color: LynetteBrown,
   paddingTop: paddingTopBot,

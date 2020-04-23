@@ -1,9 +1,9 @@
 import React from 'react'
 import './App.css'
 import Home  from './Home/Home'
-import Product from './Product/Product'
+// import Product from './Product/Product'
 import NavBarScrolling from './NavBarScrolling/NavBarScrolling'
-import { styled, withStyle } from 'styletron-react'
+import { styled } from 'styletron-react'
 
 type LinkValue = {
   name: string;

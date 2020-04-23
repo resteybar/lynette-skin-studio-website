@@ -1,19 +1,13 @@
 import React from 'react'
 import './Home.css'
 import NavBar from '../NavBar/NavBar'
-import { styled, withStyle } from 'styletron-react'
-import { Client } from "styletron-engine-atomic";
-
-const instance = new Client();
+import { styled } from 'styletron-react'
 
 interface HomeProps {
     renderLinks: JSX.Element[]
 }
 
 const Home: React.FC<HomeProps> = props => {
-    const displayLinks = () => {
-
-    }
     return (
 
         <div id="Home" className='debug-border'>
@@ -23,9 +17,9 @@ const Home: React.FC<HomeProps> = props => {
                 <h1 id='welcome-message'>WELCOME MESSAGE</h1>
                 
                 {/* Raymond will complete the a tag later */}
-                <a href='#'>
+                {/* <a href=''> */}
                     <ButtonInput type="button" value="CONTACT US"/>
-                </a>
+                {/* </a> */}
             </ButtonContainer>
 
         </div>

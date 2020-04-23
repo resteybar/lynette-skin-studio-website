@@ -25,6 +25,10 @@
                   border
      */
     box-shadow: 0px 10px 5px -5px lightgrey;
+
+    /* Adding more white space above and below the title & links */
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 /* Provides space for the title on the left */
@@ -90,7 +94,7 @@
     /* Mobile NavBar look */
     .mobile-navbar {
         position: absolute;
-        top: 72px;
+        top: 102px;
         right: 0px;
         background-color: white;
         width: 100%;
