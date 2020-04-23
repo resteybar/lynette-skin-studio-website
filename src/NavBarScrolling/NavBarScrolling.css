@@ -33,6 +33,9 @@
     padding-top: 15px;
     padding-bottom: 15px;
 
+    /*  Makes the Nav. Bar stick to the top of the webpage 
+        the entire way down
+     */
     position: fixed;
 }
 

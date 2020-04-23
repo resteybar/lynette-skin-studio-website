@@ -94,7 +94,10 @@ const MobileLinks = styled('ul', {
     // Creates white space on the left and right of the mobile nav. bar
     paddingLeft: '4%',
     paddingRight: '4%',
-    backgroundColor: 'white'
+    backgroundColor: 'white',
+
+    // Ensures the entire page is white
+    height: '100vh'
 })
 
 const Menu = styled('div', {
