@@ -42,7 +42,8 @@ const ButtonInput = styled('input', {
     backgroundColor: 'Transparent',
     ':hover':{
         backgroundColor: '#862e08',
-        //opacity: '.3',
+
+        opacity: 0.7,
         color: 'rgba(255,255,255,2)',
         cursor: 'pointer'   // Changes cursor to a 'It's a Link!' cursor
     },
@@ -53,6 +54,6 @@ const ButtonInput = styled('input', {
     letterSpacing: '2px',
     fontFamily: 'Shree Devanagari 714-Regular.ttf',
     fontWeight: 200,
-});
+})
 
 export default Home
