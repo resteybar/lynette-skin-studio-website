@@ -14,7 +14,7 @@
 
     /* Ensures Home Bg Img size does not get any smaller */
     /* min-width: 1840px; */
-    max-height: 100vh;
+    min-height: 1000px;
 
     /* Center and scale the image nicely */
     background-position: center top;
