@@ -1,6 +1,11 @@
 #Home {
     background-image: url('../images/home_bg.jpg');
 
+    /* 
+        TODO: Fix Background Image to cut off with window.innerHeight
+        Adjust size.
+     */
+
     /* Fit Bg Img Entire Screen Height */
     height: 100vh;
 
@@ -8,7 +13,8 @@
     width: 100%;
 
     /* Ensures Home Bg Img size does not get any smaller */
-    min-height: 1200px;
+    /* min-width: 1840px; */
+    max-height: 100vh;
 
     /* Center and scale the image nicely */
     background-position: center top;

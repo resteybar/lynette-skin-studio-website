@@ -37,6 +37,10 @@
         the entire way down
      */
     position: fixed;
+
+    /* TODO: Transition Nav. Bar to show */
+    transition: top 0.3s;
+    top: -150px;
 }
 
 /* Provides space for the title on the left */
