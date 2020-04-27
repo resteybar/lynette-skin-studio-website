@@ -6,22 +6,6 @@ interface NavBarProps {
 }
 
 const NavBar: React.FC<NavBarProps> = props => {
-    // var isScrolledPast = false
-
-    // window.addEventListener('scroll', function() {
-    //     const navbarLinks = document.getElementById('NavBar-links')
-    //     if (navbarLinks) {
-    //         if (window.scrollY > navbarLinks.offsetTop + navbarLinks.offsetHeight) {
-    //             this.console.log('Scrolled past nav bar links')
-    //             isScrolledPast = true
-    //         } else {
-    //             isScrolledPast = false
-    //         }
-    //     }
-
-    //     console.log(document.getElementById('NavBar')?.clientHeight)
-    // })
-
     return (
         <div id='NavBar' className='debug-border'>
             <div id='navbar-title'>
