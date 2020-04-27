@@ -48,7 +48,7 @@ const App: React.FC = () => {
 
   return (
     <div className='App'>
-      {/* <NavBarScrolling links={ links } renderLinks={ formattedHtmlLinks } /> */}
+      <NavBarScrolling links={ links } renderLinks={ formattedHtmlLinks } />
       <Home renderLinks={ formattedHtmlLinks } />
       <About />
       <Product />

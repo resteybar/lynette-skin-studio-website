@@ -20,7 +20,7 @@ interface NavBarScrollingProps {
 const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
     var isMenuDisplayed: boolean = false
 
-    const displayLinks = () => {
+    const displayLinks = (): void => {
         const menuLinks: HTMLElement | null = document.getElementById('mobile-links')
         const app: HTMLElement | null = document.querySelector('*')
 
@@ -37,7 +37,7 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
         isMenuDisplayed = !isMenuDisplayed
     }
 
-    const renderLinks = (links: LinkValue[]) => {
+    const renderLinks = (links: LinkValue[]): JSX.Element[] => {
         var renderedLinks = []
   
         for (let i = 0; i < links.length; i++)
@@ -49,6 +49,21 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
         
         return renderedLinks
     }
+
+    const showNavBar = (): void => {
+        const top = 118
+        const navBar = document.getElementById('NavBarScrolling')
+        
+        if (navBar) {
+            if (document.body.scrollTop > top || document.documentElement.scrollTop > top) {
+                navBar.style.top = '0px'
+            } else {
+                navBar.style.top = '-150px'
+            }
+        }
+    }
+
+    window.onscroll = function() { showNavBar() }
 
     const renderedLinks = renderLinks(props.links)
     const facebookLink = 'https://www.facebook.com/LynetteSkinStudio/'
