@@ -50,8 +50,8 @@ const App: React.FC = () => {
     <div className='App'>
       {/* <NavBarScrolling links={ links } renderLinks={ formattedHtmlLinks } /> */}
       <Home renderLinks={ formattedHtmlLinks } />
-      <Product />
       <About />
+      <Product />
     </div>
   )
 }
