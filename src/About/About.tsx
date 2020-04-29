@@ -79,7 +79,7 @@ const LynetteTitle = styled('h2', {
 const LynetteDescription = styled('h2', {
     fontFamily: 'Shree Reg',
     fontSize: '15pt',
-    width: '900px',
+    maxWidth: '900px',
     wordWrap: 'break-word',
     marginRight: 'auto',
     marginLeft: 'auto',
@@ -87,10 +87,11 @@ const LynetteDescription = styled('h2', {
     letterSpacing: '5px'
 })
 
-const iconSize = '45px'
 const SocialIcons = styled('div', {
     paddingTop: '20px',
 })
+
+const iconSize = '50px'
 const YelpIcon = styled('img', {
     height: iconSize,
     width: iconSize
