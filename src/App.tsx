@@ -15,10 +15,10 @@ const App: React.FC = () => {
   // Links in Nav Bar
   const links: LinkValue[] = [
       { name: 'Home', path: '' },
-      { name: 'About', path: '' },
-      { name: 'Services', path: '' },
-      { name: 'Products', path: '' },
-      { name: 'Contact', path: '' }
+      { name: 'About', path: 'About' },
+      { name: 'Services', path: 'Services' },
+      { name: 'Products', path: 'Products' },
+      { name: 'Contact', path: 'Contact' }
   ]
 
   // Automate Rendering Links

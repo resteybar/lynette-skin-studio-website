@@ -9,7 +9,7 @@ import facebookIcon from '../images/Facebook_Graphic-01.png'
 import yelpIcon from '../images/Yelp_Graphic-01.png'
 
 //  - Background Image, 
-import aboutBackground from '../images/About_Background.png'
+import aboutBackground from '../images/About_Background_Fixed.png'
 import lynetteHeadShot from '../images/Lynette_Headshot.png'
 
 const About: React.FC = () => {
@@ -45,14 +45,14 @@ const About: React.FC = () => {
 const Background = styled('div', {
     backgroundImage: 'url("' + aboutBackground + '")',
     height: '100vh',
-    width: '100vw',
+    width: '100%',
     maxHeight: '760px',
-    minHeight: '760px',
+    // minHeight: '760px',
     paddingTop: '250px',
     // paddingBottom: '450px',
     textAlign: 'center',
     /* Center and scale the image nicely */
-    backgroundPosition: 'right center',
+    backgroundPosition: 'center bottom',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover'
 })
