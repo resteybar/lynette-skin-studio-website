@@ -44,14 +44,14 @@ const About: React.FC = () => {
 
 const Background = styled('div', {
     backgroundImage: 'url("' + aboutBackground + '")',
-    height: '60vh',
+    height: '100vh',
     width: '99vw',
     maxHeight: '1000px',
-    paddingTop: '250px',
+    // paddingTop: '250px',
     // paddingBottom: '450px',
     textAlign: 'center',
     /* Center and scale the image nicely */
-    backgroundPosition: 'center top',
+    backgroundPosition: 'center bottom',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover'
 })
@@ -68,11 +68,16 @@ const LynetteHeader = styled('h2', {
 })
 const LynetteTitle = styled('h2', {
     fontFamily: 'Halant Bold',
-    fontSize: '30pt'
+    fontSize: '30pt',
 })
 const LynetteDescription = styled('h2', {
     fontFamily: 'Shree Reg',
-    fontSize: '30pt'
+    fontSize: '30pt',
+    // wordWrap: 'break-word',
+    // width: '500px',
+    // marginRight: 'auto',
+    // marginLeft: 'auto',
+    // marginTop: '150px'
 })
 
 const iconSize = '45px'
