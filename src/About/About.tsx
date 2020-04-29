@@ -46,12 +46,13 @@ const Background = styled('div', {
     backgroundImage: 'url("' + aboutBackground + '")',
     height: '100vh',
     width: '100vw',
-    maxHeight: '1000px',
+    maxHeight: '760px',
+    minHeight: '760px',
     paddingTop: '250px',
     // paddingBottom: '450px',
     textAlign: 'center',
     /* Center and scale the image nicely */
-    backgroundPosition: 'center top',
+    backgroundPosition: 'right center',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover'
 })
