@@ -9,7 +9,6 @@ interface HomeProps {
 
 const Home: React.FC<HomeProps> = props => {
     return (
-
         <div id="Home" className='debug-border'>
             <NavBar renderLinks={props.renderLinks} />
 

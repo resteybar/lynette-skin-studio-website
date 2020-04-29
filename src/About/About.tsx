@@ -79,7 +79,7 @@ const LynetteTitle = styled('h2', {
 const LynetteDescription = styled('h2', {
     fontFamily: 'Shree Reg',
     fontSize: '15pt',
-    width: '900px',
+    maxWidth: '900px',
     wordWrap: 'break-word',
     marginRight: 'auto',
     marginLeft: 'auto',
