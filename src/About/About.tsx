@@ -44,14 +44,14 @@ const About: React.FC = () => {
 
 const Background = styled('div', {
     backgroundImage: 'url("' + aboutBackground + '")',
-    height: '50vh',
+    height: '60vh',
     width: '99vw',
     maxHeight: '1000px',
-    // paddingTop: '250px',
+    paddingTop: '250px',
     // paddingBottom: '450px',
     textAlign: 'center',
     /* Center and scale the image nicely */
-    backgroundPosition: 'center bottom',
+    backgroundPosition: 'center top',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover'
 })
