@@ -47,11 +47,11 @@ const Background = styled('div', {
     height: '100vh',
     width: '100vw',
     maxHeight: '1000px',
-    paddingTop: '250px',
+    // paddingTop: '250px',
     // paddingBottom: '450px',
     textAlign: 'center',
     /* Center and scale the image nicely */
-    backgroundPosition: 'center top',
+    backgroundPosition: 'center bottom',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover'
 })

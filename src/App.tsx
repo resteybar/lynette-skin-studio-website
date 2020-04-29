@@ -1,10 +1,13 @@
 import React from 'react'
 import './App.css'
-import Home  from './Home/Home'
-import Product from './Product/Product'
-import About from './About/About'
-import NavBarScrolling from './NavBarScrolling/NavBarScrolling'
 import { styled } from 'styletron-react'
+
+// Components
+import Home  from './Home/Home'
+import About from './About/About'
+import Services from './Services/Services'
+import Product from './Product/Product'
+import NavBarScrolling from './NavBarScrolling/NavBarScrolling'
 
 type LinkValue = {
   name: string;
@@ -15,10 +18,10 @@ const App: React.FC = () => {
   // Links in Nav Bar
   const links: LinkValue[] = [
       { name: 'Home', path: '' },
-      { name: 'About', path: '' },
-      { name: 'Services', path: '' },
-      { name: 'Products', path: '' },
-      { name: 'Contact', path: '' }
+      { name: 'About', path: 'About' },
+      { name: 'Services', path: 'Services' },
+      { name: 'Products', path: 'Products' },
+      { name: 'Contact', path: 'Contact' }
   ]
 
   // Automate Rendering Links
@@ -44,6 +47,7 @@ const App: React.FC = () => {
       return renderedLinks
   }
 
+
   const formattedHtmlLinks = renderLinks(links)
 
   return (
@@ -51,6 +55,7 @@ const App: React.FC = () => {
       <NavBarScrolling links={ links } renderLinks={ formattedHtmlLinks } />
       <Home renderLinks={ formattedHtmlLinks } />
       <About />
+      <Services />
       <Product />
     </div>
   )
