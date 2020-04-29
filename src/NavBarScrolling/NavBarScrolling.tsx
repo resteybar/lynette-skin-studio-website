@@ -152,12 +152,11 @@ const MenuIcon = styled('img', {
     userSelect: 'none'
 })
 
-const iconSize = '45px'
-
 const SocialIcons = styled('div', {
     paddingTop: '15px',
 })
 
+const iconSize = '45px'
 const YelpIcon = styled('img', {
     height: iconSize,
     width: iconSize

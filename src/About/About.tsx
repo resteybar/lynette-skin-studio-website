@@ -87,10 +87,11 @@ const LynetteDescription = styled('h2', {
     letterSpacing: '5px'
 })
 
-const iconSize = '45px'
 const SocialIcons = styled('div', {
     paddingTop: '20px',
 })
+
+const iconSize = '50px'
 const YelpIcon = styled('img', {
     height: iconSize,
     width: iconSize
