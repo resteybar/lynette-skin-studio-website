@@ -18,8 +18,7 @@ const About: React.FC = () => {
     
     return (
         <Background id="About" className='debug-border'>
-            
-            <LynetteHeadShot src={ lynetteHeadShot } />
+            <LynetteHeadShot id='lynette-photo' src={ lynetteHeadShot } />
             <LynetteHeader>LYNETTE</LynetteHeader>
             <LynetteTitle>Professional Esthetician</LynetteTitle>
             <LynetteDescription>Lorem ipsum dolor sit amet, 
