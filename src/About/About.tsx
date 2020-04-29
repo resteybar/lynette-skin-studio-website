@@ -20,7 +20,7 @@ const About: React.FC = () => {
         <Background id="About" className='debug-border'>
             
             <LynetteHeadShot src={ lynetteHeadShot } />
-            <LynetteHeader>LYNNETE</LynetteHeader>
+            <LynetteHeader>LYNETTE</LynetteHeader>
             <LynetteTitle>Professional Esthetician</LynetteTitle>
             <LynetteDescription>Lorem ipsum dolor sit amet, 
                 consectetur adipiscing elit. Cras risus mauris, 
@@ -44,19 +44,20 @@ const About: React.FC = () => {
 
 const Background = styled('div', {
     backgroundImage: 'url("' + aboutBackground + '")',
-    height: '60vh',
-    width: '99vw',
-    maxHeight: '1000px',
+    height: '100vh',
+    width: '100vw',
+    maxHeight: '760px',
+    minHeight: '760px',
     paddingTop: '250px',
     // paddingBottom: '450px',
     textAlign: 'center',
     /* Center and scale the image nicely */
-    backgroundPosition: 'center top',
+    backgroundPosition: 'right center',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover'
 })
 
-const headshotSize = '125px'
+const headshotSize = '145px'
 const LynetteHeadShot = styled('img', {
     width: headshotSize,
     height: headshotSize
@@ -64,20 +65,31 @@ const LynetteHeadShot = styled('img', {
 
 const LynetteHeader = styled('h2', {
     fontFamily: 'Halant Light',
-    fontSize: '30pt'
+    fontSize: '40pt',
+    letterSpacing: '5px',
+    fontWeight: 100,
 })
 const LynetteTitle = styled('h2', {
     fontFamily: 'Halant Bold',
-    fontSize: '30pt'
+    fontSize: '23pt',
+    marginTop: '-25px',
+    letterSpacing: '6px',
+    color: '#989898'
 })
 const LynetteDescription = styled('h2', {
     fontFamily: 'Shree Reg',
-    fontSize: '30pt'
+    fontSize: '15pt',
+    width: '900px',
+    wordWrap: 'break-word',
+    marginRight: 'auto',
+    marginLeft: 'auto',
+    marginTop: '20px',
+    letterSpacing: '5px'
 })
 
 const iconSize = '45px'
 const SocialIcons = styled('div', {
-    paddingTop: '15px',
+    paddingTop: '20px',
 })
 const YelpIcon = styled('img', {
     height: iconSize,
