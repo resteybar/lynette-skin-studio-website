@@ -28,8 +28,6 @@ const Home: React.FC<HomeProps> = props => {
 }
 const ButtonContainer = styled('div', {
     textAlign: 'center',
-    //border: '1px solid',
-    //top: '50px',
 })
 
 const ButtonInput = styled('input', {
