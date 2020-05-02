@@ -17,7 +17,7 @@ const App: React.FC = () => {
       { name: 'Home', path: '' },
       { name: 'About', path: 'About' },
       { name: 'Services', path: 'Services' },
-      { name: 'Products', path: 'Products' },
+      { name: 'Products', path: 'Product' },
       { name: 'Contact', path: 'Contact' }
   ]
 
