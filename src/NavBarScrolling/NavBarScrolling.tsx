@@ -83,7 +83,7 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
             {/* Mobile Nav. Bar */}
             {/*     - Menu Icon */}
             <Menu onClick={ () => displayLinks() }>
-                <MenuIcon src={ menuIcon } />
+                <MenuIcon src={ menuIcon } draggable='false' />
             </Menu>
             
             {/*     - Mobile Links */}
@@ -121,7 +121,6 @@ const Menu = styled('div', {
     /* Hide menu icon when expanded on computer */
     display: 'none',
     ':hover': {
-        backgroundColor: 'lightgrey',
         cursor: 'pointer'
     },
     '@media screen and (max-width: 800px)': {
@@ -135,8 +134,8 @@ const Menu = styled('div', {
         left: '86%',
 
         paddingRight: '2%',
-        paddingTop: '38px',
-        paddingBottom: '38px',
+        paddingTop: '33px',
+        paddingBottom: '33px',
         paddingLeft: '2%',
     }
 })
@@ -146,10 +145,12 @@ const MenuIcon = styled('img', {
     width: '21px',
     
     // Turn off Highlighting on menu icon
+    // Allows the user to not select the "Menu" icon and open it in a new tab
     WebkitUserSelect: 'none',
     MozUserSelect: 'none',
     msUserSelect: 'none',
-    userSelect: 'none'
+    userSelect: 'none',
+    pointerEvents: 'none'
 })
 
 const SocialIcons = styled('div', {
