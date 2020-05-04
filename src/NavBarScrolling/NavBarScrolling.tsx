@@ -41,15 +41,14 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
     }
 
     const scrollToAbout = (): void => {
+        // When in Mobile Nav. Bar, clicking on a link will navigate to the
+        // page and hide the Nav. Bar
+        if (isMenuDisplayed) 
+            displayLinks()
+
         const aboutDiv = document.getElementById('About')
         if (aboutDiv) {
             var top = aboutDiv.getBoundingClientRect().top + window.pageYOffset
-    
-            if (isMobile) {
-              console.log("On Mobile!")
-            } else {
-              console.log("NOT ON MOBILE")
-            }
     
             // When on Mobile, scroll down to have the content just below the 
             // mobile nav. bar
