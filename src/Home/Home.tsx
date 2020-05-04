@@ -15,37 +15,37 @@ interface HomeProps {
 
 const Home: React.FC<HomeProps> = props => {
     // Automate Rendering Links
-  const renderLinks = () => {
-    var renderedLinks = []
+    const renderLinks = () => {
+        var renderedLinks = []
 
-    const links: LinkValue[] = props.links
+        const links: LinkValue[] = props.links
 
-    renderedLinks.push(
-      <List key={ 0 }>
-          <Link href='#'>{ links[0].name.toUpperCase() }</Link>
-      </List>
-    )
+        renderedLinks.push(
+            <List key={ 0 }>
+                <Link href='#'>{ links[0].name.toUpperCase() }</Link>
+            </List>
+        )
 
-    // On Home Page, show every link except the "Contact Us"
-    // because we made a button to handle that link
-    for (let i = 1; i < links.length - 1; i++) {
-      const pageName = links[i].name
-      const linkRef = '#' + pageName
-      const pixelsAdjustment = links[i].pixelsAdjustment
+        // On Home Page, show every link except the "Contact Us"
+        // because we made a button to handle that link
+        for (let i = 1; i < links.length - 1; i++) {
+            const pageName = links[i].name
+            const linkRef = '#' + pageName
+            const pixelsAdjustment = links[i].pixelsAdjustment
 
-      renderedLinks.push(
-          <List key={ i }>
-              <Link onClick={ () => props.scrollToPage(pageName, pixelsAdjustment) } 
-                    $style={{ color: 'white' }} 
-                    href={ linkRef }>
-                { pageName.toUpperCase() }
-              </Link>
-          </List>
-      )
+            renderedLinks.push(
+                <List key={ i }>
+                    <Link onClick={ () => props.scrollToPage(pageName, pixelsAdjustment) } 
+                        $style={{ color: 'white' }} 
+                        href={ linkRef }>
+                    { pageName.toUpperCase() }
+                    </Link>
+                </List>
+            )
+        }
+        
+        return renderedLinks
     }
-    
-    return renderedLinks
-}
 
     return (
         <div id="Home" className='debug-border'>
@@ -53,11 +53,10 @@ const Home: React.FC<HomeProps> = props => {
 
             <ButtonContainer>
                 <h1 id='welcome-message'>WELCOME MESSAGE</h1>
-                
-                {/* Raymond will complete the a tag later */}
-                {/* <a href=''> */}
-                    <ButtonInput type="button" value="CONTACT US"/>
-                {/* </a> */}
+                <ButtonInput 
+                    type="button" 
+                    value="CONTACT US"
+                    onClick={ () => props.scrollToPage('Contact', 0) } />
             </ButtonContainer>
 
         </div>
