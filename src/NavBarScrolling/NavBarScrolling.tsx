@@ -92,7 +92,7 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
 
     return (
         <div id='NavBarScrolling' className='debug-border'>
-            <HomeLink href='#'>
+            <HomeLink href='#' onClick={ () => displayLinks() }>
                 <div id='navbarscrolling-title'>
                     <h1 className='title-lynette lynette-brown'>LYNETTE'S</h1>
                     <h1 className='title-skin-studio lynette-brown'>SKIN STUDIO</h1>
