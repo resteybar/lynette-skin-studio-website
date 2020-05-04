@@ -84,6 +84,13 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
         }
     }
 
+    // Used for Logo link when Mobile links are displayed and it needs to close
+    // NOT used when Mobile links are closed.
+    const logoLink = (): void => {
+        if (isMenuDisplayed)
+            displayLinks()
+    }
+
     window.onscroll = function() { showNavBar() }
 
     const renderedLinks = renderLinks()
@@ -92,7 +99,7 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
 
     return (
         <div id='NavBarScrolling' className='debug-border'>
-            <HomeLink href='#' onClick={ () => displayLinks() }>
+            <HomeLink href='#' onClick={ () => logoLink() }>
                 <div id='navbarscrolling-title'>
                     <h1 className='title-lynette lynette-brown'>LYNETTE'S</h1>
                     <h1 className='title-skin-studio lynette-brown'>SKIN STUDIO</h1>
