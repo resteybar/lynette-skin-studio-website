@@ -1,11 +1,14 @@
 import React from 'react'
 import './NavBarScrolling.css'
-import { styled, withStyle } from 'styletron-react'
 
 // Images
 import menuIcon from '../images/menu.png'
 import facebookIcon from '../images/Facebook_Graphic-01.png'
 import yelpIcon from '../images/Yelp_Graphic-01.png'
+
+// Tools Used
+import { styled, withStyle } from 'styletron-react'
+import { isMobile } from 'react-device-detect'
 
 type LinkValue = {
     name: string;
@@ -40,13 +43,25 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
     const scrollToAbout = (): void => {
         const aboutDiv = document.getElementById('About')
         if (aboutDiv) {
-            const top = aboutDiv.getBoundingClientRect().top + window.pageYOffset + 20
+            var top = aboutDiv.getBoundingClientRect().top + window.pageYOffset
+    
+            if (isMobile) {
+              console.log("On Mobile!")
+            } else {
+              console.log("NOT ON MOBILE")
+            }
+    
+            // When on Mobile, scroll down to have the content just below the 
+            // mobile nav. bar
+            if (isMobile)
+              top += 140
+    
             window.scrollTo({
                 top,
                 behavior: 'smooth'
             })
         }
-    }
+      }
 
     const renderLinks = (links: LinkValue[]): JSX.Element[] => {
         var renderedLinks = []

@@ -9,7 +9,7 @@ import NavBarScrolling from './NavBarScrolling/NavBarScrolling'
 
 // Tools Used
 import { styled } from 'styletron-react'
-import { isBrowser, isMobile } from 'react-device-detect'
+import { isMobile } from 'react-device-detect'
 
 type LinkValue = {
   name: string;
@@ -20,7 +20,7 @@ const App: React.FC = () => {
   // Links in Nav Bar
   const links: LinkValue[] = [
       { name: 'Home', path: '' },
-      { name: 'About', path: 'about-stop' },
+      { name: 'About', path: 'About' },
       { name: 'Services', path: 'Services' },
       { name: 'Products', path: 'Product' },
       { name: 'Contact', path: 'Contact' }
@@ -30,6 +30,12 @@ const App: React.FC = () => {
     const aboutDiv = document.getElementById('About')
     if (aboutDiv) {
         var top = aboutDiv.getBoundingClientRect().top + window.pageYOffset
+
+        if (isMobile) {
+          console.log("On Mobile!")
+        } else {
+          console.log("NOT ON MOBILE")
+        }
 
         // When on Mobile, scroll down to have the content just below the 
         // mobile nav. bar
@@ -59,7 +65,6 @@ const App: React.FC = () => {
           renderedLinks.push(
               <List key={ i }>
                   <Link onClick={ () => scrollToAbout() } $style={{ color: 'white' }} href={ '#' + links[i].path }>{ links[i].name.toUpperCase() }</Link>
-                  {/* <Link href={ '#' + links[i].path }>{ links[i].name.toUpperCase() }</Link> */}
               </List>
           )
       
