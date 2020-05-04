@@ -1,10 +1,15 @@
 import React from 'react'
 import './App.css'
+
+// Components
 import Home  from './Home/Home'
 import Product from './Product/Product'
 import About from './About/About'
 import NavBarScrolling from './NavBarScrolling/NavBarScrolling'
+
+// Tools Used
 import { styled } from 'styletron-react'
+import { isBrowser, isMobile } from 'react-device-detect'
 
 type LinkValue = {
   name: string;
@@ -22,9 +27,15 @@ const App: React.FC = () => {
   ]
 
   const scrollToAbout = (): void => {
-    const aboutDiv = document.getElementById('lynette-photo')
+    const aboutDiv = document.getElementById('About')
     if (aboutDiv) {
-        const top = aboutDiv.getBoundingClientRect().top + window.pageYOffset - 110
+        var top = aboutDiv.getBoundingClientRect().top + window.pageYOffset
+
+        // When on Mobile, scroll down to have the content just below the 
+        // mobile nav. bar
+        if (isMobile)
+          top += 140
+
         window.scrollTo({
             top,
             behavior: 'smooth'
