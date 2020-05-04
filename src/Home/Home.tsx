@@ -62,8 +62,9 @@ const Home: React.FC<HomeProps> = props => {
                 <h1 id='welcome-message'>WELCOME MESSAGE</h1>
                 <ButtonInput 
                     type="button" 
-                    value="CONTACT US"
-                    onClick={ () => props.scrollToPage(contactPageId, contactPageMobileAdj, contactPageBrowserAdj) } />
+                    onClick={ () => props.scrollToPage(contactPageId, contactPageMobileAdj, contactPageBrowserAdj) }>
+                        CONTACT US
+                </ButtonInput>
             </ButtonContainer>
 
         </div>
@@ -73,7 +74,7 @@ const ButtonContainer = styled('div', {
     textAlign: 'center',
 })
 
-const ButtonInput = styled('input', {
+const ButtonInput = styled('button', {
     marginTop: '0px',
     height: '60px',
     width: '200px',
@@ -85,8 +86,11 @@ const ButtonInput = styled('input', {
 
         opacity: 0.7,
         color: 'rgba(255,255,255,2)',
-        cursor: 'pointer'   // Changes cursor to a 'It's a Link!' cursor
+        cursor: 'pointer',
     },
+
+    // Hides highlighting when putting is clicked
+    outline: 'none',
 
     //Contact us text
     color: '#862e08',
