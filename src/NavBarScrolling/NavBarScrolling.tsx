@@ -40,17 +40,24 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
         isMenuDisplayed = !isMenuDisplayed
     }
 
+    const navigateToPage = (pageName: string, pixelsAdjustment: number): void => {
+        // Hides Mobile Nav. Links when link is clicked
+        if (isMenuDisplayed)
+            displayLinks()
+        props.scrollToPage(pageName, pixelsAdjustment)
+    }
+
     const renderLinks = (links: LinkValue[]): JSX.Element[] => {
         var renderedLinks = []
   
         for (let i = 0; i < links.length; i++) {
-            const pageName = links[i].name
-            const linkRef = '#' + pageName
-            const pixelsAdjustment = links[i].pixelsAdjustment
+            const pageName: string = links[i].name
+            const linkRef: string = '#' + pageName
+            const pixelsAdjustment: number = links[i].pixelsAdjustment
 
             renderedLinks.push(
                 <List key={ i }>
-                    <Link   onClick={ () => props.scrollToPage(pageName, pixelsAdjustment) } 
+                    <Link   onClick={ () => navigateToPage(pageName, pixelsAdjustment) } 
                             className='is-mobile-view' 
                             href={ linkRef }>
                         { pageName.toUpperCase() }
