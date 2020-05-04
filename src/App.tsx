@@ -21,6 +21,17 @@ const App: React.FC = () => {
       { name: 'Contact', path: 'Contact' }
   ]
 
+  const scrollToAbout = (): void => {
+    const aboutDiv = document.getElementById('lynette-photo')
+    if (aboutDiv) {
+        const top = aboutDiv.getBoundingClientRect().top + window.pageYOffset - 110
+        window.scrollTo({
+            top,
+            behavior: 'smooth'
+        })
+    }
+  }
+
   // Automate Rendering Links
   const renderLinks = () => {
       var renderedLinks = []
@@ -36,7 +47,7 @@ const App: React.FC = () => {
       for (let i = 1; i < links.length - 1; i++)
           renderedLinks.push(
               <List key={ i }>
-                  <Link $style={{ color: 'white' }} href={ '#' + links[i].path }>{ links[i].name.toUpperCase() }</Link>
+                  <Link onClick={ () => scrollToAbout() } $style={{ color: 'white' }} href={ '#' + links[i].path }>{ links[i].name.toUpperCase() }</Link>
                   {/* <Link href={ '#' + links[i].path }>{ links[i].name.toUpperCase() }</Link> */}
               </List>
           )

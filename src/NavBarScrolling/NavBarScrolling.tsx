@@ -37,13 +37,24 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
         isMenuDisplayed = !isMenuDisplayed
     }
 
+    const scrollToAbout = (): void => {
+        const aboutDiv = document.getElementById('About')
+        if (aboutDiv) {
+            const top = aboutDiv.getBoundingClientRect().top + window.pageYOffset + 20
+            window.scrollTo({
+                top,
+                behavior: 'smooth'
+            })
+        }
+    }
+
     const renderLinks = (links: LinkValue[]): JSX.Element[] => {
         var renderedLinks = []
   
         for (let i = 0; i < links.length; i++)
             renderedLinks.push(
                 <List key={ i }>
-                    <Link className='is-mobile-view' href={ '#' + links[i].path }>{ links[i].name.toUpperCase() }</Link>
+                    <Link onClick={ () => scrollToAbout() } className='is-mobile-view' href={ '#' + links[i].path }>{ links[i].name.toUpperCase() }</Link>
                 </List>
             )
         
