@@ -41,6 +41,11 @@
     /* TODO: Transition Nav. Bar to show */
     transition: top 0.3s;
     top: -150px;
+
+    /* Fixes Bug: When hovering mouse over "Contact Us" button in Home page would 
+                  make the button go above the NavBarScrolling
+     */
+    z-index: 9999;
 }
 
 /* Provides space for the title on the left */
