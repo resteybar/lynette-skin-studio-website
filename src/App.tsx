@@ -29,9 +29,9 @@ const App: React.FC = () => {
   ]
 
   const scrollToPage = (id: string, mobileAdjustment: number, browserAdjustment: number): void => {
-    const aboutDiv = document.getElementById(id)
-    if (aboutDiv) {
-        var top = aboutDiv.getBoundingClientRect().top + window.pageYOffset
+    const element = document.getElementById(id)
+    if (element) {
+        var top = element.getBoundingClientRect().top + window.pageYOffset
 
         // When on Mobile, scroll down to have the content just below the 
         // mobile nav. bar
@@ -39,8 +39,6 @@ const App: React.FC = () => {
           top += mobileAdjustment
         else if (isBrowser)
           top += browserAdjustment
-
-          console.log(top)
 
         window.scrollTo({ top })
     }
