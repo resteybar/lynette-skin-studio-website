@@ -8,21 +8,23 @@ import About from './About/About'
 import NavBarScrolling from './NavBarScrolling/NavBarScrolling'
 
 // Tools Used
+import { styled } from 'styletron-react'
 import { isMobile } from 'react-device-detect'
 
-type LinkValue = {
+export type LinkValue = {
   name: string;
+  path: string;
   pixelsAdjustment: number;
 }
 
 const App: React.FC = () => {
   // Links in Nav Bar
   const links: LinkValue[] = [
-      { name: 'Home', pixelsAdjustment: 0 },
-      { name: 'About', pixelsAdjustment: 140 },
-      { name: 'Services', pixelsAdjustment: 0 },
-      { name: 'Products', pixelsAdjustment: 0 },
-      { name: 'Contact', pixelsAdjustment: 0 }
+      { name: 'Home', path: '', pixelsAdjustment: 0 },
+      { name: 'About', path: 'lynette-photo', pixelsAdjustment: 140 },
+      { name: 'Services', path: 'Services', pixelsAdjustment: 0 },
+      { name: 'Products', path: 'Products', pixelsAdjustment: 0 },
+      { name: 'Contact', path: 'Contact', pixelsAdjustment: 0 }
   ]
 
   const scrollToPage = (id: string, pixelsAdjustment: number): void => {
@@ -46,7 +48,7 @@ const App: React.FC = () => {
         scrollToPage={ scrollToPage } />
       <Home 
         links={ links } 
-        scrollToPage={ scrollToPage } />
+        scrollToPage={ scrollToPage }/>
       <About />
       <Product />
     </div>

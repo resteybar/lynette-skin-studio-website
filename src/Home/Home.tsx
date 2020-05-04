@@ -5,6 +5,7 @@ import { styled } from 'styletron-react'
 
 type LinkValue = {
     name: string;
+    path: string;
     pixelsAdjustment: number;
 }
 
@@ -30,12 +31,13 @@ const Home: React.FC<HomeProps> = props => {
         // because we made a button to handle that link
         for (let i = 1; i < links.length - 1; i++) {
             const pageName = links[i].name
-            const linkRef = '#' + pageName
+            const path: string = links[i].path
+            const linkRef = '#' + path
             const pixelsAdjustment = links[i].pixelsAdjustment
 
             renderedLinks.push(
                 <List key={ i }>
-                    <Link onClick={ () => props.scrollToPage(pageName, pixelsAdjustment) } 
+                    <Link onClick={ () => props.scrollToPage(path, pixelsAdjustment) } 
                         $style={{ color: 'white' }} 
                         href={ linkRef }>
                     { pageName.toUpperCase() }
