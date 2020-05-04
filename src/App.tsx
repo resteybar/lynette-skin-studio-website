@@ -6,6 +6,7 @@ import Home  from './Home/Home'
 import Product from './Products/Products'
 import About from './About/About'
 import NavBarScrolling from './NavBarScrolling/NavBarScrolling'
+import Services from './Services/Services'
 
 // Tools Used
 import { isBrowser, isMobile } from 'react-device-detect'
@@ -55,6 +56,7 @@ const App: React.FC = () => {
         links={ links } 
         scrollToPage={ scrollToPage }/>
       <About />
+      <Services/>
       <Product />
     </div>
   )
