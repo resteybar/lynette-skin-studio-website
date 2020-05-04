@@ -12,7 +12,7 @@ import { isMobile } from 'react-device-detect'
 
 type LinkValue = {
     name: string;
-    path: string;
+    pixelsAdjustment: number;
 }
 
 interface NavBarScrollingProps {
@@ -40,37 +40,38 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
         isMenuDisplayed = !isMenuDisplayed
     }
 
-    const scrollToAbout = (): void => {
-        // When in Mobile Nav. Bar, clicking on a link will navigate to the
-        // page and hide the Nav. Bar
-        if (isMenuDisplayed) 
-            displayLinks()
-
-        const aboutDiv = document.getElementById('About')
+    const scrollToPage = (id: string, pixelsAdjustment: number): void => {
+        const aboutDiv = document.getElementById(id)
         if (aboutDiv) {
             var top = aboutDiv.getBoundingClientRect().top + window.pageYOffset
-    
+
             // When on Mobile, scroll down to have the content just below the 
             // mobile nav. bar
             if (isMobile)
-              top += 140
-    
-            window.scrollTo({
-                top,
-                behavior: 'smooth'
-            })
+                top += pixelsAdjustment
+
+            window.scrollTo({ top })
         }
-      }
+    }
 
     const renderLinks = (links: LinkValue[]): JSX.Element[] => {
         var renderedLinks = []
   
-        for (let i = 0; i < links.length; i++)
+        for (let i = 0; i < links.length; i++) {
+            const pageName = links[i].name
+            const linkRef = '#' + pageName
+            const pixelsAdjustment = links[i].pixelsAdjustment
+
             renderedLinks.push(
                 <List key={ i }>
-                    <Link onClick={ () => scrollToAbout() } className='is-mobile-view' href={ '#' + links[i].path }>{ links[i].name.toUpperCase() }</Link>
+                    <Link   onClick={ () => scrollToPage(pageName, pixelsAdjustment) } 
+                            className='is-mobile-view' 
+                            href={ linkRef }>
+                        { pageName.toUpperCase() }
+                    </Link>
                 </List>
             )
+        }
         
         return renderedLinks
     }

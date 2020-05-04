@@ -3,7 +3,7 @@ import './App.css'
 
 // Components
 import Home  from './Home/Home'
-import Product from './Product/Product'
+import Product from './Products/Products'
 import About from './About/About'
 import NavBarScrolling from './NavBarScrolling/NavBarScrolling'
 
@@ -13,21 +13,21 @@ import { isMobile } from 'react-device-detect'
 
 type LinkValue = {
   name: string;
-  path: string;
+  pixelsAdjustment: number;
 }
 
 const App: React.FC = () => {
   // Links in Nav Bar
   const links: LinkValue[] = [
-      { name: 'Home', path: '' },
-      { name: 'About', path: 'About' },
-      { name: 'Services', path: 'Services' },
-      { name: 'Products', path: 'Product' },
-      { name: 'Contact', path: 'Contact' }
+      { name: 'Home', pixelsAdjustment: 0 },
+      { name: 'About', pixelsAdjustment: 140 },
+      { name: 'Services', pixelsAdjustment: 0 },
+      { name: 'Products', pixelsAdjustment: 0 },
+      { name: 'Contact', pixelsAdjustment: 0 }
   ]
 
-  const scrollToAbout = (): void => {
-    const aboutDiv = document.getElementById('About')
+  const scrollToAbout = (id: string, pixelsAdjustment: number): void => {
+    const aboutDiv = document.getElementById(id)
     if (aboutDiv) {
         var top = aboutDiv.getBoundingClientRect().top + window.pageYOffset
 
@@ -40,12 +40,9 @@ const App: React.FC = () => {
         // When on Mobile, scroll down to have the content just below the 
         // mobile nav. bar
         if (isMobile)
-          top += 140
+          top += pixelsAdjustment
 
-        window.scrollTo({
-            top,
-            behavior: 'smooth'
-        })
+        window.scrollTo({ top })
     }
   }
 
@@ -55,18 +52,27 @@ const App: React.FC = () => {
 
       renderedLinks.push(
         <List key={ 0 }>
-            <Link href={ '#' + links[0].path }>{ links[0].name.toUpperCase() }</Link>
+            <Link href='#'>{ links[0].name.toUpperCase() }</Link>
         </List>
       )
 
       // On Home Page, show every link except the "Contact Us"
       // because we made a button to handle that link
-      for (let i = 1; i < links.length - 1; i++)
-          renderedLinks.push(
-              <List key={ i }>
-                  <Link onClick={ () => scrollToAbout() } $style={{ color: 'white' }} href={ '#' + links[i].path }>{ links[i].name.toUpperCase() }</Link>
-              </List>
-          )
+      for (let i = 1; i < links.length - 1; i++) {
+        const pageName = links[i].name
+        const linkRef = '#' + pageName
+        const pixelsAdjustment = links[i].pixelsAdjustment
+
+        renderedLinks.push(
+            <List key={ i }>
+                <Link onClick={ () => scrollToAbout(pageName, pixelsAdjustment) } 
+                      $style={{ color: 'white' }} 
+                      href={ linkRef }>
+                  { pageName.toUpperCase() }
+                </Link>
+            </List>
+        )
+      }
       
       return renderedLinks
   }
