@@ -26,16 +26,10 @@ const App: React.FC = () => {
       { name: 'Contact', pixelsAdjustment: 0 }
   ]
 
-  const scrollToAbout = (id: string, pixelsAdjustment: number): void => {
+  const scrollToPage = (id: string, pixelsAdjustment: number): void => {
     const aboutDiv = document.getElementById(id)
     if (aboutDiv) {
         var top = aboutDiv.getBoundingClientRect().top + window.pageYOffset
-
-        if (isMobile) {
-          console.log("On Mobile!")
-        } else {
-          console.log("NOT ON MOBILE")
-        }
 
         // When on Mobile, scroll down to have the content just below the 
         // mobile nav. bar
@@ -46,60 +40,18 @@ const App: React.FC = () => {
     }
   }
 
-  // Automate Rendering Links
-  const renderLinks = () => {
-      var renderedLinks = []
-
-      renderedLinks.push(
-        <List key={ 0 }>
-            <Link href='#'>{ links[0].name.toUpperCase() }</Link>
-        </List>
-      )
-
-      // On Home Page, show every link except the "Contact Us"
-      // because we made a button to handle that link
-      for (let i = 1; i < links.length - 1; i++) {
-        const pageName = links[i].name
-        const linkRef = '#' + pageName
-        const pixelsAdjustment = links[i].pixelsAdjustment
-
-        renderedLinks.push(
-            <List key={ i }>
-                <Link onClick={ () => scrollToAbout(pageName, pixelsAdjustment) } 
-                      $style={{ color: 'white' }} 
-                      href={ linkRef }>
-                  { pageName.toUpperCase() }
-                </Link>
-            </List>
-        )
-      }
-      
-      return renderedLinks
-  }
-
-  const formattedHtmlLinks = renderLinks()
-
   return (
     <div className='App'>
-      <NavBarScrolling links={ links } renderLinks={ formattedHtmlLinks } />
-      <Home renderLinks={ formattedHtmlLinks } />
+      <NavBarScrolling 
+        links={ links } 
+        scrollToPage={ scrollToPage } />
+      <Home 
+        links={ links } 
+        scrollToPage={ scrollToPage } />
       <About />
       <Product />
     </div>
   )
 }
-
-// CSS        
-const LynetteBrown = '#862e08'
-
-export const List = styled('li', {
-  listStyleType: 'none',  /* Takes off Bullet Points from List */
-})
-
-export const Link = styled('a', {
-  textDecoration: 'none', /* Takes off Underline in Links */
-  color: LynetteBrown,
-  letterSpacing: '0.1em',
-})
 
 export default App

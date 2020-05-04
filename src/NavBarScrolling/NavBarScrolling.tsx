@@ -17,7 +17,7 @@ type LinkValue = {
 
 interface NavBarScrollingProps {
     links: LinkValue[],
-    renderLinks: JSX.Element[]
+    scrollToPage(id: string, pixelsAdjustment: number): void
 }
 
 const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
@@ -40,20 +40,6 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
         isMenuDisplayed = !isMenuDisplayed
     }
 
-    const scrollToPage = (id: string, pixelsAdjustment: number): void => {
-        const aboutDiv = document.getElementById(id)
-        if (aboutDiv) {
-            var top = aboutDiv.getBoundingClientRect().top + window.pageYOffset
-
-            // When on Mobile, scroll down to have the content just below the 
-            // mobile nav. bar
-            if (isMobile)
-                top += pixelsAdjustment
-
-            window.scrollTo({ top })
-        }
-    }
-
     const renderLinks = (links: LinkValue[]): JSX.Element[] => {
         var renderedLinks = []
   
@@ -64,7 +50,7 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
 
             renderedLinks.push(
                 <List key={ i }>
-                    <Link   onClick={ () => scrollToPage(pageName, pixelsAdjustment) } 
+                    <Link   onClick={ () => props.scrollToPage(pageName, pixelsAdjustment) } 
                             className='is-mobile-view' 
                             href={ linkRef }>
                         { pageName.toUpperCase() }

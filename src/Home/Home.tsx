@@ -3,14 +3,53 @@ import './Home.css'
 import NavBar from '../NavBar/NavBar'
 import { styled } from 'styletron-react'
 
+type LinkValue = {
+    name: string;
+    pixelsAdjustment: number;
+}
+
 interface HomeProps {
-    renderLinks: JSX.Element[]
+    links: LinkValue[],
+    scrollToPage(id: string, pixelsAdjustment: number): void
 }
 
 const Home: React.FC<HomeProps> = props => {
+    // Automate Rendering Links
+  const renderLinks = () => {
+    var renderedLinks = []
+
+    const links: LinkValue[] = props.links
+
+    renderedLinks.push(
+      <List key={ 0 }>
+          <Link href='#'>{ links[0].name.toUpperCase() }</Link>
+      </List>
+    )
+
+    // On Home Page, show every link except the "Contact Us"
+    // because we made a button to handle that link
+    for (let i = 1; i < links.length - 1; i++) {
+      const pageName = links[i].name
+      const linkRef = '#' + pageName
+      const pixelsAdjustment = links[i].pixelsAdjustment
+
+      renderedLinks.push(
+          <List key={ i }>
+              <Link onClick={ () => props.scrollToPage(pageName, pixelsAdjustment) } 
+                    $style={{ color: 'white' }} 
+                    href={ linkRef }>
+                { pageName.toUpperCase() }
+              </Link>
+          </List>
+      )
+    }
+    
+    return renderedLinks
+}
+
     return (
         <div id="Home" className='debug-border'>
-            <NavBar renderLinks={props.renderLinks} />
+            <NavBar renderLinks={ renderLinks() } />
 
             <ButtonContainer>
                 <h1 id='welcome-message'>WELCOME MESSAGE</h1>
@@ -22,8 +61,6 @@ const Home: React.FC<HomeProps> = props => {
             </ButtonContainer>
 
         </div>
-        
-        
     )
 }
 const ButtonContainer = styled('div', {
@@ -51,6 +88,18 @@ const ButtonInput = styled('input', {
     letterSpacing: '2px',
     fontFamily: 'Shree Devanagari 714-Regular.ttf',
     fontWeight: 100,
+})
+
+const LynetteBrown = '#862e08'
+
+const List = styled('li', {
+  listStyleType: 'none',  /* Takes off Bullet Points from List */
+})
+
+const Link = styled('a', {
+  textDecoration: 'none', /* Takes off Underline in Links */
+  color: LynetteBrown,
+  letterSpacing: '0.1em',
 })
 
 export default Home
