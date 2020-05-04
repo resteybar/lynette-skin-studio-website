@@ -47,6 +47,10 @@ const Home: React.FC<HomeProps> = props => {
         return renderedLinks
     }
 
+    const lastIndex = props.links.length - 1
+    const contactPageId: string = props.links[lastIndex].name
+    const contactPagePixelAdj: number = props.links[lastIndex].pixelsAdjustment
+
     return (
         <div id="Home" className='debug-border'>
             <NavBar renderLinks={ renderLinks() } />
@@ -56,7 +60,7 @@ const Home: React.FC<HomeProps> = props => {
                 <ButtonInput 
                     type="button" 
                     value="CONTACT US"
-                    onClick={ () => props.scrollToPage('Contact', 0) } />
+                    onClick={ () => props.scrollToPage(contactPageId, contactPagePixelAdj) } />
             </ButtonContainer>
 
         </div>
