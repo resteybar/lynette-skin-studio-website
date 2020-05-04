@@ -8,7 +8,6 @@ import yelpIcon from '../images/Yelp_Graphic-01.png'
 
 // Tools Used
 import { styled, withStyle } from 'styletron-react'
-import { isMobile } from 'react-device-detect'
 
 type LinkValue = {
     name: string;
@@ -47,9 +46,10 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
         props.scrollToPage(pageName, pixelsAdjustment)
     }
 
-    const renderLinks = (links: LinkValue[]): JSX.Element[] => {
+    const renderLinks = (): JSX.Element[] => {
         var renderedLinks = []
-  
+        const links: LinkValue[] = props.links
+
         for (let i = 0; i < links.length; i++) {
             const pageName: string = links[i].name
             const linkRef: string = '#' + pageName
@@ -84,7 +84,7 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
 
     window.onscroll = function() { showNavBar() }
 
-    const renderedLinks = renderLinks(props.links)
+    const renderedLinks = renderLinks()
     const facebookLink = 'https://www.facebook.com/LynetteSkinStudio/'
     const yelpLink = 'https://www.yelp.com/biz/lynettes-skin-studio-marina'
 
