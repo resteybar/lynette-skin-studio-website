@@ -9,25 +9,26 @@ import NavBarScrolling from './NavBarScrolling/NavBarScrolling'
 
 // Tools Used
 import { styled } from 'styletron-react'
-import { isMobile } from 'react-device-detect'
+import { isBrowser, isMobile } from 'react-device-detect'
 
-export type LinkValue = {
+type LinkValue = {
   name: string;
   path: string;
-  pixelsAdjustment: number;
+  mobileAdjustment: number;
+  browserAdjustment: number;
 }
 
 const App: React.FC = () => {
   // Links in Nav Bar
   const links: LinkValue[] = [
-      { name: 'Home', path: '', pixelsAdjustment: 0 },
-      { name: 'About', path: 'lynette-photo', pixelsAdjustment: 140 },
-      { name: 'Services', path: 'Services', pixelsAdjustment: 0 },
-      { name: 'Products', path: 'Products', pixelsAdjustment: 0 },
-      { name: 'Contact', path: 'Contact', pixelsAdjustment: 0 }
+      { name: 'Home', path: '', mobileAdjustment: 0, browserAdjustment: 0 },
+      { name: 'About', path: 'lynette-photo', mobileAdjustment: 140, browserAdjustment: 0 },
+      { name: 'Services', path: 'Services', mobileAdjustment: 0, browserAdjustment: 0 },
+      { name: 'Products', path: 'Products', mobileAdjustment: 0, browserAdjustment: 0 },
+      { name: 'Contact', path: 'Contact', mobileAdjustment: 0, browserAdjustment: 0 },
   ]
 
-  const scrollToPage = (id: string, pixelsAdjustment: number): void => {
+  const scrollToPage = (id: string, mobileAdjustment: number, browserAdjustment: number): void => {
     const aboutDiv = document.getElementById(id)
     if (aboutDiv) {
         var top = aboutDiv.getBoundingClientRect().top + window.pageYOffset
@@ -35,7 +36,9 @@ const App: React.FC = () => {
         // When on Mobile, scroll down to have the content just below the 
         // mobile nav. bar
         if (isMobile)
-          top += pixelsAdjustment
+          top += mobileAdjustment
+        else if (isBrowser)
+          top += browserAdjustment
 
         window.scrollTo({ top })
     }

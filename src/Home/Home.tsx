@@ -6,12 +6,13 @@ import { styled } from 'styletron-react'
 type LinkValue = {
     name: string;
     path: string;
-    pixelsAdjustment: number;
+    mobileAdjustment: number;
+    browserAdjustment: number;
 }
 
 interface HomeProps {
     links: LinkValue[],
-    scrollToPage(id: string, pixelsAdjustment: number): void
+    scrollToPage(id: string, mobileAdjustment: number, browserAdjustment: number): void
 }
 
 const Home: React.FC<HomeProps> = props => {
@@ -30,14 +31,15 @@ const Home: React.FC<HomeProps> = props => {
         // On Home Page, show every link except the "Contact Us"
         // because we made a button to handle that link
         for (let i = 1; i < links.length - 1; i++) {
-            const pageName = links[i].name
+            const pageName: string = links[i].name
             const path: string = links[i].path
-            const linkRef = '#' + path
-            const pixelsAdjustment = links[i].pixelsAdjustment
+            const linkRef: string = '#' + path
+            const mobileAdjustment: number = links[i].mobileAdjustment
+            const browserAdjustment: number = links[i].browserAdjustment
 
             renderedLinks.push(
                 <List key={ i }>
-                    <Link onClick={ () => props.scrollToPage(path, pixelsAdjustment) } 
+                    <Link onClick={ () => props.scrollToPage(path, mobileAdjustment, browserAdjustment) } 
                         $style={{ color: 'white' }} 
                         href={ linkRef }>
                     { pageName.toUpperCase() }
@@ -51,7 +53,8 @@ const Home: React.FC<HomeProps> = props => {
 
     const lastIndex = props.links.length - 1
     const contactPageId: string = props.links[lastIndex].name
-    const contactPagePixelAdj: number = props.links[lastIndex].pixelsAdjustment
+    const contactPageMobileAdj: number = props.links[lastIndex].mobileAdjustment
+    const contactPageBrowserAdj: number = props.links[lastIndex].browserAdjustment
 
     return (
         <div id="Home" className='debug-border'>
@@ -62,7 +65,7 @@ const Home: React.FC<HomeProps> = props => {
                 <ButtonInput 
                     type="button" 
                     value="CONTACT US"
-                    onClick={ () => props.scrollToPage(contactPageId, contactPagePixelAdj) } />
+                    onClick={ () => props.scrollToPage(contactPageId, contactPageMobileAdj, contactPageBrowserAdj) } />
             </ButtonContainer>
 
         </div>

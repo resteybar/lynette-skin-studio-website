@@ -12,12 +12,13 @@ import { styled, withStyle } from 'styletron-react'
 type LinkValue = {
     name: string;
     path: string;
-    pixelsAdjustment: number;
+    mobileAdjustment: number;
+    browserAdjustment: number;
 }
 
 interface NavBarScrollingProps {
     links: LinkValue[],
-    scrollToPage(id: string, pixelsAdjustment: number): void
+    scrollToPage(id: string, mobileAdjustment: number, browserAdjustment: number): void
 }
 
 const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
@@ -40,11 +41,11 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
         isMenuDisplayed = !isMenuDisplayed
     }
 
-    const navigateToPage = (id: string, pixelsAdjustment: number): void => {
+    const navigateToPage = (id: string, mobileAdjustment: number, browserAdjustment: number): void => {
         // Hides Mobile Nav. Links when link is clicked
         if (isMenuDisplayed)
             displayLinks()
-        props.scrollToPage(id, pixelsAdjustment)
+        props.scrollToPage(id, mobileAdjustment, browserAdjustment)
     }
 
     const renderLinks = (): JSX.Element[] => {
@@ -55,11 +56,12 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
             const pageName: string = links[i].name
             const path: string = links[i].path
             const linkRef: string = '#' + path
-            const pixelsAdjustment: number = links[i].pixelsAdjustment
+            const mobileAdjustment: number = links[i].mobileAdjustment
+            const browserAdjustment: number = links[i].browserAdjustment
 
             renderedLinks.push(
                 <List key={ i }>
-                    <Link   onClick={ () => navigateToPage(path, pixelsAdjustment) } 
+                    <Link onClick={ () => navigateToPage(path, mobileAdjustment, browserAdjustment) } 
                             className='is-mobile-view' 
                             href={ linkRef }>
                         { pageName.toUpperCase() }
