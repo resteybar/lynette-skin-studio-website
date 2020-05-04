@@ -22,7 +22,7 @@ const App: React.FC = () => {
   // Mobile & Browser adjustments measured in px.
   const links: LinkValue[] = [
       { name: 'Home', path: 'Home', mobileAdjustment: 0, browserAdjustment: 0 },
-      { name: 'About', path: 'lynette-photo', mobileAdjustment: 140, browserAdjustment: -180 },
+      { name: 'About', path: 'lynette-photo', mobileAdjustment: -100, browserAdjustment: -180 },
       { name: 'Services', path: 'Services', mobileAdjustment: 0, browserAdjustment: 0 },
       { name: 'Products', path: 'Products', mobileAdjustment: 0, browserAdjustment: 0 },
       { name: 'Contact', path: 'Contact', mobileAdjustment: 0, browserAdjustment: 0 },
