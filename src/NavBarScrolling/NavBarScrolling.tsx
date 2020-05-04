@@ -92,10 +92,12 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
 
     return (
         <div id='NavBarScrolling' className='debug-border'>
-            <div id='navbarscrolling-title'>
-                <h1 className='title-lynette lynette-brown'>LYNETTE'S</h1>
-                <h1 className='title-skin-studio lynette-brown'>SKIN STUDIO</h1>
-            </div>
+            <HomeLink href='#'>
+                <div id='navbarscrolling-title'>
+                    <h1 className='title-lynette lynette-brown'>LYNETTE'S</h1>
+                    <h1 className='title-skin-studio lynette-brown'>SKIN STUDIO</h1>
+                </div>
+            </HomeLink>
             
             <ul id='navbarscrolling-links'>
                 { renderedLinks }
@@ -222,6 +224,10 @@ const Link = styled('span', {
   ':hover': {
       cursor: 'pointer'
     },
+})
+
+const HomeLink = styled('a', {
+    textDecoration: 'none'
 })
 
 export default NavBarScrolling
