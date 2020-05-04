@@ -33,7 +33,6 @@ const Home: React.FC<HomeProps> = props => {
         for (let i = 1; i < links.length - 1; i++) {
             const pageName: string = links[i].name
             const path: string = links[i].path
-            const linkRef: string = '#' + path
             const mobileAdjustment: number = links[i].mobileAdjustment
             const browserAdjustment: number = links[i].browserAdjustment
 

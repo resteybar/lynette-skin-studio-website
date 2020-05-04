@@ -8,7 +8,6 @@ import About from './About/About'
 import NavBarScrolling from './NavBarScrolling/NavBarScrolling'
 
 // Tools Used
-import { styled } from 'styletron-react'
 import { isBrowser, isMobile } from 'react-device-detect'
 
 type LinkValue = {

@@ -55,7 +55,6 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
         for (let i = 0; i < links.length; i++) {
             const pageName: string = links[i].name
             const path: string = links[i].path
-            const linkRef: string = '#' + path
             const mobileAdjustment: number = links[i].mobileAdjustment
             const browserAdjustment: number = links[i].browserAdjustment
 
