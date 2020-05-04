@@ -6,6 +6,19 @@ const Products: React.FC = () => {
     return (
         <Background id="Products" className='debug-border'>
             <h1>Product Page Showing</h1>
+            <h1>Product Page Showing</h1>
+            <h1>Product Page Showing</h1>
+            <h1>Product Page Showing</h1>
+            <h1>Product Page Showing</h1>
+            <h1>Product Page Showing</h1>
+            <h1>Product Page Showing</h1>
+            <h1>Product Page Showing</h1>
+            <h1>Product Page Showing</h1>
+            <h1>Product Page Showing</h1>
+            <h1>Product Page Showing</h1>
+            <h1>Product Page Showing</h1>
+            <h1>Product Page Showing</h1>
+            
         </Background>
     )
 }

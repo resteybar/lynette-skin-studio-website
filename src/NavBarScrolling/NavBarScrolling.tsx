@@ -62,8 +62,7 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
             renderedLinks.push(
                 <List key={ i }>
                     <Link onClick={ () => navigateToPage(path, mobileAdjustment, browserAdjustment) } 
-                            className='is-mobile-view' 
-                            href={ linkRef }>
+                            className='is-mobile-view'>
                         { pageName.toUpperCase() }
                     </Link>
                 </List>
@@ -215,7 +214,7 @@ const List = styled('li', {
   }
 })
 
-const Link = styled('a', {
+const Link = styled('p', {
   textDecoration: 'none', /* Takes off Underline in Links */
   color: LynetteBrown,
   paddingTop: paddingTopBot,
