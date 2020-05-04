@@ -1,72 +1,63 @@
 import React from 'react'
 import './App.css'
+
+// Components
 import Home  from './Home/Home'
-import Product from './Product/Product'
+import Product from './Products/Products'
 import About from './About/About'
 import NavBarScrolling from './NavBarScrolling/NavBarScrolling'
-import { styled } from 'styletron-react'
+
+// Tools Used
+import { isBrowser, isMobile } from 'react-device-detect'
 
 type LinkValue = {
   name: string;
   path: string;
+  mobileAdjustment: number;
+  browserAdjustment: number;
 }
 
 const App: React.FC = () => {
   // Links in Nav Bar
+  // Mobile & Browser adjustments measured in px.
   const links: LinkValue[] = [
-      { name: 'Home', path: '' },
-      { name: 'About', path: 'About' },
-      { name: 'Services', path: 'Services' },
-      { name: 'Products', path: 'Product' },
-      { name: 'Contact', path: 'Contact' }
+      { name: 'Home', path: 'Home', mobileAdjustment: 0, browserAdjustment: 0 },
+      { name: 'About', path: 'lynette-photo', mobileAdjustment: -100, browserAdjustment: -180 },
+      { name: 'Services', path: 'Services', mobileAdjustment: 0, browserAdjustment: 0 },
+      { name: 'Products', path: 'Products', mobileAdjustment: 0, browserAdjustment: 0 },
+      { name: 'Contact', path: 'Contact', mobileAdjustment: 0, browserAdjustment: 0 },
   ]
 
-  // Automate Rendering Links
-  const renderLinks = (links: LinkValue[]) => {
-      var renderedLinks = []
+  const scrollToPage = (id: string, mobileAdjustment: number, browserAdjustment: number): void => {
+    const aboutDiv = document.getElementById(id)
+    if (aboutDiv) {
+        var top = aboutDiv.getBoundingClientRect().top + window.pageYOffset
 
-      renderedLinks.push(
-        <List key={ 0 }>
-            <Link href={ '#' + links[0].path }>{ links[0].name.toUpperCase() }</Link>
-        </List>
-      )
+        // When on Mobile, scroll down to have the content just below the 
+        // mobile nav. bar
+        if (isMobile)
+          top += mobileAdjustment
+        else if (isBrowser)
+          top += browserAdjustment
 
-      // On Home Page, show every link except the "Contact Us"
-      // because we made a button to handle that link
-      for (let i = 1; i < links.length - 1; i++)
-          renderedLinks.push(
-              <List key={ i }>
-                  <Link $style={{ color: 'white' }} href={ '#' + links[i].path }>{ links[i].name.toUpperCase() }</Link>
-                  {/* <Link href={ '#' + links[i].path }>{ links[i].name.toUpperCase() }</Link> */}
-              </List>
-          )
-      
-      return renderedLinks
+          console.log(top)
+
+        window.scrollTo({ top })
+    }
   }
-
-  const formattedHtmlLinks = renderLinks(links)
 
   return (
     <div className='App'>
-      <NavBarScrolling links={ links } renderLinks={ formattedHtmlLinks } />
-      <Home renderLinks={ formattedHtmlLinks } />
+      <NavBarScrolling 
+        links={ links } 
+        scrollToPage={ scrollToPage } />
+      <Home 
+        links={ links } 
+        scrollToPage={ scrollToPage }/>
       <About />
       <Product />
     </div>
   )
 }
-
-// CSS        
-const LynetteBrown = '#862e08'
-
-export const List = styled('li', {
-  listStyleType: 'none',  /* Takes off Bullet Points from List */
-})
-
-export const Link = styled('a', {
-  textDecoration: 'none', /* Takes off Underline in Links */
-  color: LynetteBrown,
-  letterSpacing: '0.1em',
-})
 
 export default App

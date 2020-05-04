@@ -1,20 +1,24 @@
 import React from 'react'
 import './NavBarScrolling.css'
-import { styled, withStyle } from 'styletron-react'
 
 // Images
 import menuIcon from '../images/menu.png'
 import facebookIcon from '../images/Facebook_Graphic-01.png'
 import yelpIcon from '../images/Yelp_Graphic-01.png'
 
+// Tools Used
+import { styled, withStyle } from 'styletron-react'
+
 type LinkValue = {
     name: string;
     path: string;
+    mobileAdjustment: number;
+    browserAdjustment: number;
 }
 
 interface NavBarScrollingProps {
     links: LinkValue[],
-    renderLinks: JSX.Element[]
+    scrollToPage(id: string, mobileAdjustment: number, browserAdjustment: number): void
 }
 
 const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
@@ -37,15 +41,32 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
         isMenuDisplayed = !isMenuDisplayed
     }
 
-    const renderLinks = (links: LinkValue[]): JSX.Element[] => {
+    const navigateToPage = (id: string, mobileAdjustment: number, browserAdjustment: number): void => {
+        // Hides Mobile Nav. Links when link is clicked
+        if (isMenuDisplayed)
+            displayLinks()
+        props.scrollToPage(id, mobileAdjustment, browserAdjustment)
+    }
+
+    const renderLinks = (): JSX.Element[] => {
         var renderedLinks = []
-  
-        for (let i = 0; i < links.length; i++)
+        const links: LinkValue[] = props.links
+
+        for (let i = 0; i < links.length; i++) {
+            const pageName: string = links[i].name
+            const path: string = links[i].path
+            const mobileAdjustment: number = links[i].mobileAdjustment
+            const browserAdjustment: number = links[i].browserAdjustment
+
             renderedLinks.push(
                 <List key={ i }>
-                    <Link className='is-mobile-view' href={ '#' + links[i].path }>{ links[i].name.toUpperCase() }</Link>
+                    <Link onClick={ () => navigateToPage(path, mobileAdjustment, browserAdjustment) } 
+                            className='is-mobile-view'>
+                        { pageName.toUpperCase() }
+                    </Link>
                 </List>
             )
+        }
         
         return renderedLinks
     }
@@ -63,18 +84,27 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
         }
     }
 
+    // Used for Logo link when Mobile links are displayed and it needs to close
+    // NOT used when Mobile links are closed.
+    const logoLink = (): void => {
+        if (isMenuDisplayed)
+            displayLinks()
+    }
+
     window.onscroll = function() { showNavBar() }
 
-    const renderedLinks = renderLinks(props.links)
+    const renderedLinks = renderLinks()
     const facebookLink = 'https://www.facebook.com/LynetteSkinStudio/'
     const yelpLink = 'https://www.yelp.com/biz/lynettes-skin-studio-marina'
 
     return (
         <div id='NavBarScrolling' className='debug-border'>
-            <div id='navbarscrolling-title'>
-                <h1 className='title-lynette lynette-brown'>LYNETTE'S</h1>
-                <h1 className='title-skin-studio lynette-brown'>SKIN STUDIO</h1>
-            </div>
+            <HomeLink href='#' onClick={ () => logoLink() }>
+                <div id='navbarscrolling-title'>
+                    <h1 className='title-lynette lynette-brown'>LYNETTE'S</h1>
+                    <h1 className='title-skin-studio lynette-brown'>SKIN STUDIO</h1>
+                </div>
+            </HomeLink>
             
             <ul id='navbarscrolling-links'>
                 { renderedLinks }
@@ -182,23 +212,29 @@ const List = styled('li', {
   marginRight: '0px',
   marginBottom: '0px',
 
-  ':hover': {
-    backgroundColor: 'lightgrey'
-  },
-
   // To display Light Border below links FOR Mobile Links
   '@media screen and (max-width: 800px)': {
-      borderBottom: '1px solid lightgrey'
+      borderBottom: '1px solid lightgrey',
+
+      ':hover': {
+        backgroundColor: 'lightgrey'
+      },
   }
 })
 
-const Link = styled('a', {
-  textDecoration: 'none', /* Takes off Underline in Links */
+const Link = styled('span', {
   color: LynetteBrown,
   paddingTop: paddingTopBot,
   paddingBottom: paddingTopBot,
   width: '100%',
   height: '100%',
+  ':hover': {
+      cursor: 'pointer'
+    },
+})
+
+const HomeLink = styled('a', {
+    textDecoration: 'none'
 })
 
 export default NavBarScrolling

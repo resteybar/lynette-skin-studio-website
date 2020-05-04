@@ -3,27 +3,70 @@ import './Home.css'
 import NavBar from '../NavBar/NavBar'
 import { styled } from 'styletron-react'
 
+type LinkValue = {
+    name: string;
+    path: string;
+    mobileAdjustment: number;
+    browserAdjustment: number;
+}
+
 interface HomeProps {
-    renderLinks: JSX.Element[]
+    links: LinkValue[],
+    scrollToPage(id: string, mobileAdjustment: number, browserAdjustment: number): void
 }
 
 const Home: React.FC<HomeProps> = props => {
+    // Automate Rendering Links
+    const renderLinks = () => {
+        var renderedLinks = []
+
+        const links: LinkValue[] = props.links
+
+        renderedLinks.push(
+            <List key={ 0 }>
+                <Link>{ links[0].name.toUpperCase() }</Link>
+            </List>
+        )
+
+        // On Home Page, show every link except the "Contact Us"
+        // because we made a button to handle that link
+        for (let i = 1; i < links.length - 1; i++) {
+            const pageName: string = links[i].name
+            const path: string = links[i].path
+            const mobileAdjustment: number = links[i].mobileAdjustment
+            const browserAdjustment: number = links[i].browserAdjustment
+
+            renderedLinks.push(
+                <List key={ i }>
+                    <Link onClick={ () => props.scrollToPage(path, mobileAdjustment, browserAdjustment) } 
+                        $style={{ color: 'white' }}>
+                    { pageName.toUpperCase() }
+                    </Link>
+                </List>
+            )
+        }
+        
+        return renderedLinks
+    }
+
+    const lastIndex = props.links.length - 1
+    const contactPageId: string = props.links[lastIndex].name
+    const contactPageMobileAdj: number = props.links[lastIndex].mobileAdjustment
+    const contactPageBrowserAdj: number = props.links[lastIndex].browserAdjustment
+
     return (
         <div id="Home" className='debug-border'>
-            <NavBar renderLinks={props.renderLinks} />
+            <NavBar renderLinks={ renderLinks() } />
 
             <ButtonContainer>
                 <h1 id='welcome-message'>WELCOME MESSAGE</h1>
-                
-                {/* Raymond will complete the a tag later */}
-                {/* <a href=''> */}
-                    <ButtonInput type="button" value="CONTACT US"/>
-                {/* </a> */}
+                <ButtonInput 
+                    type="button" 
+                    value="CONTACT US"
+                    onClick={ () => props.scrollToPage(contactPageId, contactPageMobileAdj, contactPageBrowserAdj) } />
             </ButtonContainer>
 
         </div>
-        
-        
     )
 }
 const ButtonContainer = styled('div', {
@@ -51,6 +94,20 @@ const ButtonInput = styled('input', {
     letterSpacing: '2px',
     fontFamily: 'Shree Devanagari 714-Regular.ttf',
     fontWeight: 100,
+})
+
+const LynetteBrown = '#862e08'
+
+const List = styled('li', {
+  listStyleType: 'none',  /* Takes off Bullet Points from List */
+})
+
+const Link = styled('span', {
+  color: LynetteBrown,
+  letterSpacing: '0.1em',
+  ':hover': {
+    cursor: 'pointer'
+  },
 })
 
 export default Home
