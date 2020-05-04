@@ -214,13 +214,15 @@ const List = styled('li', {
   }
 })
 
-const Link = styled('p', {
-  textDecoration: 'none', /* Takes off Underline in Links */
+const Link = styled('span', {
   color: LynetteBrown,
   paddingTop: paddingTopBot,
   paddingBottom: paddingTopBot,
   width: '100%',
   height: '100%',
+  ':hover': {
+      cursor: 'pointer'
+    },
 })
 
 export default NavBarScrolling

@@ -22,7 +22,7 @@ const App: React.FC = () => {
   // Links in Nav Bar
   // Mobile & Browser adjustments measured in px.
   const links: LinkValue[] = [
-      { name: 'Home', path: '', mobileAdjustment: 0, browserAdjustment: 0 },
+      { name: 'Home', path: 'Home', mobileAdjustment: 0, browserAdjustment: 0 },
       { name: 'About', path: 'lynette-photo', mobileAdjustment: 140, browserAdjustment: -180 },
       { name: 'Services', path: 'Services', mobileAdjustment: 0, browserAdjustment: 0 },
       { name: 'Products', path: 'Products', mobileAdjustment: 0, browserAdjustment: 0 },

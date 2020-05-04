@@ -24,7 +24,7 @@ const Home: React.FC<HomeProps> = props => {
 
         renderedLinks.push(
             <List key={ 0 }>
-                <Link href='#'>{ links[0].name.toUpperCase() }</Link>
+                <Link>{ links[0].name.toUpperCase() }</Link>
             </List>
         )
 
@@ -40,8 +40,7 @@ const Home: React.FC<HomeProps> = props => {
             renderedLinks.push(
                 <List key={ i }>
                     <Link onClick={ () => props.scrollToPage(path, mobileAdjustment, browserAdjustment) } 
-                        $style={{ color: 'white' }} 
-                        href={ linkRef }>
+                        $style={{ color: 'white' }}>
                     { pageName.toUpperCase() }
                     </Link>
                 </List>
@@ -104,10 +103,12 @@ const List = styled('li', {
   listStyleType: 'none',  /* Takes off Bullet Points from List */
 })
 
-const Link = styled('a', {
-  textDecoration: 'none', /* Takes off Underline in Links */
+const Link = styled('span', {
   color: LynetteBrown,
   letterSpacing: '0.1em',
+  ':hover': {
+    cursor: 'pointer'
+  },
 })
 
 export default Home
