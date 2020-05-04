@@ -182,13 +182,13 @@ const List = styled('li', {
   marginRight: '0px',
   marginBottom: '0px',
 
-  ':hover': {
-    backgroundColor: 'lightgrey'
-  },
-
   // To display Light Border below links FOR Mobile Links
   '@media screen and (max-width: 800px)': {
-      borderBottom: '1px solid lightgrey'
+      borderBottom: '1px solid lightgrey',
+
+      ':hover': {
+        backgroundColor: 'lightgrey'
+      },
   }
 })
 

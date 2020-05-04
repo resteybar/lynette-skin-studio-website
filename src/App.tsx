@@ -15,14 +15,14 @@ const App: React.FC = () => {
   // Links in Nav Bar
   const links: LinkValue[] = [
       { name: 'Home', path: '' },
-      { name: 'About', path: 'About' },
+      { name: 'About', path: 'about-stop' },
       { name: 'Services', path: 'Services' },
       { name: 'Products', path: 'Product' },
       { name: 'Contact', path: 'Contact' }
   ]
 
   // Automate Rendering Links
-  const renderLinks = (links: LinkValue[]) => {
+  const renderLinks = () => {
       var renderedLinks = []
 
       renderedLinks.push(
@@ -44,7 +44,7 @@ const App: React.FC = () => {
       return renderedLinks
   }
 
-  const formattedHtmlLinks = renderLinks(links)
+  const formattedHtmlLinks = renderLinks()
 
   return (
     <div className='App'>
