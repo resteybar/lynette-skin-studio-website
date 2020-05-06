@@ -1,6 +1,6 @@
 import React from 'react'
 import './Services.css'
-import { styled, withStyle } from 'styletron-react'
+import { styled } from 'styletron-react'
 
 type ServiceValues = {
     serviceName: string;
@@ -159,9 +159,10 @@ const GridLayout = styled('div', {
     marginRight: '50px',
     marginTop: '25px',
 
-    // '@media screen and (max-width: 700px)': {
-    //     gridTemplateColumns: 'repeat(auto-fill, 200px)',
-    // }
+    // Helps organize Services when website is getting minimized or on Mobile
+    '@media screen and (max-width: 700px)': {
+        gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
+    }
 })
 
 export default Services
