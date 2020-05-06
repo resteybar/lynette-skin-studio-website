@@ -3,6 +3,8 @@ import './Products.css'
 import { styled } from 'styletron-react'
 
 const Products: React.FC = () => {
+    
+
     return (
         <Background id="Products" className='debug-border'>
             <h1>Product Page Showing</h1>
@@ -13,7 +15,10 @@ const Products: React.FC = () => {
                     <p>description</p>
                     <p>$55</p>
                 </li>
-                <li>2</li>
+                
+                <li>
+                    2
+                </li>
             </ul>
 
         </Background>
