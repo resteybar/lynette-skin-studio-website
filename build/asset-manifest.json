@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.41da7b78.chunk.css",
+    "main.js": "/static/js/main.9db1a263.chunk.js",
+    "main.js.map": "/static/js/main.9db1a263.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.363ff65e.js",
+    "runtime-main.js.map": "/static/js/runtime-main.363ff65e.js.map",
+    "static/js/2.3ed4aa0f.chunk.js": "/static/js/2.3ed4aa0f.chunk.js",
+    "static/js/2.3ed4aa0f.chunk.js.map": "/static/js/2.3ed4aa0f.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.0a26c7305124a5d00681ad9b3387e162.js": "/precache-manifest.0a26c7305124a5d00681ad9b3387e162.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.41da7b78.chunk.css.map": "/static/css/main.41da7b78.chunk.css.map",
+    "static/js/2.3ed4aa0f.chunk.js.LICENSE.txt": "/static/js/2.3ed4aa0f.chunk.js.LICENSE.txt",
+    "static/media/About_Background_Fixed.png": "/static/media/About_Background_Fixed.1b3efbc0.png",
+    "static/media/Facebook_Graphic-01.png": "/static/media/Facebook_Graphic-01.2c4b2e25.png",
+    "static/media/About.css": "/static/media/Shree Devanagari 714-Regular.d02befc8.ttf",
+    "static/media/Lynette_Headshot.png": "/static/media/Lynette_Headshot.968672e8.png",
+    "static/media/Yelp_Graphic-01.png": "/static/media/Yelp_Graphic-01.8efa3b44.png",
+    "static/media/Home.css": "/static/media/home_bg.caa67a06.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.363ff65e.js",
+    "static/js/2.3ed4aa0f.chunk.js",
+    "static/css/main.41da7b78.chunk.css",
+    "static/js/main.9db1a263.chunk.js"
+  ]
+}

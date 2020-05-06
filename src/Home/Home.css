@@ -41,7 +41,10 @@
     margin-bottom: -65px;
     text-align: center;
     width: 100%;   
-}
+
+    /* Fixes height difference in welcome message
+    /* line-height: normal; */
+} */
 
 #ContactUsButton {
     text-align: center;
