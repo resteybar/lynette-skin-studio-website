@@ -3,7 +3,7 @@ import './App.css'
 
 // Components
 import Home  from './Home/Home'
-import Product from './Products/Products'
+// import Product from './Products/Products'
 import About from './About/About'
 import NavBarScrolling from './NavBarScrolling/NavBarScrolling'
 import Services from './Services/Services'
@@ -57,7 +57,7 @@ const App: React.FC = () => {
         scrollToPage={ scrollToPage }/>
       <About />
       <Services/>
-      <Product />
+      {/* <Product /> */}
     </div>
   )
 }
