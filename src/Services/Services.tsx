@@ -18,7 +18,7 @@ const Services: React.FC = () => {
 
         {
             serviceName: 'Diamond micro.* facial'.toUpperCase(), 
-            serviceDescription: '*Micrdermabrasion facial removes dead skin cells, lightens pigmentation, minimizes fine lines, and increases collagen for clear skin',
+            serviceDescription: '*Microdermabrasion facial removes dead skin cells, lightens pigmentation, minimizes fine lines, and increases collagen for clear skin',
             servicePrice: '$50'
         },
 
@@ -155,13 +155,26 @@ const GridLayout = styled('div', {
     display: 'grid',
     gridTemplateColumns: '1fr 1fr 1fr',
     gridColumnGap: '90px',
-    marginLeft: '50px',
-    marginRight: '50px',
+
+    // Center Menu
+    marginLeft: 'auto',
+    marginRight: 'auto',
     marginTop: '25px',
+
+    // Ensuring size does not maximize and minimize too much
+    minWidth: '400px',
+    maxWidth: '1400px',
 
     // Helps organize Services when website is getting minimized or on Mobile
     '@media screen and (max-width: 700px)': {
         gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
+    },
+
+    // Ensures there is space around what wraps all the services as 
+    // the browser minimizes
+    '@media screen and (max-width: 1500px)': {
+        marginLeft: '50px',
+        marginRight: '50px'
     }
 })
 

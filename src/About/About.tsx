@@ -83,7 +83,7 @@ const LynetteDescription = styled('h2', {
     marginRight: 'auto',
     marginLeft: 'auto',
     marginTop: '20px',
-    letterSpacing: '5px'
+    letterSpacing: '5px',
 })
 
 const SocialIcons = styled('div', {
