@@ -18,7 +18,7 @@ const Services: React.FC = () => {
 
         {
             serviceName: 'Diamond micro.* facial'.toUpperCase(), 
-            serviceDescription: '*Micrdermabrasion facial removes dead skin cells, lightens pigmentation, minimizes fine lines, and increases collagen for clear skin',
+            serviceDescription: '*Microdermabrasion facial removes dead skin cells, lightens pigmentation, minimizes fine lines, and increases collagen for clear skin',
             servicePrice: '$50'
         },
 
