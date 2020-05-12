@@ -170,6 +170,11 @@ const GridLayout = styled('div', {
         gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
     },
 
+    // Just in case someone has a REALLY small phone
+    '@media screen and (max-width: 450px)': {
+        minWidth: '0px',
+    },
+
     // Ensures there is space around what wraps all the services as 
     // the browser minimizes
     '@media screen and (max-width: 1500px)': {
