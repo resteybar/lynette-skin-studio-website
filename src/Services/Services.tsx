@@ -159,7 +159,7 @@ const GridLayout = styled('div', {
     maxWidth: '1400px',
 
     // Helps organize Services when website is getting minimized or on Mobile
-    '@media screen and (max-width: 700px)': {
+    '@media screen and (max-width: 800px)': {
         gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
     },
 

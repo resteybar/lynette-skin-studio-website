@@ -83,7 +83,9 @@ const Products: React.FC = () => {
 
               renderedMenu.push(
                 <Product>
-                    <ProductImage src={ image } />
+                    <ImageContainer>
+                        <ProductImage src={ image } />
+                    </ImageContainer>
                     <ProductName>{ name }</ProductName>
                     <ProductPrice>{ price }</ProductPrice>
                 </Product>
@@ -156,7 +158,9 @@ const AttentionTitle = styled('h2',{
     fontSize: '15px',
     letterSpacing: '2.4px',
     textTransform: 'uppercase',
-    textAlign: 'center'
+    textAlign: 'center',
+
+    // maxWidth: '1411px',
 })
 const ProductsPage = styled('div', {
     backgroundColor: '#f4f2f5',
@@ -168,16 +172,9 @@ const ProductsPage = styled('div', {
 
 const Product = styled('div', {
     backgroundColor: 'white',
-    // Need to fix
-    // x, y, blur, spread, color
-    // boxShadow: '0px 0px 15px 4px rgba(0, 0, 0, 0.17)',
     boxShadow: '3px 6px 10px 4px rgba(0, 0, 0, 0.21)',
-
-    // opacity 10%, distance 5px, 
-    // spread 40%, size 40%
-    
     textAlign: 'center',
-    paddingBottom: '15px'
+    paddingBottom: '15px',
 })
 const ProductName = styled('h2', {
     fontFamily: 'Halant Medium',
@@ -197,6 +194,13 @@ const ProductImage = styled('img', {
     width: productImageSize,
 })
 
+const ImageContainer = styled('div', {
+    ':hover': {
+        // backgroundColor: 'black'
+        // boxShadow: 'inset 0 0 0 100px rgba(36, 70, 105, 0.74)'
+    }
+})
+
 const GridLayout = styled('div', {
     display: 'grid',
     gridTemplateColumns: '1fr 1fr 1fr 1fr',
@@ -212,21 +216,37 @@ const GridLayout = styled('div', {
     maxWidth: '1000px',
 
     // Helps organize Services when website is getting minimized or on Mobile
-    // '@media screen and (max-width: 700px)': {
-    //     gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
-    // },
+    '@media screen and (max-width: 1100px)': {
+        gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
+        maxWidth: '700px'
+    },
 
-    // Just in case someone has a REALLY small phone
+    '@media screen and (max-width: 800px)': {
+        gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
+        maxWidth: '600px'
+    },
+
+    '@media screen and (max-width: 700px)': {
+        gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
+        marginLeft: '50px',
+        marginRight: '50px',
+    },
+
+    '@media screen and (max-width: 600px)': {
+        gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        maxWidth: '225px'
+    },
+
+    // // Just in case someone has a REALLY small phone
     // '@media screen and (max-width: 500px)': {
     //     minWidth: '0px',
     // },
 
-    // Ensures there is space around what wraps all the services as 
-    // the browser minimizes
-    // '@media screen and (max-width: 1500px)': {
-    //     marginLeft: '50px',
-    //     marginRight: '50px'
-    // }
+    // // TODO: FIX HERE
+    // // Ensures there is space around what wraps all the services as 
+    // // the browser minimizes
 })
 
 export default Products

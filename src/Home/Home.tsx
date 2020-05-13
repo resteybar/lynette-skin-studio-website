@@ -81,7 +81,7 @@ const ButtonInput = styled('button', {
     border: '1px solid',
     borderColor: '#862e08',
     backgroundColor: 'Transparent',
-    ':hover':{
+    ':hover': {
         backgroundColor: '#862e08',
 
         opacity: 0.7,
