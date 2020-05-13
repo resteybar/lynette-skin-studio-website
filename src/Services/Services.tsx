@@ -65,7 +65,7 @@ const Services: React.FC = () => {
         },
       ]
 
-      const renderServiceMenu = () =>{
+      const renderServiceMenu = (): JSX.Element[] =>{
           var renderedMenu = []
 
           for (let i = 0; i < services.length; i++){
@@ -97,13 +97,6 @@ const Services: React.FC = () => {
 }
 
 // CSS
-//  TO DO:
-//      1. Wrap text after right before the end of the RIGHT side of the box
-//    ✔ 2. Draw Lynette Brown line above the box (borderTop)
-//      3. Apply Font Family to all 3 text (Title, Desc., Price)
-//      4. Bold 2 Text (Title, Price)
-//      5. Adjust Font Size to all 3 text (Title, Desc., Price)
-//      6. Adjust spacing between all 3 text (Title, Desc., Price) - Eros
 const StyledNamePrice = styled ('h1', {
     fontFamily: 'Shree Bold',
     fontSize: '14pt'
@@ -146,7 +139,7 @@ const Service = styled('div', {
 const ServicesTitle = styled('h1', {
     // fontFamiy: 'Halant Light',
     textAlign: 'center',
-    letterSpacing: '15px',
+    letterSpacing: '13px',
     fontSize: '40px',
     color: LynetteBrown
 })
