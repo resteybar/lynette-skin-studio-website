@@ -171,7 +171,7 @@ const GridLayout = styled('div', {
     },
 
     // Just in case someone has a REALLY small phone
-    '@media screen and (max-width: 450px)': {
+    '@media screen and (max-width: 500px)': {
         minWidth: '0px',
     },
 
