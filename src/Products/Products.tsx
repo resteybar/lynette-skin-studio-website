@@ -239,8 +239,14 @@ const ProductInfo = styled('div', {
     flexDirection: 'column',
     wordWrap: 'break-word',
 
-    // Ask Eros for help after putting in description
-    opacity: '0.85'
+    opacity: '0.85',
+
+    // Takes off highlighting to text
+    WebkitUserSelect: 'none',
+    MozUserSelect: 'none',
+    msUserSelect: 'none',
+    userSelect: 'none',
+    pointerEvents: 'none',
 })
 
 const spaceLeftRight: string = '20px'
