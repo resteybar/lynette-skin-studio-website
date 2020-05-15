@@ -205,6 +205,13 @@ const ProductImage = styled('img', {
     // descipription & ingredients
     ':hover + #product-info': {
         display: 'flex',
+
+        // Extra assurance that you cannot drag the product image
+        WebkitUserSelect: 'none',
+        MozUserSelect: 'none',
+        msUserSelect: 'none',
+        userSelect: 'none',
+        pointerEvents: 'none',
     }
 })
 
@@ -212,20 +219,27 @@ const ImageContainer = styled('div', {
     overflow: 'hidden',
     position: 'relative',
     width: '100%',
+
+    // Ensures that you cannot drag the product image
+
+    WebkitUserSelect: 'none',
+    MozUserSelect: 'none',
+    msUserSelect: 'none',
+    userSelect: 'none',
+    pointerEvents: 'none',
 })
 
 const ProductInfo = styled('div', {
     color: '#f4f2f5',
     fontFamily: 'Shree Reg',
-    fontSize: '15px',
+    fontSize: '14px',
     backgroundColor: 'black',
     position: 'absolute',
     height: '100%',
     width: '100%',
     right: '0',
     top: '0',
-    // display: 'none',
-    display: 'flex',
+    display: 'none',
     textAlign: 'left',
 
     justifyContent: 'space-between',

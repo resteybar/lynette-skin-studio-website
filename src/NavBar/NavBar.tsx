@@ -21,8 +21,8 @@ const NavBar: React.FC<NavBarProps> = props => {
 }
 const StylingNavBar = styled ('ul', {
     '@media screen and (max-width: 422px)': {
-        marginLeft: '25px',
-        marginRight: '25px',
+        // marginLeft: '10px',
+        // marginRight: '10px',
     }
 })
 export default NavBar

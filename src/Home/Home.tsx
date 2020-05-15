@@ -1,7 +1,7 @@
 import React from 'react'
 import './Home.css'
 import NavBar from '../NavBar/NavBar'
-import { styled } from 'styletron-react'
+import { styled, withStyle } from 'styletron-react'
 
 type LinkValue = {
     name: string;
@@ -53,12 +53,12 @@ const Home: React.FC<HomeProps> = props => {
         const browserAdjustment: number = links[productsIndex].browserAdjustment
 
         renderedLinks.push(
-            <List key={ productsIndex } $style={{ marginRight: '0px' }}>
+            <ProductLink key={ productsIndex } $style={{ marginRight: '0px' }}>
                 <Link onClick={ () => props.scrollToPage(path, mobileAdjustment, browserAdjustment) } 
                     $style={{ color: 'white' }}>
                 { pageName.toUpperCase() }
                 </Link>
-            </List>
+            </ProductLink>
         )
 
         // renderedLinks[Last] $style = {{ marginRight: '0px' }}
@@ -120,11 +120,14 @@ const ButtonInput = styled('button', {
 
 const LynetteBrown = '#862e08'
 
-const List = styled('li', {
-  listStyleType: 'none',  /* Takes off Bullet Points from List */
-  //marginRight: '25px'
+const ProductLink = styled('li', {
+    listStyleType: 'none',  /* Takes off Bullet Points from List */
+})
 
-  
+const List = withStyle(ProductLink, {
+  '@media screen and (max-width: 422px)': {
+        marginRight: '12px',
+    }
 })
 
 const Link = styled('span', {
