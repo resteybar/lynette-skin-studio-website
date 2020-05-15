@@ -16,56 +16,56 @@ const Products: React.FC = () => {
     const products: ProductValues[] = [
         {
             productName: 'BB CREAM SPF 60',
-            productDescription: 'Smooths & maintains healthy skin inorder to prevent dark spots and descreases appearance of freckles.',
+            productDescription: 'Smooths & maintains healthy skin inorder to prevent dark spots and decreases appearance of freckles.',
+            productIngredients: 'No ingredients displayed yet!',
+            productPrice: '$25',
+            productImage: DefaultProductImage
+        },
+        {
+            productName: 'BB CREAM SPF 60',
+            productDescription: 'Smooths & maintains healthy skin inorder to prevent dark spots and decreases appearance of freckles.',
             productIngredients: '???',
             productPrice: '$25',
             productImage: DefaultProductImage
         },
         {
             productName: 'BB CREAM SPF 60',
-            productDescription: 'Smooths & maintains healthy skin inorder to prevent dark spots and descreases appearance of freckles.',
+            productDescription: 'Smooths & maintains healthy skin inorder to prevent dark spots and decreases appearance of freckles.',
             productIngredients: '???',
             productPrice: '$25',
             productImage: DefaultProductImage
         },
         {
             productName: 'BB CREAM SPF 60',
-            productDescription: 'Smooths & maintains healthy skin inorder to prevent dark spots and descreases appearance of freckles.',
+            productDescription: 'Smooths & maintains healthy skin inorder to prevent dark spots and decreases appearance of freckles.',
             productIngredients: '???',
             productPrice: '$25',
             productImage: DefaultProductImage
         },
         {
             productName: 'BB CREAM SPF 60',
-            productDescription: 'Smooths & maintains healthy skin inorder to prevent dark spots and descreases appearance of freckles.',
+            productDescription: 'Smooths & maintains healthy skin inorder to prevent dark spots and decreases appearance of freckles.',
             productIngredients: '???',
             productPrice: '$25',
             productImage: DefaultProductImage
         },
         {
             productName: 'BB CREAM SPF 60',
-            productDescription: 'Smooths & maintains healthy skin inorder to prevent dark spots and descreases appearance of freckles.',
+            productDescription: 'Smooths & maintains healthy skin inorder to prevent dark spots and decreases appearance of freckles.',
             productIngredients: '???',
             productPrice: '$25',
             productImage: DefaultProductImage
         },
         {
             productName: 'BB CREAM SPF 60',
-            productDescription: 'Smooths & maintains healthy skin inorder to prevent dark spots and descreases appearance of freckles.',
+            productDescription: 'Smooths & maintains healthy skin inorder to prevent dark spots and decreases appearance of freckles.',
             productIngredients: '???',
             productPrice: '$25',
             productImage: DefaultProductImage
         },
         {
             productName: 'BB CREAM SPF 60',
-            productDescription: 'Smooths & maintains healthy skin inorder to prevent dark spots and descreases appearance of freckles.',
-            productIngredients: '???',
-            productPrice: '$25',
-            productImage: DefaultProductImage
-        },
-        {
-            productName: 'BB CREAM SPF 60',
-            productDescription: 'Smooths & maintains healthy skin inorder to prevent dark spots and descreases appearance of freckles.',
+            productDescription: 'Smooths & maintains healthy skin inorder to prevent dark spots and decreases appearance of freckles.',
             productIngredients: '???',
             productPrice: '$25',
             productImage: DefaultProductImage
@@ -77,14 +77,19 @@ const Products: React.FC = () => {
 
           for (let i = 0; i < products.length; i++){
               const name: string = products[i].productName
-              const description: string = products[i].productDescription
               const price: string = products[i].productPrice
               const image: string = products[i].productImage
+              const description: string = products[i].productDescription
+              const ingredients: string = products[i].productIngredients
 
               renderedMenu.push(
                 <Product>
                     <ImageContainer>
                         <ProductImage src={ image } />
+                        <ProductInfo id='product-info'>
+                            <ProductDescription>{ description }</ProductDescription>
+                            <ProductIngredients>Ingredients:&nbsp;{ ingredients }</ProductIngredients>
+                        </ProductInfo>
                     </ImageContainer>
                     <ProductName>{ name }</ProductName>
                     <ProductPrice>{ price }</ProductPrice>
@@ -160,7 +165,10 @@ const AttentionTitle = styled('h2',{
     textTransform: 'uppercase',
     textAlign: 'center',
 
-    // maxWidth: '1411px',
+    '@media screen and (max-width: 1100px)': {
+        marginLeft: '50px',
+        marginRight: '50px'
+    },
 })
 const ProductsPage = styled('div', {
     backgroundColor: '#f4f2f5',
@@ -192,13 +200,54 @@ const productImageSize = '200px'
 const ProductImage = styled('img', {
     height: productImageSize,
     width: productImageSize,
+
+    // When hovering the Product image, it will display the product's
+    // descipription & ingredients
+    ':hover + #product-info': {
+        display: 'flex',
+    }
 })
 
 const ImageContainer = styled('div', {
-    ':hover': {
-        // backgroundColor: 'black'
-        // boxShadow: 'inset 0 0 0 100px rgba(36, 70, 105, 0.74)'
-    }
+    overflow: 'hidden',
+    position: 'relative',
+    width: '100%',
+})
+
+const ProductInfo = styled('div', {
+    color: '#f4f2f5',
+    fontFamily: 'Shree Reg',
+    fontSize: '15px',
+    backgroundColor: 'black',
+    position: 'absolute',
+    height: '100%',
+    width: '100%',
+    right: '0',
+    top: '0',
+    // display: 'none',
+    display: 'flex',
+    textAlign: 'left',
+
+    justifyContent: 'space-between',
+    flexDirection: 'column',
+    wordWrap: 'break-word',
+
+    // Ask Eros for help after putting in description
+    opacity: '0.85'
+})
+
+const spaceLeftRight: string = '20px'
+const spaceTopBot: string = '20px'
+const ProductDescription = styled('p', {
+    marginTop: spaceTopBot,
+    marginLeft: spaceLeftRight,
+    marginRight: spaceLeftRight,
+})
+
+const ProductIngredients = styled('p', {
+    marginBottom: spaceTopBot,
+    marginLeft: spaceLeftRight,
+    marginRight: spaceLeftRight,
 })
 
 const GridLayout = styled('div', {
@@ -238,15 +287,6 @@ const GridLayout = styled('div', {
         marginRight: 'auto',
         maxWidth: '225px'
     },
-
-    // // Just in case someone has a REALLY small phone
-    // '@media screen and (max-width: 500px)': {
-    //     minWidth: '0px',
-    // },
-
-    // // TODO: FIX HERE
-    // // Ensures there is space around what wraps all the services as 
-    // // the browser minimizes
 })
 
 export default Products
