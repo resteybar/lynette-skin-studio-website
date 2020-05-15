@@ -38,17 +38,17 @@
     left: 0;
     line-height: 200px;
     margin-top: 115px;
-    margin-bottom: -65px;
+    margin-bottom: -10px;
     text-align: center;
     width: 100%;   
 
-    /* Fixes height difference in welcome message
-    /* line-height: normal; */
-} */
+    /* Fixes height difference in welcome message */
+    line-height: normal;
+} 
 
 #ContactUsButton {
     text-align: center;
-    margin-top: 240px;
+    margin-top: 0px;
 }
 
 /* #OnHoverContact {
