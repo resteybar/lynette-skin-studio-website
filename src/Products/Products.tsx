@@ -85,7 +85,7 @@ const Products: React.FC = () => {
               renderedMenu.push(
                 <Product>
                     <ImageContainer>
-                        <ProductImage src={ image } />
+                        <UnclickableImage><ProductImage src={ image } /></UnclickableImage>
                         <ProductInfo id='product-info'>
                             <ProductDescription>{ description }</ProductDescription>
                             <ProductIngredients>Ingredients:&nbsp;{ ingredients }</ProductIngredients>
@@ -201,17 +201,18 @@ const ProductImage = styled('img', {
     height: productImageSize,
     width: productImageSize,
 
+    // Ensures that you cannot drag the product image
+    WebkitUserSelect: 'none',
+    MozUserSelect: 'none',
+    msUserSelect: 'none',
+    userSelect: 'none',
+    pointerEvents: 'none',
+})
+const UnclickableImage = styled('div', {
     // When hovering the Product image, it will display the product's
     // descipription & ingredients
     ':hover + #product-info': {
-        display: 'flex',
-
-        // Extra assurance that you cannot drag the product image
-        WebkitUserSelect: 'none',
-        MozUserSelect: 'none',
-        msUserSelect: 'none',
-        userSelect: 'none',
-        pointerEvents: 'none',
+        display: 'flex'
     }
 })
 
@@ -219,14 +220,6 @@ const ImageContainer = styled('div', {
     overflow: 'hidden',
     position: 'relative',
     width: '100%',
-
-    // Ensures that you cannot drag the product image
-
-    WebkitUserSelect: 'none',
-    MozUserSelect: 'none',
-    msUserSelect: 'none',
-    userSelect: 'none',
-    pointerEvents: 'none',
 })
 
 const ProductInfo = styled('div', {
