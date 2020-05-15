@@ -87,7 +87,7 @@ const Services: React.FC = () => {
           return renderedMenu
       }
     return (
-        <ServicesPage>
+        <ServicesPage id='Services'>
             <ServicesTitle>SERVICES</ServicesTitle>
             <GridLayout>
                 { renderServiceMenu() }
