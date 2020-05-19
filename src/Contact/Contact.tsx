@@ -17,7 +17,7 @@ const Contact: React.FC = () => {
     
     return (
         <ContactPage id="Contact">
-            <div>
+            <Details>
                 <AppointmentMsg>
                     BY APPOINTMENT ONLY* 
                 </AppointmentMsg>
@@ -29,8 +29,12 @@ const Contact: React.FC = () => {
                         <Info>(831) 884-5086</Info>
                     </PhoneInfo>
                     <LocationInfo>
-                        <LocationIcon src={ locationImage } />
-                        <Info>287 Carmel Ave, Marina, CA 93933</Info>
+                        <a href='https://goo.gl/maps/X8CDzALiztyKY4aU6' target='_blank'>
+                            <LocationIcon src={ locationImage } />
+                        </a>
+                        <AddressInfo href='https://goo.gl/maps/X8CDzALiztyKY4aU6' target='_blank'>
+                            <Info>287 Carmel Ave, Marina, CA 93933</Info>
+                        </AddressInfo>
                     </LocationInfo>
                 </ContactInfo>
 
@@ -38,9 +42,33 @@ const Contact: React.FC = () => {
                     *For any cancellations, please notify at least 
                     24 hours in advance as courtesy.
                 </CancelMsg>
-            </div>
+            </Details>
 
-            <div>
+            {/* Business Hours */}
+            <BusinessHours>
+                <BusinessHoursMsg>OPERATING HOURS</BusinessHoursMsg>
+
+                <TimeFrame>
+                    <Days>
+                        <Day>MON</Day>
+                        <Day>TUE</Day>
+                        <Day>WED</Day>
+                        <Day>THU</Day>
+                        <Day>FRI</Day>
+                        <Day>SAT</Day>
+                        <Day>SUN</Day>
+                    </Days>
+                    <Times>
+                        <Time>9:30 AM - 6:00 PM</Time>
+                        <Time>9:30 AM - 6:00 PM</Time>
+                        <Time>9:30 AM - 6:00 PM</Time>
+                        <Time>9:30 AM - 6:00 PM</Time>
+                        <Time>9:30 AM - 6:00 PM</Time>
+                        <Time>9:30 AM - 6:00 PM</Time>
+                        <ClosedTime>CLOSED</ClosedTime>
+                    </Times>
+                </TimeFrame>
+
                 {/* FB & Yelp Icons */}
                 <SocialIcons>
                     <a href={ facebookLink } target='_blank' rel='noopener noreferrer'>
@@ -50,7 +78,7 @@ const Contact: React.FC = () => {
                         <YelpIcon src={ yelpImage } />
                     </a>
                 </SocialIcons>
-            </div>
+            </BusinessHours>
         </ContactPage>
     )
 }
@@ -59,26 +87,76 @@ const ContactPage = styled('div', {
     color: '#862e08',
     backgroundColor: '#dabe8e',
     display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between'
+    alignItems: 'flex-start',
+    justifyContent: 'space-between',
+    paddingTop: '50px',
+    paddingBottom: '50px',
+    flexWrap: 'wrap',
+})
+
+// Business Hours
+const BusinessHours = styled('div', {
+    paddingRight: '60px',
+    
+    '@media screen and (max-width: 968px)': {
+        paddingTop: '30px',
+        paddingLeft: '60px',
+    },
+})
+
+const BusinessHoursMsg = styled('h2', {
+    fontFamily: 'Halant Med',
+    textAlign: 'center'
+})
+
+const TimeFrame = styled('div', {
+    display: 'flex',
+    justifyContent: 'space-between',
+    marginTop: '10px'
+})
+
+const Days = styled('div', {
+    marginRight: '20px'
+})
+
+const Day = styled('h4', {
+    fontFamily: 'Shree Reg'
+})
+
+const Times = styled('div', {
+    fontFamily: 'Shree Reg'
+})
+
+const Time = styled('h4', {
+
+})
+
+const ClosedTime = withStyle(Time, {
+    textAlign: 'right'    
+})
+
+// Details
+const Details = styled('div', {
+    paddingLeft: '60px',
+    paddingRight: '50px',
 })
 
 // Appointment Details
-const AppointmentMsg = styled('h1', {
+const AppointmentMsg = styled('h2', {
     fontFamily: 'Halant Med'
 })
 
-const CancelMsg = styled('h2', {
-    fontFamily: 'Halant Med'
-})
-
-const ContactInfo = styled('div', {
-    fontFamily: 'Shree Reg'
+const CancelMsg = styled('h3', {
+    fontFamily: 'Halant Reg',
+    fontWeight: 100,
+    wordWrap: 'break-word',
+    marginTop: '10px'
 })
 
 // Social Media Icons
 const SocialIcons = styled('div', {
     paddingTop: '15px',
+    textAlign: 'right'
 })
 
 const socialIconSize = '30px'
@@ -92,17 +170,25 @@ const FacebookIcon = withStyle(YelpIcon, {
 })
 
 // Contact Info Icons
+const ContactInfo = styled('div', {
+    fontFamily: 'Shree Reg',
+    marginTop: '10px'
+})
 const PhoneInfo = styled('div', {
     display: 'flex',
     alignItems: 'center'
 })
 
 const LocationInfo = withStyle(PhoneInfo, {
-    marginTop: '8px'
+    marginTop: '8px',
 })
 
-const Info = styled('h2', {
+const Info = styled('h3', {
     display: 'inline'
+})
+
+const AddressInfo = styled('a', {
+    color: 'inherit'
 })
 
 const contactIconSize = '45px'

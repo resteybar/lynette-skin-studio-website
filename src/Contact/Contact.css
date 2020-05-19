@@ -1,4 +1,8 @@
 @font-face {
+    font-family: Halant Reg;
+    src: url('../fonts/Halant-Regular.ttf');
+}
+@font-face {
     font-family: Halant Med;
     src: url('../fonts/Halant-Medium.ttf');
 }

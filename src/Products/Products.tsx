@@ -116,35 +116,6 @@ const Products: React.FC = () => {
     )
 }
 
-
-/*
-    TODO:
-        Eros
-            1. "PRODUCTS" title like "SERVICES" title
-            2. "ATTENTION: ..." message
-
-        Raymond
-        3. Organize layout of Products (Using Grid), 1 product at a time
-
-        Eros & Raymond
-            - Product Image
-            - Title
-            - Price
-            - onHover Background color
-            - onHover Description
-            - onHover Ingredients
-*/
-
-/*
-    Fonts:
-        - Products Title: Halant Light
-        - "Attention...": Shree Reg
-            - Color: Black
-        - Name of Product: Halant Medium
-        - Price: Shree Reg.
-        - OnHover Text: Shree Reg.
-*/
-
 // CSS
 const LynetteBrown = '#862e08'
 
@@ -174,8 +145,8 @@ const ProductsPage = styled('div', {
     backgroundColor: '#f4f2f5',
 
     // Debugging purposes: Using it to see the Products
-    paddingTop: '100px',
-    paddingBottom: '500px'
+    paddingTop: '75px',
+    paddingBottom: '250px'
 })
 
 const Product = styled('div', {
