@@ -46,14 +46,18 @@ const Background = styled('div', {
     height: '100vh',
     width: '100%',
     maxHeight: '760px',
-    // minHeight: '760px',
     paddingTop: '250px',
     // paddingBottom: '450px',
     textAlign: 'center',
     /* Center and scale the image nicely */
     backgroundPosition: 'center bottom',
     backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover'
+    backgroundSize: 'cover',
+
+    // Ensures Services Page does not overlap content in About Page
+    '@media screen and (max-height: 520px)': {
+        minHeight: '520px'
+    }
 })
 
 const headshotSize = '145px'
