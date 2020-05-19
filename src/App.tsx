@@ -7,6 +7,7 @@ import Product from './Products/Products'
 import About from './About/About'
 import NavBarScrolling from './NavBarScrolling/NavBarScrolling'
 import Services from './Services/Services'
+import Contact from './Contact/Contact'
 
 // Tools Used
 import { isBrowser, isMobile } from 'react-device-detect'
@@ -56,6 +57,7 @@ const App: React.FC = () => {
       <About />
       <Services/>
       <Product />
+      <Contact />
     </div>
   )
 }
