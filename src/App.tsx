@@ -25,9 +25,9 @@ const App: React.FC = () => {
   const links: LinkValue[] = [
       { name: 'Home', path: 'Home', mobileAdjustment: 0, browserAdjustment: 0 },
       { name: 'About', path: 'lynette-photo', mobileAdjustment: -100, browserAdjustment: -180 },
-      { name: 'Services', path: 'Services', mobileAdjustment: 0, browserAdjustment: 0 },
-      { name: 'Products', path: 'Products', mobileAdjustment: 0, browserAdjustment: 0 },
-      { name: 'Contact', path: 'Contact', mobileAdjustment: 0, browserAdjustment: 0 },
+      { name: 'Services', path: 'Services', mobileAdjustment: -70, browserAdjustment: -70 },
+      { name: 'Products', path: 'Products', mobileAdjustment: -40, browserAdjustment: -40 },
+      { name: 'Contact', path: 'Contact', mobileAdjustment: -60, browserAdjustment: -60 },
   ]
 
   const scrollToPage = (id: string, mobileAdjustment: number, browserAdjustment: number): void => {
