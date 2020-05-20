@@ -137,7 +137,7 @@ const AttentionTitle = styled('h2',{
     textAlign: 'center',
 
     marginLeft: '50px',
-    marginRight: '50px'
+    marginRight: '50px',
 
     // '@media screen and (max-width: 1100px)': {
     //     marginLeft: '50px',
