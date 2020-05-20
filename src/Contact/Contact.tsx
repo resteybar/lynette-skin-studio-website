@@ -98,38 +98,13 @@ const ContactPage = styled('div', {
 
 // Details
 const Details = styled('div', {
-    paddingLeft: '60px',
-    paddingRight: '50px',
+    marginLeft: '60px',
+    marginRight: '50px',
 
     // Centers Phone #, Address, Appointment Info when website gets smaller
     '@media screen and (max-width: 780px)': {
-        paddingRight: '0px',
-        // marginLeft: 'auto',
-        // marginRight: 'auto',
-        // display: 'flex',
-        // justifyContent: 'center',
-        // flexDirection: 'column',
-        // alignItems: 'center',
-
-        // Default Padding
-        // paddingLeft: '0px',
-        // paddingRight: '0px',
-        // textAlign: 'center'
-    },
-
-    '@media screen and (max-width: 480px)': {
-        marginRight: '10px',
-        // marginLeft: 'auto',
-        // marginRight: 'auto',
-        // display: 'flex',
-        // justifyContent: 'center',
-        // flexDirection: 'column',
-        // alignItems: 'center',
-
-        // Default Padding
-        // paddingLeft: '0px',
-        // paddingRight: '0px',
-        // textAlign: 'center'
+        marginRight: '10%',
+        marginLeft: '10%',
     },
 })
 
@@ -182,14 +157,12 @@ const LocationIcon = withStyle(PhoneIcon, {
 
 // Business Hours
 const BusinessHours = styled('div', {
-    paddingRight: '60px',
+    marginRight: '60px',
 
     '@media screen and (max-width: 780px)': {
-        paddingLeft: '60px',
+        marginLeft: '10%',
         marginTop: '40px',
-        // marginLeft: 'auto',
-        // marginRight: 'auto',
-        // paddingRight: '0px',
+        marginRight: '10%',
     },
 })
 
