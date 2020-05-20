@@ -116,13 +116,19 @@ const pageVerticalPadding = '50'
 
 const ServicesPage = styled('div', {
     backgroundColor: '#f4f2f5',
+    height: '80vh',
 
     // Space Between About Page & Services Page, Services & Product
     paddingTop: pageVerticalPadding + 'px',
     paddingBottom: pageVerticalPadding + 'px',
 
     // Applying here due to <h1> tags not changing Font
-    fontFamily: 'Halant Light'
+    fontFamily: 'Halant Light',
+
+    // Ensures Product Page does not overlap content in Services Page
+    '@media screen and (max-height: 663px)': {
+        minHeight: '663px'
+    }
 })
 
 const Service = styled('div', {

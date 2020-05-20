@@ -136,10 +136,13 @@ const AttentionTitle = styled('h2',{
     textTransform: 'uppercase',
     textAlign: 'center',
 
-    '@media screen and (max-width: 1100px)': {
-        marginLeft: '50px',
-        marginRight: '50px'
-    },
+    marginLeft: '50px',
+    marginRight: '50px'
+
+    // '@media screen and (max-width: 1100px)': {
+    //     marginLeft: '50px',
+    //     marginRight: '50px'
+    // },
 })
 const ProductsPage = styled('div', {
     backgroundColor: '#f4f2f5',
