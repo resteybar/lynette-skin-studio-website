@@ -29,10 +29,10 @@ const Contact: React.FC = () => {
                         <Info>(831) 884-5086</Info>
                     </PhoneInfo>
                     <LocationInfo>
-                        <a href='https://goo.gl/maps/X8CDzALiztyKY4aU6' target='_blank'>
+                        <a href='https://goo.gl/maps/X8CDzALiztyKY4aU6' target='_blank' rel="noopener noreferrer" >
                             <LocationIcon src={ locationImage } />
                         </a>
-                        <AddressInfo href='https://goo.gl/maps/X8CDzALiztyKY4aU6' target='_blank'>
+                        <AddressInfo href='https://goo.gl/maps/X8CDzALiztyKY4aU6' target='_blank' rel="noopener noreferrer" >
                             <Info>287 Carmel Ave, Marina, CA 93933</Info>
                         </AddressInfo>
                     </LocationInfo>
@@ -91,57 +91,49 @@ const ContactPage = styled('div', {
     justifyContent: 'space-between',
     paddingTop: '50px',
     paddingBottom: '50px',
-    flexWrap: 'wrap',
-})
-
-// Business Hours
-const BusinessHours = styled('div', {
-    paddingRight: '60px',
-    
-    '@media screen and (max-width: 968px)': {
-        paddingTop: '30px',
-        paddingLeft: '60px',
+    '@media screen and (max-width: 780px)': {
+        flexWrap: 'wrap',
     },
-})
-
-const BusinessHoursMsg = styled('h2', {
-    fontFamily: 'Halant Med',
-    textAlign: 'center'
-})
-
-const TimeFrame = styled('div', {
-    display: 'flex',
-    justifyContent: 'space-between',
-    marginTop: '10px'
-})
-
-const Days = styled('div', {
-    marginRight: '20px'
-})
-
-const Day = styled('h4', {
-    fontFamily: 'Shree Reg'
-})
-
-const Times = styled('div', {
-    fontFamily: 'Shree Reg'
-})
-
-const Time = styled('h4', {
-
-})
-
-const ClosedTime = withStyle(Time, {
-    textAlign: 'right'    
 })
 
 // Details
 const Details = styled('div', {
     paddingLeft: '60px',
     paddingRight: '50px',
+
+    // Centers Phone #, Address, Appointment Info when website gets smaller
+    '@media screen and (max-width: 780px)': {
+        paddingRight: '0px',
+        // marginLeft: 'auto',
+        // marginRight: 'auto',
+        // display: 'flex',
+        // justifyContent: 'center',
+        // flexDirection: 'column',
+        // alignItems: 'center',
+
+        // Default Padding
+        // paddingLeft: '0px',
+        // paddingRight: '0px',
+        // textAlign: 'center'
+    },
+
+    '@media screen and (max-width: 480px)': {
+        marginRight: '10px',
+        // marginLeft: 'auto',
+        // marginRight: 'auto',
+        // display: 'flex',
+        // justifyContent: 'center',
+        // flexDirection: 'column',
+        // alignItems: 'center',
+
+        // Default Padding
+        // paddingLeft: '0px',
+        // paddingRight: '0px',
+        // textAlign: 'center'
+    },
 })
 
-// Appointment Details
+//  - Appointment Details
 const AppointmentMsg = styled('h2', {
     fontFamily: 'Halant Med'
 })
@@ -150,33 +142,18 @@ const CancelMsg = styled('h3', {
     fontFamily: 'Halant Reg',
     fontWeight: 100,
     wordWrap: 'break-word',
-    marginTop: '10px'
+    marginTop: '5px'
 })
 
-// Social Media Icons
-const SocialIcons = styled('div', {
-    paddingTop: '15px',
-    textAlign: 'right'
-})
-
-const socialIconSize = '30px'
-const YelpIcon = styled('img', {
-    height: socialIconSize,
-    width: socialIconSize
-})
-
-const FacebookIcon = withStyle(YelpIcon, {
-    marginRight: '10px',
-})
-
-// Contact Info Icons
+//  - Contact Info Icons
 const ContactInfo = styled('div', {
     fontFamily: 'Shree Reg',
-    marginTop: '10px'
+    marginTop: '10px',
 })
+
 const PhoneInfo = styled('div', {
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
 })
 
 const LocationInfo = withStyle(PhoneInfo, {
@@ -188,6 +165,7 @@ const Info = styled('h3', {
 })
 
 const AddressInfo = styled('a', {
+    // Hides Blue Color from links
     color: 'inherit'
 })
 
@@ -200,6 +178,78 @@ const PhoneIcon = styled('img', {
 
 const LocationIcon = withStyle(PhoneIcon, {
     
+})
+
+// Business Hours
+const BusinessHours = styled('div', {
+    paddingRight: '60px',
+
+    '@media screen and (max-width: 780px)': {
+        paddingLeft: '60px',
+        marginTop: '40px',
+        // marginLeft: 'auto',
+        // marginRight: 'auto',
+        // paddingRight: '0px',
+    },
+})
+
+const BusinessHoursMsg = styled('h2', {
+    fontFamily: 'Halant Med',
+    textAlign: 'center',
+
+    '@media screen and (max-width: 780px)': {
+        textAlign: 'left'
+    },
+})
+
+//  - Days + Times
+const TimeFrame = styled('div', {
+    display: 'flex',
+    justifyContent: 'space-between',
+    marginTop: '10px'
+})
+
+//      - Days
+const Days = styled('div', {
+    marginRight: '50px'
+})
+
+const Day = styled('h4', {
+    fontFamily: 'Shree Reg'
+})
+
+//      - Times
+const Times = styled('div', {
+    fontFamily: 'Shree Reg',
+    whiteSpace: 'nowrap'
+})
+
+const Time = styled('h4', {
+
+})
+
+const ClosedTime = withStyle(Time, {
+    textAlign: 'right'    
+})
+
+//  - Social Media Icons
+const SocialIcons = styled('div', {
+    paddingTop: '15px',
+    textAlign: 'right',
+
+    '@media screen and (max-width: 780px)': {
+        textAlign: 'left'
+    },
+})
+
+const socialIconSize = '30px'
+const YelpIcon = styled('img', {
+    height: socialIconSize,
+    width: socialIconSize
+})
+
+const FacebookIcon = withStyle(YelpIcon, {
+    marginRight: '10px',
 })
 
 export default Contact
