@@ -8,7 +8,7 @@ import { styled, withStyle } from 'styletron-react'
 import facebookIcon from '../images/Facebook_Graphic-01.png'
 import yelpIcon from '../images/Yelp_Graphic-01.png'
 
-//  - Background Image, 
+//  - Background Image, Image by dungthuyvunguyen from Pixabay https://pixabay.com/photos/cosmetic-skincare-female-natural-2357981/
 import aboutBackground from '../images/About_Background_Fixed.png'
 import lynetteHeadShot from '../images/Lynette_Headshot.png'
 
@@ -55,8 +55,8 @@ const Background = styled('div', {
     backgroundSize: 'cover',
 
     // Ensures Services Page does not overlap content in About Page
-    '@media screen and (max-height: 520px)': {
-        minHeight: '520px'
+    '@media screen and (max-height: 663px)': {
+        minHeight: '663px'
     }
 })
 

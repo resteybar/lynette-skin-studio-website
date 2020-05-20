@@ -11,6 +11,7 @@ import Contact from './Contact/Contact'
 
 // Tools Used
 import { isBrowser, isMobile } from 'react-device-detect'
+import { styled } from 'styletron-react'
 
 type LinkValue = {
   name: string;
@@ -47,7 +48,7 @@ const App: React.FC = () => {
   }
 
   return (
-    <div className='App'>
+    <Main className='App'>
       <NavBarScrolling 
         links={ links } 
         scrollToPage={ scrollToPage } />
@@ -58,8 +59,12 @@ const App: React.FC = () => {
       <Services/>
       <Product />
       <Contact />
-    </div>
+    </Main>
   )
 }
+
+const Main = styled('div', {
+  backgroundColor: '#f4f2f5',
+})
 
 export default App

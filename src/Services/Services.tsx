@@ -122,7 +122,7 @@ const ServicesPage = styled('div', {
     paddingBottom: pageVerticalPadding + 'px',
 
     // Applying here due to <h1> tags not changing Font
-    fontFamily: 'Halant Light'
+    fontFamily: 'Halant Light',
 })
 
 const Service = styled('div', {
