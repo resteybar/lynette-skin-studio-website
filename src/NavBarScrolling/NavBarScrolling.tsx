@@ -271,8 +271,8 @@ const List = styled('li', {
 
   // To display Light Border below links FOR Mobile Links
   '@media screen and (min-width: 801px)': {
+    paddingBottom: '10px',
     ':hover': {
-        paddingBottom: '10px',
         borderBottom: '2px solid ' + LynetteBrown
     },
   },
