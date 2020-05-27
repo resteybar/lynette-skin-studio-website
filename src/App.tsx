@@ -56,7 +56,7 @@ const App: React.FC = () => {
         links={ links } 
         scrollToPage={ scrollToPage }/>
       <About />
-      <Services/>
+      <Services />
       <Product />
       <Contact />
     </Main>

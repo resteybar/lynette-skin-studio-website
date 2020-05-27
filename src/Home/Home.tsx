@@ -73,7 +73,7 @@ const Home: React.FC<HomeProps> = props => {
     const contactPageBrowserAdj: number = props.links[lastIndex].browserAdjustment
 
     return (
-        <div id="Home" className='debug-border'>
+        <div id="Home">
             <NavBar renderLinks={ renderLinks() } />
 
             <ButtonContainer>
@@ -96,7 +96,6 @@ const ButtonInput = styled('button', {
     marginTop: '0px',
     height: '60px',
     width: '200px',
-    border: '1px solid',
     borderColor: '#862e08',
     backgroundColor: 'Transparent',
     ':hover': {

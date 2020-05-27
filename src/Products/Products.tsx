@@ -83,7 +83,7 @@ const Products: React.FC = () => {
               const ingredients: string = products[i].productIngredients
 
               renderedMenu.push(
-                <Product>
+                <Product key={ i }>
                     <ImageContainer>
                         <UnclickableImage><ProductImage src={ image } /></UnclickableImage>
                         <ProductInfo id='product-info'>

@@ -9,6 +9,10 @@ import yelpIcon from '../images/Yelp_Graphic-01.png'
 // Tools Used
 import { styled, withStyle } from 'styletron-react'
 
+// TO DO:
+//  1. Highlight box that surrounds the link: on hover
+//  2. Highlight Name of Link to indicate which page the user is on
+
 type LinkValue = {
     name: string;
     path: string;
@@ -83,26 +87,39 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
             }
         }
 
-        indicatePageOn()
+        // indicatePageOn()
     }
+
+    var pageEntryBorders: number[]
 
     const indicatePageOn = (): void => {
         // Gets distance from the top of the website to each page (in px.)
-        const pageEntryBorders: Map<string, number> = getPageBorders()
+        if (!pageEntryBorders) {
+            pageEntryBorders = getPageBorders()
+            console.log('INIT Page Entry Borders')
+        }
+
         console.log(pageEntryBorders)
 
         if (pageEntryBorders) {
-            const home: number | undefined = pageEntryBorders.get('Home')
-            const about: number | undefined = pageEntryBorders.get('About')
-
+            const user: number = window.pageYOffset
             console.log('Current: ', window.pageYOffset)
-            console.log(home, ' | ', about)
+
+            // Locate which page the user is on
+            // for (let i = 0; i < pageEntryBorders.length - 1; i++) {
+            //     const currentPage: number = pageEntryBorders[i]
+            //     const nextPage: number = pageEntryBorders[i + 1]
+
+            //     if (user >= currentPage && user <= nextPage) {
+            //         return 
+            //     }
+            // }
         }
     }
 
-    const getPageBorders = (): Map<string, number> => {
+    const getPageBorders = (): number[] => {
         const links: LinkValue[] = props.links
-        var pageEntryBorders: Map<string, number> = new Map()
+        var pageEntryBorders: number[] = []
     
         for (let i = 0; i < links.length; i++) {
             const pageName: string = links[i].name
@@ -111,7 +128,7 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
             if (element) {
                 var topOfPage = element.getBoundingClientRect().top + window.pageYOffset
                 
-                pageEntryBorders.set(pageName, topOfPage)
+                pageEntryBorders.push(topOfPage)
             }
         }
     
@@ -126,17 +143,17 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
     }
 
     window.onscroll = function() { showNavBar() }
-
+    
     const renderedLinks = renderLinks()
     const facebookLink = 'https://www.facebook.com/LynetteSkinStudio/'
     const yelpLink = 'https://www.yelp.com/biz/lynettes-skin-studio-marina'
 
     return (
-        <div id='NavBarScrolling' className='debug-border'>
+        <div id='NavBarScrolling'>
             <HomeLink href='#' onClick={ () => logoLink() }>
                 <div id='navbarscrolling-title'>
-                    <h1 className='title-lynette lynette-brown'>LYNETTE'S</h1>
-                    <h1 className='title-skin-studio lynette-brown'>SKIN STUDIO</h1>
+                    <TitleStyle className='title-lynette lynette-brown'>LYNETTE'S</TitleStyle>
+                    <TitleStyle className='title-skin-studio lynette-brown'>SKIN STUDIO</TitleStyle>
                 </div>
             </HomeLink>
             
@@ -171,6 +188,12 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
 }
 
 // CSS
+const LynetteBrown = '#862e08'
+
+const TitleStyle = styled('h1', {
+    fontFamily: 'Shree Reg',
+    color: LynetteBrown
+})
 const MobileLinks = styled('ul', {
     // Creates white space on the left and right of the mobile nav. bar
     paddingLeft: '4%',
@@ -231,7 +254,7 @@ const FacebookIcon = withStyle(YelpIcon, {
     marginRight: '10px',
 })
 
-const LynetteBrown = '#862e08'
+
 const paddingTopBot = '15px'
 
 const SocialIconList = styled('li', {
@@ -247,23 +270,33 @@ const List = styled('li', {
   marginBottom: '0px',
 
   // To display Light Border below links FOR Mobile Links
+  '@media screen and (min-width: 801px)': {
+    ':hover': {
+        paddingBottom: '10px',
+        borderBottom: '2px solid ' + LynetteBrown
+    },
+  },
+
+  // To display Light Border below links FOR Mobile Links
   '@media screen and (max-width: 800px)': {
       borderBottom: '1px solid lightgrey',
 
       ':hover': {
-        backgroundColor: 'lightgrey'
+        backgroundColor: 'lightgrey',
+        borderBottom: '1px solid ' + LynetteBrown
       },
   }
 })
 
 const Link = styled('span', {
-  color: LynetteBrown,
-  paddingTop: paddingTopBot,
-  paddingBottom: paddingTopBot,
-  width: '100%',
-  height: '100%',
+    color: LynetteBrown,
+    paddingTop: paddingTopBot,
+    paddingBottom: paddingTopBot,
+    width: '100%',
+    height: '100%',
+  
   ':hover': {
-      cursor: 'pointer'
+      cursor: 'pointer',
     },
 })
 

@@ -1,6 +1,13 @@
+@font-face {
+    font-family: Shree Reg;
+    src: url('../fonts/Shree\ Devanagari\ 714-Regular.ttf');
+}
+@font-face {
+    font-family: Shree Bo;
+    src: url('../fonts/ShreeDev0714-Bold-02.ttf');
+}
 #NavBarScrolling {
-    font-family: 'Open Sans', sans-serif;
-
+    font-family: Shree Bo;
     width: 100%;
     background-color: white;
 
@@ -31,7 +38,7 @@
 
     /* Adding more white space above and below the title & links */
     padding-top: 15px;
-    padding-bottom: 15px;
+    padding-bottom: 10px;
 
     /*  Makes the Nav. Bar stick to the top of the webpage 
         the entire way down
