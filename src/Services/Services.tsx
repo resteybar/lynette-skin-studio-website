@@ -74,7 +74,7 @@ const Services: React.FC = () => {
               const price: string = services[i].servicePrice
 
               renderedMenu.push(
-                <Service>
+                <Service key={ i }>
                     <div>
                         <StyledNamePrice>{name}</StyledNamePrice>
                         <StyledDescriptions>{description}</StyledDescriptions>

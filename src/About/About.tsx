@@ -17,7 +17,7 @@ const About: React.FC = () => {
     const yelpLink = 'https://www.yelp.com/biz/lynettes-skin-studio-marina'
     
     return (
-        <Background id="About" className='debug-border'>
+        <Background id="About">
             <LynetteHeadShot id='lynette-photo' src={ lynetteHeadShot } />
             <LynetteHeader>LYNETTE</LynetteHeader>
             <LynetteTitle>Professional Esthetician</LynetteTitle>

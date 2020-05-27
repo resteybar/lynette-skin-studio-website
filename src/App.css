@@ -12,10 +12,6 @@ html, body {
     color: #862e08;
 }
 
-/* .debug-border {
-    border: 1px solid black;
-} */
-
 .inline-list {
     /* Makes each Link on the same line */
     display: inline;

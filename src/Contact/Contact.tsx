@@ -114,7 +114,7 @@ const AppointmentMsg = styled('h2', {
 })
 
 const CancelMsg = styled('h3', {
-    fontFamily: 'Halant Reg',
+    fontFamily: 'Halant Med',
     fontWeight: 100,
     wordWrap: 'break-word',
     marginTop: '5px'
