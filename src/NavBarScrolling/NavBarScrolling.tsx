@@ -140,6 +140,7 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
     const logoLink = (): void => {
         if (isMenuDisplayed)
             displayLinks()
+        navigateToPage('Home', 0, 0)
     }
 
     window.onscroll = function() { showNavBar() }
@@ -150,11 +151,9 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
 
     return (
         <div id='NavBarScrolling'>
-            <HomeLink href='#' onClick={ () => logoLink() }>
-                <div id='navbarscrolling-title'>
-                    <TitleStyle className='title-lynette lynette-brown'>LYNETTE'S</TitleStyle>
-                    <TitleStyle className='title-skin-studio lynette-brown'>SKIN STUDIO</TitleStyle>
-                </div>
+            <HomeLink id='navbarscrolling-title' onClick={ () => logoLink() }>
+                <TitleStyle className='title-lynette lynette-brown'>LYNETTE'S</TitleStyle>
+                <TitleStyle className='title-skin-studio lynette-brown'>SKIN STUDIO</TitleStyle>
             </HomeLink>
             
             <ul id='navbarscrolling-links'>
@@ -300,8 +299,10 @@ const Link = styled('span', {
     },
 })
 
-const HomeLink = styled('a', {
-    textDecoration: 'none'
+const HomeLink = styled('div', {
+    ':hover': {
+        cursor: 'pointer'
+    }
 })
 
 export default NavBarScrolling
