@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://i.imgur.com/mhY49WO.png" width="200">
+<img src="https://i.imgur.com/mhY49WO.png" width="200" />
 </p>
 
 # Lynette's Skin Studio Website
@@ -12,7 +12,7 @@
 
 **Demo**
 
-![](http://g.recordit.co/PtzMn8zOyX.gif)
+<img src="http://g.recordit.co/PtzMn8zOyX.gif" width="200" />
 
 ---
 
