@@ -12,7 +12,7 @@
 
 **Demo**
 
-![Recordit GIF](http://g.recordit.co/PtzMn8zOyX.gif)
+![Recording](http://g.recordit.co/PtzMn8zOyX.gif)
 
 ---
 
