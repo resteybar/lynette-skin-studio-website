@@ -4,7 +4,7 @@
 
 # Lynette's Skin Studio Website
 
-> A website that introduces the facial business, Lynette's Skin Studio. It includes their services, products, and contact information.
+> A website that introduces the facial business, Lynette's Skin Studio. It includes their about info, services, products, and contact info.
 
 ***Home Page***
 
