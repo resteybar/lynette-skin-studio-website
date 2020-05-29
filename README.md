@@ -6,10 +6,6 @@
 
 > A website that introduces the facial business, Lynette's Skin Studio. It includes their services, products, and contact information.
 
-> ideally one sentence
-
-> include terms/tags that can be searched
-
 ***Home Page***
 
 ![Home Page Image](https://i.imgur.com/0HZBagL.jpg)
