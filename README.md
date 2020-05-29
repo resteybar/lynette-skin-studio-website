@@ -12,7 +12,7 @@
 
 **Demo**
 
-<img src="http://g.recordit.co/PtzMn8zOyX.gif" width="200" />
+![](https://i.imgur.com/yedYVbn.gif)
 
 ---
 
