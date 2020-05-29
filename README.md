@@ -10,10 +10,9 @@
 
 > include terms/tags that can be searched
 
-***INSERT ANOTHER GRAPHIC HERE***
+***Home Page***
 
-![Home Page Image](![](https://i.imgur.com/0HZBagL.jpg)
-)
+![Home Page Image](https://i.imgur.com/0HZBagL.jpg)
 
 **Demo**
 
