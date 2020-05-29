@@ -12,7 +12,8 @@
 
 **Demo**
 
-![Demo of Website](https://i.imgur.com/yedYVbn.gif)
+![](https://i.imgur.com/yedYVbn.gif)
+![](https://i.imgur.com/0HZBagL.jpg)
 
 ---
 
