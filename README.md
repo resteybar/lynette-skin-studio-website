@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://i.imgur.com/mjU6gqa.png" width="200">
+<img src="https://i.imgur.com/mhY49WO.png" width="200">
 </p>
 
 # Lynette's Skin Studio Website
