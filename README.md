@@ -12,7 +12,7 @@
 
 **Demo**
 
-![](https://i.imgur.com/yedYVbn.gif)
+![](https://github.com/resteybar/lynette-skin-studio-website/blob/master/demo/demo.gif)
 
 ---
 
