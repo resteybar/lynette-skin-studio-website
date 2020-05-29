@@ -4,7 +4,7 @@
 
 # Lynette's Skin Studio Website
 
-> Subtitle or Short Description Goes Here
+> A website that introduces the facial business, Lynette's Skin Studio. It includes their services, products, and contact information.
 
 > ideally one sentence
 
