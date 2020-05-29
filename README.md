@@ -32,9 +32,3 @@ See Lynette's Skin Studio's website, customer results on Facebook, or even read 
 - Website at <a href="" target="_blank">`To Be Announced! Stay Tuned!`</a>
 - Facebook at <a href="https://www.facebook.com/LynetteSkinStudio/" target="_blank">`@LynetteSkinStudio`</a>
 - Yelp at <a href="https://www.yelp.com/biz/lynettes-skin-studio-marina" target="_blank">`Lynette's Skin Studio`</a>
-
----
-
-## Font Credit
-Shree
-<div>Font made from <a href="http://www.onlinewebfonts.com">Online Web Fonts</a> is licensed by CC BY 3.0</div>
