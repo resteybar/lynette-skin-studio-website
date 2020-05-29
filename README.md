@@ -27,7 +27,7 @@
 
 ## Social Media
 
-Reach out to me at one of the following places!
+See Lynette's Skin Studio's website, customer results on Facebook, or even read customer reviews on our Yelp!
 
 - Website at <a href="" target="_blank">`To Be Announced! Stay Tuned!`</a>
 - Facebook at <a href="https://www.facebook.com/LynetteSkinStudio/" target="_blank">`@LynetteSkinStudio`</a>
