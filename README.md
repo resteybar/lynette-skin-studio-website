@@ -16,14 +16,6 @@
 
 ---
 
-## Table of Contents
-
-- [Team](#team)
-- [Social Media](#socialmedia)
-- [Credit](#credit)
-
----
-
 ## Team
 
 | **Raymond Esteybar** | **Eros Gonzalez**
