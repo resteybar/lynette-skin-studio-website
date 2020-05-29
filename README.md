@@ -12,7 +12,7 @@
 
 **Demo**
 
-![](https://i.imgur.com/yedYVbn.gif)
+![Demo of Website](https://i.imgur.com/yedYVbn.gif)
 
 ---
 
