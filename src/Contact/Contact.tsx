@@ -26,14 +26,16 @@ const Contact: React.FC = () => {
                 <ContactInfo>
                     <PhoneInfo>
                         <PhoneIcon src={ phoneImage } />
-                        <Info>(831) 884-5086</Info>
+                        {/* <Info>(831) 884-5086</Info> */}
+                        <Info>(###) ###-####</Info>
                     </PhoneInfo>
                     <LocationInfo>
                         <a href='https://goo.gl/maps/X8CDzALiztyKY4aU6' target='_blank' rel="noopener noreferrer" >
                             <LocationIcon src={ locationImage } />
                         </a>
                         <AddressInfo href='https://goo.gl/maps/X8CDzALiztyKY4aU6' target='_blank' rel="noopener noreferrer" >
-                            <Info>287 Carmel Ave, Marina, CA 93933</Info>
+                            {/* <Info>287 Carmel Ave, Marina, CA 93933</Info> */}
+                            <Info>111 Street, City, State Zip</Info>
                         </AddressInfo>
                     </LocationInfo>
                 </ContactInfo>
