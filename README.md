@@ -8,11 +8,11 @@
 
 ***Home Page***
 
-![Home Page Image](https://i.imgur.com/0HZBagL.jpg)
+![](https://i.imgur.com/0HZBagL.jpg)
 
 **Demo**
 
-![Recording](http://g.recordit.co/PtzMn8zOyX.gif)
+![](http://g.recordit.co/PtzMn8zOyX.gif)
 
 ---
 
