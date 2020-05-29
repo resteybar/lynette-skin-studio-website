@@ -30,12 +30,10 @@
 
 ## Team
 
-<div align="center">
 | **Raymond Esteybar** | **Eros Gonzalez**
 | :---: |:---:|
 | ![Raymond](https://avatars0.githubusercontent.com/u/25356573?s=200&u=56e82663078daf0e9583a47375a9e99d4c613cc9&v=4)   | ![Eros](https://avatars2.githubusercontent.com/u/25356545?s=200&u=8e92c9176724f31fe920ad52bf23e68481ebd539&v=4) |
 | <a href="https://github.com/resteybar" target="_blank">`@resteybar`</a> | <a href="https://github.com/erosgonzalez" target="_blank">`@erosgonzalez`</a> |
-</div>
 
 ---
 
