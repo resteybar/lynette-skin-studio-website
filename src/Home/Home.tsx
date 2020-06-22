@@ -106,10 +106,10 @@ const ButtonInput = styled('button', {
         cursor: 'pointer',
     },
 
-    // Hides highlighting when putting is clicked
-    outline: 'none',
+    // Hides highlighting when button is clicked
+    // outline: 'none',
 
-    //Contact us text
+    // Contact us text
     color: '#862e08',
     fontSize: '16pt',
     letterSpacing: '2px',

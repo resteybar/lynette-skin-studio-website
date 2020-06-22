@@ -86,54 +86,7 @@ const NavBarScrolling: React.FC<NavBarScrollingProps> = props => {
                 navBar.style.top = '-150px'
             }
         }
-
-        // indicatePageOn()
     }
-
-    var pageEntryBorders: number[]
-
-    const indicatePageOn = (): void => {
-        // Gets distance from the top of the website to each page (in px.)
-        if (!pageEntryBorders) {
-            pageEntryBorders = getPageBorders()
-            console.log('INIT Page Entry Borders')
-        }
-
-        console.log(pageEntryBorders)
-
-        if (pageEntryBorders) {
-            const user: number = window.pageYOffset
-            console.log('Current: ', window.pageYOffset)
-
-            // Locate which page the user is on
-            // for (let i = 0; i < pageEntryBorders.length - 1; i++) {
-            //     const currentPage: number = pageEntryBorders[i]
-            //     const nextPage: number = pageEntryBorders[i + 1]
-
-            //     if (user >= currentPage && user <= nextPage) {
-            //         return 
-            //     }
-            // }
-        }
-    }
-
-    const getPageBorders = (): number[] => {
-        const links: LinkValue[] = props.links
-        var pageEntryBorders: number[] = []
-    
-        for (let i = 0; i < links.length; i++) {
-            const pageName: string = links[i].name
-            const element = document.getElementById(pageName)
-            
-            if (element) {
-                var topOfPage = element.getBoundingClientRect().top + window.pageYOffset
-                
-                pageEntryBorders.push(topOfPage)
-            }
-        }
-    
-        return pageEntryBorders
-      }
 
     // Used for Logo link when Mobile links are displayed and it needs to close
     // NOT used when Mobile links are closed.

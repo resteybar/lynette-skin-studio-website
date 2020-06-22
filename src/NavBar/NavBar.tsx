@@ -1,6 +1,6 @@
 import React from 'react'
 import './NavBar.css'
-import { styled } from 'styletron-react'
+// import { styled } from 'styletron-react'
 
 interface NavBarProps {
     renderLinks: JSX.Element[]

@@ -20,7 +20,8 @@
     "react-scripts": "3.4.0",
     "styletron-engine-atomic": "^1.4.6",
     "styletron-react": "^5.2.7",
-    "typescript": "~3.7.2"
+    "typescript": "~3.7.2",
+    "websocket-extensions": "^0.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
