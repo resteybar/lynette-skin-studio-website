@@ -9,7 +9,7 @@ import facebookIcon from '../images/Facebook_Graphic-01.png'
 import yelpIcon from '../images/Yelp_Graphic-01.png'
 
 //  - Background Image, Image by dungthuyvunguyen from Pixabay https://pixabay.com/photos/cosmetic-skincare-female-natural-2357981/
-import aboutBackground from '../images/About_Background_Fixed.png'
+import aboutBackground from '../images/About_Background_Blur_Top.png'
 import lynetteHeadShot from '../images/Lynette_Headshot.png'
 
 const About: React.FC = () => {

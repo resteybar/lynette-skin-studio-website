@@ -1,0 +1,20 @@
+@font-face{
+    font-family: Halant Light;
+    src: url('../fonts/Halant-Light.ttf');
+}
+@font-face {
+    font-family: Halant Bold;
+    src: url('../fonts/Halant-Bold.ttf');
+}
+@font-face {
+    font-family: Halant Medium;
+    src: url('../fonts/Halant-Medium.ttf');
+}
+@font-face {
+    font-family: Shree Reg;
+    src: url('../fonts/Shree\ Devanagari\ 714-Regular.ttf');
+}
+@font-face{
+    font-family: Shree Bold;
+    src: url('../fonts/ShreeDev0714-Bold-02.ttf');
+}

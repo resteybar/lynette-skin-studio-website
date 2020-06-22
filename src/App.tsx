@@ -4,6 +4,7 @@ import './App.css'
 // Components
 import Home  from './Home/Home'
 import Product from './Products/Products'
+import Goals from './Goals/Goals'
 import About from './About/About'
 import NavBarScrolling from './NavBarScrolling/NavBarScrolling'
 import Services from './Services/Services'
@@ -55,6 +56,7 @@ const App: React.FC = () => {
       <Home 
         links={ links } 
         scrollToPage={ scrollToPage }/>
+      <Goals />
       <About />
       <Services />
       <Product />
