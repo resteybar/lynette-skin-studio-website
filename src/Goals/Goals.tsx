@@ -117,7 +117,8 @@ const Goals: React.FC<GoalsProps> = props => {
 const LynetteBrown = '#862e08'
 
 const GoalsPage = styled('div', {
-    paddingTop: '8px',
+    paddingTop: '40px',
+    marginBottom: '-90px',
 })
 
 const AboutTitle = styled('h1', {
