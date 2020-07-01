@@ -58,8 +58,11 @@ const Goals: React.FC = () => {
     )
 }
 
-const Goal = styled('div', {
+// CSS
+const LynetteBrown = '#862e08'
 
+const Goal = styled('div', {
+    textAlign: 'center',
 })
 
 const GoalName = styled('h2', {
@@ -70,45 +73,37 @@ const GoalDescription = styled('h2', {
     
 })
 
-const GoalButtonText = styled('h2', {
-    
+const GoalButtonText = styled('button', {
+    border: '1px solid' + LynetteBrown,
+    color: LynetteBrown,
+    fontFamily: 'Shree Reg',
+    letterSpacing: '1px',
+
+    // Same sizing as the 'Contact Us' button in the 'Home' page
+    height: '60px',
+    width: '200px',
 })
 
 const GridLayout = styled('div', {
     display: 'grid',
     gridTemplateColumns: '1fr 1fr 1fr',
-    // gridColumnGap: '50px',
-    // gridRowGap: '80px',
+    gridColumnGap: '50px',
+    gridRowGap: '30px',
+
     // Center Menu
-    justifyItems: 'center',
+    marginLeft: 'auto',
+    marginRight: 'auto',
 
-    // // Ensuring size does not maximize and minimize too much
-    // // minWidth: '400px',
-    // maxWidth: '1000px',
+    // Ensuring size does not maximize and minimize too much
+    minWidth: '400px',
+    maxWidth: '1000px',
 
-    // // Helps organize Services when website is getting minimized or on Mobile
-    // '@media screen and (max-width: 1100px)': {
-    //     gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
-    //     maxWidth: '700px'
-    // },
-
-    // '@media screen and (max-width: 800px)': {
-    //     gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
-    //     maxWidth: '600px'
-    // },
-
-    // '@media screen and (max-width: 700px)': {
-    //     gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
-    //     marginLeft: '50px',
-    //     marginRight: '50px',
-    // },
-
-    // '@media screen and (max-width: 600px)': {
-    //     gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
-    //     marginLeft: 'auto',
-    //     marginRight: 'auto',
-    //     maxWidth: '225px'
-    // },
+    // Helps organize Services when website is getting minimized or on Mobile
+    '@media screen and (max-width: 900px)': {
+        gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
+        maxWidth: '700px',
+        minWidth: '200px',
+    },
 })
 
 export default Goals

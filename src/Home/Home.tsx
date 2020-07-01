@@ -88,6 +88,10 @@ const Home: React.FC<HomeProps> = props => {
         </div>
     )
 }
+
+// CSS
+const LynetteBrown = '#862e08'
+
 const ButtonContainer = styled('div', {
     textAlign: 'center',
 })
@@ -96,7 +100,7 @@ const ButtonInput = styled('button', {
     marginTop: '0px',
     height: '60px',
     width: '200px',
-    borderColor: '#862e08',
+    border: '1px solid' + LynetteBrown,
     backgroundColor: 'Transparent',
     ':hover': {
         backgroundColor: '#862e08',
@@ -116,8 +120,6 @@ const ButtonInput = styled('button', {
     fontFamily: 'Shree Devanagari 714-Regular.ttf',
     fontWeight: 100,
 })
-
-const LynetteBrown = '#862e08'
 
 const ProductLink = styled('li', {
     listStyleType: 'none',  /* Takes off Bullet Points from List */
