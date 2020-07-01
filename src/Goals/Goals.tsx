@@ -26,26 +26,77 @@ const LynettesGoals: GoalValues[] = [
     }
 ]
 
-const Goals: React.FC = () => {
+type LinkValue = {
+    name: string;
+    path: string;
+    mobileAdjustment: number;
+    browserAdjustment: number;
+}
+
+interface GoalsProps {
+    links: LinkValue[],
+    scrollToPage(id: string, mobileAdjustment: number, browserAdjustment: number): void
+}
+
+const Goals: React.FC<GoalsProps> = props => {
+
+    const checkNames: Map<string, boolean> = new Map([
+        ['Services', true],
+        ['Contact', true],
+        ['Products', true],
+    ])
+
+    const linkNames: string[] = [
+        'Services',
+        'Contact',
+        'Products'
+    ]
+
+    const getButtonLinks = (): Map<string, LinkValue> => {
+        let buttonLinks: Map<string, LinkValue> = new Map()
+
+        for (let i = 0; i < props.links.length; i++) {
+            const name: string = props.links[i].name
+
+            if (checkNames.has(name)) 
+                buttonLinks.set(name, props.links[i])
+        }
+
+        return buttonLinks
+    }
 
     const renderGoals = (): JSX.Element[] => {
         var renderedMenu: JSX.Element[] = []
 
-        for (let i = 0; i < LynettesGoals.length; i++){
+        const buttonLinks: Map<string, LinkValue> = getButtonLinks()
+
+        for (let i = 0; i < LynettesGoals.length; i++) {
             const goalName: string = LynettesGoals[i].goalName
             const goalDescription: string = LynettesGoals[i].goalDescription
             const goalButtonText: string = LynettesGoals[i].goalButtonText
 
-            renderedMenu.push(
-                <Goal key={ i }>
-                    <div>
-                        <GoalName>{ goalName }</GoalName>
-                        <GoalDescription>{ goalDescription }</GoalDescription>
-                    </div>
+            const link: LinkValue | undefined = buttonLinks.get(linkNames[i])
 
-                    <GoalButtonText>{ goalButtonText }</GoalButtonText>
-                </Goal>
-            )
+            if (link) {
+                const path = link.path
+                const mobileAdj = link.mobileAdjustment
+                const browserAdj = link.browserAdjustment
+
+                renderedMenu.push(
+                    <Goal key={ i }>
+                        <div>
+                            <GoalName>{ goalName }</GoalName>
+                            <GoalDescription>{ goalDescription }</GoalDescription>
+                        </div>
+    
+                        <GoalButtonText
+                            onClick={ () => props.scrollToPage(path, mobileAdj, browserAdj) } 
+                        >
+                            { goalButtonText }
+                        </GoalButtonText>
+                    </Goal>
+                )
+            }
         }
 
         return renderedMenu
