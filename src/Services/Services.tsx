@@ -120,9 +120,6 @@ const ServicesPage = styled('div', {
     // Space Between About Page & Services Page, Services & Product
     paddingTop: pageVerticalPadding + 'px',
     paddingBottom: pageVerticalPadding + 'px',
-
-    // Applying here due to <h1> tags not changing Font
-    fontFamily: 'Halant Light',
 })
 
 const Service = styled('div', {
@@ -137,7 +134,7 @@ const Service = styled('div', {
 })
 
 const ServicesTitle = styled('h1', {
-    // fontFamiy: 'Halant Light',
+    fontFamily: 'Halant Light',
     textAlign: 'center',
     letterSpacing: '13px',
     fontSize: '40px',

@@ -38,8 +38,11 @@ const Goals: React.FC = () => {
 
             renderedMenu.push(
                 <Goal key={ i }>
-                    <GoalName>{ goalName }</GoalName>
-                    <GoalDescription>{ goalDescription }</GoalDescription>
+                    <div>
+                        <GoalName>{ goalName }</GoalName>
+                        <GoalDescription>{ goalDescription }</GoalDescription>
+                    </div>
+
                     <GoalButtonText>{ goalButtonText }</GoalButtonText>
                 </Goal>
             )
@@ -49,45 +52,78 @@ const Goals: React.FC = () => {
     }
 
     return (
-        <div>
+        <GoalsPage>
+            <AboutTitle>ABOUT</AboutTitle>
             {/* Goals */}
             <GridLayout>
                 { renderGoals() }
             </GridLayout>
-        </div>
+        </GoalsPage>
     )
 }
 
 // CSS
 const LynetteBrown = '#862e08'
 
+const GoalsPage = styled('div', {
+    paddingTop: '8px',
+})
+
+const AboutTitle = styled('h1', {
+    fontFamily: 'Halant Light',
+    textAlign: 'center',
+    letterSpacing: '13px',
+    fontSize: '40px',
+    color: LynetteBrown,
+    marginTop: '30px',
+    marginBottom: '25px',
+})
+
 const Goal = styled('div', {
     textAlign: 'center',
+
+    // Organizing title, description, & button
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
 })
 
 const GoalName = styled('h2', {
-    
+    fontFamily: 'Shree Bold',
+    letterSpacing: '4px',
+    borderBottom: '1px solid ' + LynetteBrown,
+    fontSize: '18pt',
 })
 
-const GoalDescription = styled('h2', {
-    
+const GoalDescription = styled('p', {
+    marginTop: '20px',
+    fontFamily: 'Shree Reg',
+    marginBottom: '25px',
 })
 
 const GoalButtonText = styled('button', {
-    border: '1px solid' + LynetteBrown,
-    color: LynetteBrown,
+    // Font Related
     fontFamily: 'Shree Reg',
     letterSpacing: '1px',
 
-    // Same sizing as the 'Contact Us' button in the 'Home' page
-    height: '60px',
-    width: '200px',
+    // Colors
+    border: '1px solid ' + LynetteBrown,
+    color: LynetteBrown,
+    backgroundColor: 'transparent',
+
+    // Centered Menu
+    marginLeft: 'auto',
+    marginRight: 'auto',
+
+    // Size of box
+    height: '45px',
+    width: '150px',
 })
 
 const GridLayout = styled('div', {
     display: 'grid',
     gridTemplateColumns: '1fr 1fr 1fr',
-    gridColumnGap: '50px',
+    gridColumnGap: '100px',
     gridRowGap: '30px',
 
     // Center Menu
@@ -96,13 +132,25 @@ const GridLayout = styled('div', {
 
     // Ensuring size does not maximize and minimize too much
     minWidth: '400px',
-    maxWidth: '1000px',
+    maxWidth: '1200px',
 
     // Helps organize Services when website is getting minimized or on Mobile
+    '@media screen and (max-width: 1250px)': {
+        marginLeft: '50px',
+        marginRight: '50px',
+    },
+
     '@media screen and (max-width: 900px)': {
         gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
         maxWidth: '700px',
         minWidth: '200px',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+    },
+
+    '@media screen and (max-width: 760px)': {
+        marginLeft: '30px',
+        marginRight: '30px',
     },
 })
 
