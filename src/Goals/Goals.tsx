@@ -175,7 +175,7 @@ const GridLayout = styled('div', {
     display: 'grid',
     gridTemplateColumns: '1fr 1fr 1fr',
     gridColumnGap: '100px',
-    gridRowGap: '30px',
+    gridRowGap: '50px',
 
     // Center Menu
     marginLeft: 'auto',
