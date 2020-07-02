@@ -204,13 +204,13 @@ const GridLayout = styled('div', {
 
     '@media screen and (max-width: 900px)': {
         gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
-        maxWidth: '700px',
+        maxWidth: '400px',
         minWidth: '200px',
         marginLeft: 'auto',
         marginRight: 'auto',
     },
 
-    '@media screen and (max-width: 760px)': {
+    '@media screen and (max-width: 460px)': {
         marginLeft: '30px',
         marginRight: '30px',
     },
