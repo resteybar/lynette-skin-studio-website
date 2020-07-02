@@ -117,8 +117,8 @@ const Goals: React.FC<GoalsProps> = props => {
 const LynetteBrown = '#862e08'
 
 const GoalsPage = styled('div', {
-    paddingTop: '40px',
-    marginBottom: '-90px',
+    marginTop: '40px',
+    marginBottom: '-60px',
 })
 
 const AboutTitle = styled('h1', {
@@ -144,7 +144,7 @@ const GoalName = styled('h2', {
     fontFamily: 'Shree Bold',
     letterSpacing: '4px',
     borderBottom: '1px solid ' + LynetteBrown,
-    fontSize: '18pt',
+    fontSize: '17pt',
 })
 
 const GoalDescription = styled('p', {
@@ -170,6 +170,16 @@ const GoalButtonText = styled('button', {
     // Size of box
     height: '45px',
     width: '150px',
+
+    ':hover': {
+        backgroundColor: LynetteBrown,
+        // border: '2px solid ' + LynetteBrown,
+        // fontFamily: 'Shree Bold',
+
+        opacity: 0.8,
+        color: '#f4f2f5',
+        cursor: 'pointer',
+    },
 })
 
 const GridLayout = styled('div', {
