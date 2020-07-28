@@ -43,11 +43,9 @@ const About: React.FC = () => {
 
 const Background = styled('div', {
     backgroundImage: 'url("' + aboutBackground + '")',
-    height: '100vh',
+    height: '700px',
     width: '100%',
-    maxHeight: '760px',
-    paddingTop: '250px',
-    // paddingBottom: '450px',
+    paddingTop: '450px',
     textAlign: 'center',
     /* Center and scale the image nicely */
     backgroundPosition: 'center bottom',
@@ -57,7 +55,11 @@ const Background = styled('div', {
     // Ensures Services Page does not overlap content in About Page
     '@media screen and (max-height: 663px)': {
         minHeight: '663px'
-    }
+    },
+
+    // '@media screen and (max-width: 2000px)': {
+    //     maxWidth: '2000px'
+    // }
 })
 
 const headshotSize = '145px'
